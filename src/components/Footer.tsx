@@ -6,12 +6,12 @@ import { company } from '@/app/constants/constants';
 import Image from 'next/image';
 import InstagramIcon from './icons/InstagramIcon';
 import FacebookIcon from './icons/FacebookIcon';
-import WhatsappIcon from './icons/WhatsappIcon';
 import LocationIcon from './icons/LocationIcon';
-import ClockIcon from './icons/ClockIcon';
 
 import Link from 'next/link';
 import GravityLogo from './icons/GravityLogo';
+import EmailFillIcon from './icons/EmailFillIcon';
+import WhatsappFillIcon from './icons/WhatsappFillIcon';
 
 const Footer = () => {
   return (
@@ -100,7 +100,7 @@ const Footer = () => {
                         : 'bg-green-500 text-white'
                     } shadow-lg hover:shadow-xl hover:scale-110`}
                   >
-                    <WhatsappIcon className='w-5 h-5' />
+                    <WhatsappFillIcon className='w-5 h-5' />
                   </a>
                 )}
               </div>
@@ -184,7 +184,7 @@ const Footer = () => {
                           company.darkmode ? 'bg-gray-800' : 'bg-gray-100'
                         }`}
                       >
-                        <WhatsappIcon
+                        <WhatsappFillIcon
                           className={`w-5 h-5 ${
                             company.darkmode ? 'text-gray-300' : 'text-gray-600'
                           }`}
@@ -242,21 +242,11 @@ const Footer = () => {
                         company.darkmode ? 'bg-gray-800' : 'bg-gray-100'
                       }`}
                     >
-                      <svg
+                      <EmailFillIcon
                         className={`w-5 h-5 ${
                           company.darkmode ? 'text-gray-300' : 'text-gray-600'
                         }`}
-                        fill='none'
-                        stroke='currentColor'
-                        viewBox='0 0 24 24'
-                      >
-                        <path
-                          strokeLinecap='round'
-                          strokeLinejoin='round'
-                          strokeWidth={2}
-                          d='M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z'
-                        />
-                      </svg>
+                      />
                     </div>
                     <a
                       href={`mailto:${company.email}`}

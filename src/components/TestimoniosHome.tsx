@@ -179,7 +179,7 @@ const TestimoniosHome = () => {
 
                     {/* Comentario del cliente */}
                     <blockquote className='text-color-text-light text-sm leading-relaxed mb-4'>
-                      "{testimonio.comentario}"
+                      &quot;{testimonio.comentario}&quot;
                     </blockquote>
                   </div>
                 </div>
