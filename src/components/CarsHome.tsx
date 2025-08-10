@@ -67,7 +67,12 @@ const CarsHome = ({ title }: CarsHomeProps) => {
     const loadVehiculos = () => {
       setLoading(true);
       try {
-        const vehiculosProcesados = data.cars
+        // Filtrar vehículos que tienen imágenes
+        const vehiculosConImagenes = data.cars.filter(
+          (auto) => auto.images && auto.images.length > 0
+        );
+
+        const vehiculosProcesados = vehiculosConImagenes
           .slice(0, 6) // Máximo 6 vehículos
           .map((auto) => ({
             id: auto.id,
@@ -276,7 +281,7 @@ const CarsHome = ({ title }: CarsHomeProps) => {
                           company.dark
                             ? 'group-hover:text-color-primary'
                             : 'group-hover:text-color-primary'
-                        } text-color-title-light text-lg md:text-xl font-bold tracking-tight truncate md:mb-1 transition-colors duration-300`}
+                        } text-color-title-light text-lg md:text-xl font-medium tracking-tight truncate md:mb-1 transition-colors duration-300`}
                       >
                         {auto.model}
                       </h3>
@@ -284,7 +289,7 @@ const CarsHome = ({ title }: CarsHomeProps) => {
                       <div
                         className={`${
                           company.price ? '' : 'hidden'
-                        } text-color-primary text-lg md:text-xl font-bold tracking-tight truncate md:mb-1 transition-colors duration-300`}
+                        } text-color-primary text-lg md:text-xl font-semibold tracking-tight truncate md:mb-1 transition-colors duration-300`}
                       >
                         {auto.price.moneda === 'ARS' ? '$' : 'US$'}
                         {auto.price.valor.toLocaleString('es-ES')}

@@ -84,9 +84,10 @@ const CarrouselRelated = ({ title, currentCarId }: CarrouselRelatedProps) => {
           return shuffled;
         };
 
-        // Obtener todos los autos excepto el actual
+        // Obtener todos los autos excepto el actual (solo con imágenes)
         const autosDisponibles = data.cars.filter(
-          (auto) => auto.id !== currentCarId
+          (auto) =>
+            auto.id !== currentCarId && auto.images && auto.images.length > 0
         );
 
         // Mezclar aleatoriamente y tomar máximo 10
@@ -301,7 +302,7 @@ const CarrouselRelated = ({ title, currentCarId }: CarrouselRelatedProps) => {
                           company.dark
                             ? 'group-hover:text-color-primary'
                             : 'group-hover:text-color-primary'
-                        } text-color-title-light text-lg md:text-xl font-bold tracking-tight truncate md:mb-1 transition-colors duration-300`}
+                        } text-color-title-light text-lg md:text-xl font-medium tracking-tight truncate md:mb-1 transition-colors duration-300`}
                       >
                         {auto.model}
                       </h3>
@@ -309,7 +310,7 @@ const CarrouselRelated = ({ title, currentCarId }: CarrouselRelatedProps) => {
                       <div
                         className={`${
                           company.price ? '' : 'hidden'
-                        } text-color-primary text-lg md:text-xl font-bold tracking-tight truncate md:mb-1 transition-colors duration-300`}
+                        } text-color-primary text-lg md:text-xl font-semibold tracking-tight truncate md:mb-1 transition-colors duration-300`}
                       >
                         {auto.price.moneda === 'ARS' ? '$' : 'US$'}
                         {auto.price.valor.toLocaleString('es-ES')}

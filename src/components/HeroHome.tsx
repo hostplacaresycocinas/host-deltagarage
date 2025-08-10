@@ -25,9 +25,9 @@ const HeroHome = () => {
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5 }}
-                  className='text-[28px] sm:text-4xl md:text-4xl lg:text-5xl xl:text-7xl font-semibold text-color-primary-light'
+                  className='uppercase text-[28px] sm:text-4xl md:text-4xl lg:text-5xl xl:text-7xl font-semibold text-color-primary-light'
                 >
-                  Vehículos Seleccionados,
+                  Compra/Venta
                 </motion.h2>
               </div>
               <div className='md:gap-3 text-nowrap lg:mb-1'>
@@ -35,9 +35,9 @@ const HeroHome = () => {
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.1 }}
-                  className='text-[28px] sm:text-4xl md:text-4xl lg:text-5xl xl:text-7xl font-semibold text-color-title-light'
+                  className='uppercase text-[28px] sm:text-4xl md:text-4xl lg:text-5xl xl:text-7xl font-semibold text-color-title-light'
                 >
-                  Usados y 0km
+                  Automotor
                 </motion.h2>
               </div>
             </div>
@@ -47,22 +47,24 @@ const HeroHome = () => {
               transition={{ duration: 0.5, delay: 0.2 }}
               className='text-lg lg:text-xl xl:text-2xl text-center text-color-text-light mx-4 max-w-md sm:max-w-md lg:max-w-lg xl:max-w-2xl'
             >
-              Concesionaria multimarca. Vehículos seleccionados, precios
-              competitivos y atención profesional. ¡Contactanos!
+              Tu concesionaria de confianza, usados seleccionados, financiación
+              directa y atención personalizada.
+              <br />
+              ¡Te esperamos!
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className='flex mt-4 md:mt-3 lg:mt-4 xl:mt-5 gap-5 mb-2 md:mb-1 lg:mb-0'
+              className='flex mt-4 md:mt-3 lg:mt-4 xl:mt-5 gap-4 md:gap-5 mb-2 md:mb-1 lg:mb-0'
             >
               <Link
                 href='/catalogo'
                 className={`${
                   company.dark
-                    ? 'text-color-title-light bg-color-primary hover:bg-color-primary-dark ring ring-color-primary hover:ring-color-primary-dark'
-                    : 'text-color-title-light bg-color-primary hover:bg-color-primary-dark ring ring-color-primary hover:ring-color-primary-dark'
-                } lg:text-lg transition-colors py-2.5 md:py-3.5 px-5 md:px-8 rounded-lg`}
+                    ? 'text-color-title-light bg-color-primary hover:bg-color-primary-dark border-2 border-color-primary hover:border-color-primary-dark'
+                    : 'text-color-title-light bg-color-primary hover:bg-color-primary-dark border-2 border-color-primary hover:border-color-primary-dark'
+                } lg:text-lg transition-all duration-300 py-3 md:py-4 px-6 md:px-10 rounded-full font-semibold`}
               >
                 Ver Catálogo
               </Link>
@@ -70,9 +72,9 @@ const HeroHome = () => {
                 href='/contacto'
                 className={`${
                   company.dark
-                    ? 'backdrop-blur bg-white/10 text-white font-medium ring ring-color-primary-dark hover:bg-white/20'
-                    : 'backdrop-blur bg-white/10 text-white font-medium ring ring-color-primary-dark hover:bg-white/20'
-                } lg:text-lg transition-colors py-2.5 md:py-3.5 px-5 md:px-8 rounded-lg`}
+                    ? 'text-color-title-light bg-neutral-600 hover:bg-neutral-700 border-2 border-neutral-500 hover:border-neutral-700'
+                    : 'text-color-title-light bg-neutral-600 hover:bg-neutral-700 border-2 border-neutral-500 hover:border-neutral-700'
+                } lg:text-lg transition-all duration-300 py-3 md:py-4 px-6 md:px-10 rounded-full`}
               >
                 Contactanos
               </Link>

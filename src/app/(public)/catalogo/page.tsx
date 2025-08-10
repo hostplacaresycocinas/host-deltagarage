@@ -85,9 +85,13 @@ const CatalogoPage = () => {
   // Función para obtener todas las marcas disponibles
   const fetchMarcas = () => {
     try {
-      // Obtener marcas únicas del catálogo
+      // Obtener marcas únicas del catálogo (solo vehículos con imágenes)
       const marcas = Array.from(
-        new Set(data.cars.map((car) => car.brand))
+        new Set(
+          data.cars
+            .filter((car) => car.images && car.images.length > 0)
+            .map((car) => car.brand)
+        )
       ).sort();
       setTodasLasMarcas(marcas);
     } catch (error) {
@@ -98,9 +102,13 @@ const CatalogoPage = () => {
   // Función para obtener las categorías del catálogo
   const fetchCategories = () => {
     try {
-      // Obtener categorías únicas del catálogo
+      // Obtener categorías únicas del catálogo (solo vehículos con imágenes)
       const categoriasUnicas = Array.from(
-        new Set(data.cars.map((car) => car.Category.name))
+        new Set(
+          data.cars
+            .filter((car) => car.images && car.images.length > 0)
+            .map((car) => car.Category.name)
+        )
       );
       const categoriasProcesadas = categoriasUnicas.map((cat) => ({
         id: cat.toLowerCase(),
@@ -121,7 +129,10 @@ const CatalogoPage = () => {
   ) => {
     setLoading(true);
     try {
-      let filteredCars = [...data.cars];
+      // Filtrar vehículos que tienen imágenes
+      let filteredCars = data.cars.filter(
+        (car) => car.images && car.images.length > 0
+      );
 
       // Aplicar filtros
       if (filters?.search) {
@@ -695,7 +706,7 @@ const CatalogoPage = () => {
                                   company.dark
                                     ? 'group-hover:text-color-primary'
                                     : 'group-hover:text-color-primary'
-                                } text-color-title-light text-lg md:text-xl font-bold tracking-tight truncate md:mb-1 transition-colors duration-300`}
+                                } text-color-title-light text-lg md:text-xl font-medium tracking-tight truncate md:mb-1 transition-colors duration-300`}
                               >
                                 {car.model}
                               </h3>
@@ -703,7 +714,7 @@ const CatalogoPage = () => {
                               <div
                                 className={`${
                                   company.price ? '' : 'hidden'
-                                } text-color-primary text-lg md:text-xl font-bold tracking-tight truncate md:mb-1 transition-colors duration-300`}
+                                } text-color-primary text-lg md:text-xl font-semibold tracking-tight truncate md:mb-1 transition-colors duration-300`}
                               >
                                 {car.price.moneda === 'ARS' ? '$' : 'US$'}
                                 {car.price.valor.toLocaleString('es-ES')}

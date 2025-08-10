@@ -5,24 +5,24 @@ export const company = {
   favicon: false,
   price: true,
   objectCover: '50%',
-  id: 'automotorestroncoso',
-  name: 'Automotores Troncoso',
-  adress: 'Av. Mitre 4369',
-  city: 'Avellaneda',
-  email: 'automotores.troncoso@hotmail.com',
-  instagram: 'automotores.troncoso',
-  facebook: 'https://www.facebook.com/profile.php?id=100049211336927',
-  whatsapp: ['1134362307', '1138806681'],
-  googlemapsLink: 'https://maps.app.goo.gl/g5XZNAed178bmUKH9',
+  id: 'merakautos',
+  name: 'Merak Autos',
+  adress: 'Av. de los incas 4345',
+  city: 'Villa Urquiza',
+  email: 'merakautos@hotmail.com',
+  instagram: 'merakautos',
+  facebook: 'https://www.facebook.com/MERAKAUTOS/',
+  whatsapp: ['1165124137'],
+  googlemapsLink: 'https://maps.app.goo.gl/1ZgPVSC5zJjiSbEV6',
   googlemaps:
-    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13122.293707910105!2d-58.33541582501924!3d-34.690714071550374!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a332fb1b1fd199%3A0x54dbf347c4da1c93!2sAutomotores%20Troncoso!5e0!3m2!1sen!2sar!4v1754598989272!5m2!1sen!2sar',
+    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.941892138972!2d-58.47270956410536!3d-34.58033683229093!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb7a1f7d29677%3A0x9c8a3970f96216b5!2sMerak%20autos!5e0!3m2!1sen!2sar!4v1754540375732!5m2!1sen!2sar',
   openDays: [
-    { day: 'Lunes', hours: ['09:30 a 19:00hs'] },
-    { day: 'Martes', hours: ['09:30 a 19:00hs'] },
-    { day: 'Miércoles', hours: ['09:30 a 19:00hs'] },
-    { day: 'Jueves', hours: ['09:30 a 19:00hs'] },
-    { day: 'Viernes', hours: ['09:30 a 19:00hs'] },
-    { day: 'Sábado', hours: ['09:30 a 13:00hs'] },
+    { day: 'Lunes', hours: ['10:00 a 19:00hs'] },
+    { day: 'Martes', hours: ['10:00 a 19:00hs'] },
+    { day: 'Miércoles', hours: ['10:00 a 19:00hs'] },
+    { day: 'Jueves', hours: ['10:00 a 19:00hs'] },
+    { day: 'Viernes', hours: ['10:00 a 19:00hs'] },
+    { day: 'Sábado', hours: ['10:00 a 15:00hs'] },
     // { day: 'Domingo', hours: ['09:00 a 13:00hs'] },
   ],
   footer:
@@ -33,8 +33,8 @@ export const API_BASE_URL = 'https://dealership.agenciagrvity.com';
 export const TENANT = 'accotto-automotores';
 
 export const metadataCompany = {
-  metadataBase: 'https://automotorestroncoso.vercel.app/',
-  title: 'Automotores Troncoso - Compra y Venta de Autos',
+  metadataBase: 'https://merakautos.vercel.app/',
+  title: 'Merak Autos - Compra y Venta de Autos',
   description:
     'Compra y Venta de Autos: Vehículos seleccionados, atención personalizada.',
 };
@@ -44,33 +44,33 @@ export const metadataCompany = {
 export const preguntas = [
   {
     id: 'preg-1',
-    question: '¿Qué opciones de pago ofrecen?',
+    question: '¿Qué métodos de pago aceptan?',
     answer:
-      'Ofrecemos diferentes opciones de pago para adaptarnos a tus necesidades. Consultanos sobre las alternativas disponibles y te asesoramos para encontrar la mejor opción para ti.',
+      'Aceptamos transferencia bancaria, efectivo y USD. Para tu tranquilidad, podés venir con tu mecánico de confianza a ver el auto, escanearlo y salir a probarlo. En el mismo momento que abonás, retirás el vehículo y nuestra gestoría se encarga de tomar la firma en el 08 para realizar todos los trámites.',
   },
   {
     id: 'preg-2',
-    question: '¿Cómo verifican el estado de los vehículos?',
+    question: '¿Toman vehículos en parte de pago?',
     answer:
-      'Todos nuestros vehículos son revisados antes de ser ofrecidos. Realizamos las verificaciones necesarias para asegurar que estén en las mejores condiciones para nuestros clientes.',
+      'Sí, tomamos vehículos en parte de pago y es nuestra prioridad que quieras dejarlo en nuestras manos. Podés enviarnos fotos, detalles y kilómetros, y nuestro equipo de ventas se encarga de cotizarlo en el momento. Te damos la posibilidad de encargarnos y gestionar toda la documentación necesaria sin honorarios, solo abonando los aranceles correspondientes. En ningún momento te quedás sin vehículo, llave contra llave.',
   },
   {
     id: 'preg-3',
-    question: '¿Incluyen algún tipo de garantía?',
+    question: '¿Ofrecen financiación?',
     answer:
-      'Sí, nuestros vehículos incluyen garantía según corresponda. Te informamos sobre los términos y condiciones al momento de la compra para tu tranquilidad.',
+      'Trabajamos con financieras directas con las mejores tasas, cuotas fijas y en pesos. Financiamos hasta el 40% de la unidad. Podés pedir vía WhatsApp la cotización del crédito a tu medida. Hacemos revisión de veraz en el acto. Señas el vehículo, la financiera se contacta con vos en 24hs, se arma el crédito y en 72hs estás firmando toda la documentación y retirando el vehículo.',
   },
   {
     id: 'preg-4',
-    question: '¿Puedo ver el vehículo antes de decidir?',
+    question: '¿Qué incluye la entrega del vehículo?',
     answer:
-      'Por supuesto, te invitamos a conocer nuestros vehículos personalmente. Coordina una visita con nuestro equipo y te mostramos todo lo que necesites saber.',
+      'Todos nuestros vehículos se entregan con permiso de circulación o cédula vigente para tu tranquilidad. Es primordial para nosotros que el auto se vaya transferido en el menor tiempo posible. Gracias a que contamos con gestoría propia y mandatarios matriculados cubriendo todas las zonas, podemos llevar a cabo la transferencia de manera eficiente.',
   },
   {
     id: 'preg-5',
-    question: '¿Brindan asesoramiento después de la compra?',
+    question: '¿Ofrecen servicios de seguro?',
     answer:
-      'Sí, nuestro compromiso continúa después de la compra. Estamos disponibles para resolver tus dudas y brindarte el apoyo que necesites con tu vehículo.',
+      'Podemos cotizarte el seguro con nuestra productora sin ningún compromiso, brindándote el precio más bajo del mercado de las compañías más prestigiosas. Si te interesa nuestro presupuesto, nos encargamos de gestionar todo para que no tengas que preocuparte y salgas cubierto del concesionario. No tiene honorarios ni adicionales, buscamos brindarte todos los servicios en un mismo lugar.',
   },
 ];
 

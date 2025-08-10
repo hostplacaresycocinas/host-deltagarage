@@ -1,12 +1,13 @@
 'use client';
 
 import HeroHome from '@/components/HeroHome';
-import Gallery from '@/components/Gallery';
 import PreguntasHome from '@/components/PreguntasHome';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import Proceso from '@/components/Proceso';
 import CarsHome from '@/components/CarsHome';
+import TestimoniosHome from '@/components/TestimoniosHome';
+import LogosCarousel from '@/components/LogosCarousel';
+import Gallery from '@/components/Gallery';
 
 export default function Home() {
   return (
@@ -19,8 +20,11 @@ export default function Home() {
             <section className='flex flex-col gap-8 md:gap-10 lg:gap-12 mt-10 mb-10 md:mt-16 md:mb-16'>
               <CarsHome title='Nuestros Vehículos' />
             </section>
-            <Proceso />
             <Gallery />
+            <TestimoniosHome />
+            <div className='flex justify-center'>
+              <LogosCarousel />
+            </div>
             <PreguntasHome />
           </main>
         </div>

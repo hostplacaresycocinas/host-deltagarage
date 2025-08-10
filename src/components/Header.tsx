@@ -59,7 +59,7 @@ const Header = () => {
                 </div>
               </>
             ) : (
-              <div className='h-14 md:h-16 w-64 sm:w-80 lg:w-96 xl:w-[400px]'>
+              <div className='h-14 md:h-16 w-56 sm:w-56 lg:w-60 xl:w-60'>
                 <Image
                   priority
                   className='h-full w-full object-contain object-left'
@@ -79,26 +79,20 @@ const Header = () => {
               return (
                 <li key={nav.id} className='relative'>
                   <Link
-                    className={` ${
-                      nav.button
-                        ? `${
-                            company.dark
-                              ? 'text-color-title-light bg-color-primary-dark hover:bg-color-primary'
-                              : 'text-color-title-light bg-color-primary hover:bg-color-primary-dark'
-                          } px-5 py-3 rounded-md`
-                        : company.darkmode
+                    className={`${
+                      company.darkmode
                         ? `text-color-text-light hover:text-color-title-light ${
-                            !nav.button && isActive && 'text-color-title-light'
+                            isActive && 'text-color-title-light'
                           }`
                         : `text-color-text hover:text-color-title ${
-                            !nav.button && isActive && 'text-color-title'
+                            isActive && 'text-color-title'
                           }`
                     } font-medium transition-all duration-300`}
                     href={nav.url}
                   >
                     {nav.title}
                   </Link>
-                  {!nav.button && isActive && (
+                  {isActive && (
                     <span
                       className={`absolute -bottom-2 left-0 w-full scale-x-110 h-0.5 ${
                         company.dark

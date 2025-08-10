@@ -1,10 +1,14 @@
 import type { Metadata } from 'next';
-import { Manrope } from 'next/font/google';
+import { Poppins } from 'next/font/google';
 import './globals.css';
 import { metadataCompany } from './constants/constants';
 import { ScrollToTopProvider } from '../components/ScrollToTopProvider';
 
-const manrope = Manrope({ subsets: ['latin'], variable: '--font-manrope' });
+const poppins = Poppins({
+  subsets: ['latin'],
+  variable: '--font-poppins',
+  weight: ['400', '500', '600', '700'],
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(metadataCompany.metadataBase),
@@ -20,7 +24,7 @@ export default function RootLayout({
   return (
     <html lang='es'>
       <body
-        className={`${manrope.variable} font-manrope font bg-color-bg-primary text-color-text antialiased`}
+        className={`${poppins.variable} font-poppins font bg-color-bg-primary text-color-text antialiased`}
       >
         <ScrollToTopProvider />
         {children}

@@ -10,12 +10,12 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        manrope: ['var(--font-manrope)', 'sans-serif'],
+        poppins: ['var(--font-poppins)', 'sans-serif'],
       },
       colors: {
-        'color-primary': '#E61524',
-        'color-primary-dark': '#CA000F',
-        'color-primary-light': '#FF1D2E',
+        'color-primary': '#3773FF',
+        'color-primary-dark': '#1D61FF',
+        'color-primary-light': '#417AFF',
         'color-primary-admin': '#E9262C',
         'color-primary-dark-admin': '#F0161C',
         'color-secondary': '#1E1E1E',
@@ -24,9 +24,9 @@ const config: Config = {
         'color-tertiary': '#FCD369',
         'color-tertiary-dark': '#FBBB17',
         'color-tertiary-light': '#FFE39C',
-        'color-bg-primary': '#06080B',
-        'color-bg-secondary': '#121316',
-        'color-bg-secondary-dark': '#06080B',
+        'color-bg-primary': '#000000',
+        'color-bg-secondary': '#0C0C0C',
+        'color-bg-secondary-dark': '#000000',
         'color-bg-secondary-light': '#1E1E1E',
         'color-title': '#1E1E1E',
         'color-title-light': '#ffff',

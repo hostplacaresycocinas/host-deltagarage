@@ -1,0 +1,67 @@
+{
+  "testimonios": [
+    {
+      "id": 1,
+      "nombre": "Gustavo Aurelio",
+      "comentario": "Genial la atención que me dieron y la seriedad al momento de cumplir con todo lo pactado. Muy recomendable!",
+      "rating": 5,
+      "image": "/assets/testimonios/merak-1.webp"
+    },
+    {
+      "id": 2,
+      "nombre": "javier salanitri",
+      "comentario": "Todo 10 puntos, excelente atención y el auto hasta ahora funcionando excelente",
+      "rating": 5,
+      "image": "/assets/testimonios/merak-2.webp"
+    },
+    {
+      "id": 3,
+      "nombre": "marcelo favio zito",
+      "comentario": "Una experiencia muy buena, en todo el proceso de la operación. Desde Brian en un primer momento muy buena atención y Mica en todo el trámite administrativo cumplieron con todo. RECOMENDABLE !!!",
+      "rating": 5,
+      "image": "/assets/testimonios/merak-3.webp"
+    },
+    {
+      "id": 4,
+      "nombre": "Antonio Vicenzotti",
+      "comentario": "Buena atención",
+      "rating": 5,
+      "image": "/assets/testimonios/merak-4.webp"
+    },
+    {
+      "id": 5,
+      "nombre": "Laura Leiva",
+      "comentario": "Realmente nos quedaríamos cortos con las 5 estrellas porque merecen muchas más. La atención que recibimos desde un principio es para sacarse el sombrero, todo de primera. El vehículo que recibimos está inmaculado, al igual que los demás que vimos ahí en la concesionaria, el trato que le dan se nota.",
+      "rating": 5,
+      "image": "/assets/testimonios/merak-5.webp"
+    },
+    {
+      "id": 6,
+      "nombre": "Ale Vicenzotti",
+      "comentario": "Súper atentos, todos los autos muy cuidados. Y dan el auto impeclabe, te vas andando. Recomiendo",
+      "rating": 5,
+      "image": "/assets/testimonios/merak-6.webp"
+    },
+    {
+      "id": 7,
+      "nombre": "Carlos Esteban Cortavarria",
+      "comentario": "Merak Autos, excelente experiencia de compra! Transparencia y amabilidad en el trato, además de una asistencia correctisima con respuestas rápidas. Recomiendo!",
+      "rating": 5,
+      "image": "/assets/testimonios/merak-7.webp"
+    },
+    {
+      "id": 8,
+      "nombre": "Analia Insaurralde",
+      "comentario": "Muy buena experiencia tuvimos . Excelente atención en especial Brian que estuvo siempre atento a todo y en todos los detalles, también Mica muy atenta y muy amable!! Los súper recomiendo gracias por todo!!!",
+      "rating": 5,
+      "image": "/assets/testimonios/merak-8.webp"
+    },
+    {
+      "id": 9,
+      "nombre": "marcelo",
+      "comentario": "Excelente trato y predisposición Jhon, Micaela y todos los que pusieron lo mejor para comprarle el primer auto a mi hijo. Gracias por todo!!!!!!",
+      "rating": 5,
+      "image": "/assets/testimonios/merak-9.webp"
+    }
+  ]
+}

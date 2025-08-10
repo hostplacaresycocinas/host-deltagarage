@@ -146,7 +146,7 @@ export default function AutoDetailPage() {
           },
           Images: carData.images.map((img, index) => ({
             thumbnailUrl: img.thumbnailUrl,
-            imageUrl: img.thumbnailUrl,
+            imageUrl: img.imageUrl,
             order: index,
           })),
         };

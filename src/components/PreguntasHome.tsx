@@ -15,106 +15,118 @@ const PreguntasHome = () => {
   };
 
   return (
-    <section
-      id='preguntasSection'
-      className='mt-10 mb-16 md:mt-16 md:mb-24 relative overflow-hidden'
-    >
-      {/* Patrón de fondo decorativo */}
-      <div className='absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgba(0,0,0,0.03)_1px,transparent_0)] bg-[length:20px_20px]'></div>
+    <section id='preguntasSection' className='py-20 md:py-28 relative'>
+      {/* Fondo sutil */}
+      <div
+        className={`absolute inset-0 ${
+          company.dark
+            ? 'bg-gradient-to-b from-transparent via-gray-900/20 to-transparent'
+            : 'bg-gradient-to-b from-transparent via-gray-50/30 to-transparent'
+        }`}
+      ></div>
 
-      <div className='max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10'>
-        {/* Título y subtítulo */}
-        <div className='text-center mb-3 md:mb-5 lg:mb-10'>
+      <div className='max-w-4xl mx-auto px-6 lg:px-8 relative z-10'>
+        {/* Header */}
+        <div className='text-center mb-6 md:mb-10'>
           <motion.h2
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true, margin: '0px 0px -100px 0px' }}
-            className='text-2xl md:text-3xl lg:text-4xl font-extrabold text-color-title-light mb-2'
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className='text-3xl md:text-4xl lg:text-5xl font-light text-color-title-light mb-4'
           >
             Preguntas Frecuentes
           </motion.h2>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+            className='w-24 h-0.5 bg-color-primary mx-auto mb-6'
+          ></motion.div>
           <motion.p
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true, margin: '0px 0px -100px 0px' }}
-            className='text-color-text-light max-w-2xl mx-auto md:text-lg font-medium'
+            transition={{ duration: 0.6, delay: 0.3 }}
+            viewport={{ once: true }}
+            className='text-color-text-light text-lg md:text-xl max-w-2xl mx-auto font-light'
           >
-            Resolvemos todas tus dudas sobre nuestros servicios y procesos
+            Todo lo que necesitas saber sobre nuestros servicios
           </motion.p>
         </div>
 
-        {/* Grid de preguntas */}
-        <div className='grid gap-6'>
+        {/* Lista de preguntas */}
+        <div className='space-y-4'>
           {preguntas.map((pregunta, index) => (
             <motion.div
               key={pregunta.id}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '0px 0px -100px 0px' }}
+              viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className='group'
             >
               <div
                 onClick={() => toggleAnswer(pregunta.id)}
-                className={`relative bg-color-bg-secondary rounded-2xl shadow-sm border border-gray-200 hover:shadow-lg transition-colors duration-300 cursor-pointer overflow-hidden
+                className={`group relative rounded-xl border transition-all duration-300 cursor-pointer overflow-hidden
                   ${
-                    activeAnswer === pregunta.id
-                      ? 'ring-2 ring-color-primary/20 shadow-lg'
-                      : 'hover:border-gray-300'
+                    company.dark
+                      ? `bg-color-bg-secondary ${
+                          activeAnswer === pregunta.id
+                            ? 'border-color-primary/40 shadow-lg shadow-color-primary/20'
+                            : 'border-gray-700 hover:border-gray-600 hover:shadow-md'
+                        }`
+                      : `bg-white ${
+                          activeAnswer === pregunta.id
+                            ? 'border-color-primary/30 shadow-lg shadow-color-primary/10'
+                            : 'border-gray-200 hover:border-gray-300 hover:shadow-md'
+                        }`
                   }`}
               >
-                {/* Línea decorativa superior */}
-                <div
-                  className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-color-primary to-color-primary/60 transition-colors duration-300
-                  ${
-                    activeAnswer === pregunta.id ? 'opacity-100' : 'opacity-0'
-                  }`}
-                ></div>
-
-                <div className='p-6 md:p-8'>
-                  <div className='flex items-start justify-between gap-4'>
+                {/* Contenido principal */}
+                <div className='p-8'>
+                  <div className='flex items-start justify-between gap-6'>
                     <div className='flex-1'>
-                      <h4 className='text-lg md:text-xl font-semibold text-color-title-light mb-2 group-hover:text-color-primary-light transition-colors duration-300'>
+                      <h4
+                        className={`text-xl font-medium transition-colors duration-300
+                        ${
+                          activeAnswer === pregunta.id
+                            ? 'text-color-primary'
+                            : 'text-color-title-light group-hover:text-color-primary'
+                        }`}
+                      >
                         {pregunta.question}
                       </h4>
                     </div>
 
-                    {/* Botón de toggle */}
+                    {/* Icono */}
                     <div className='flex-shrink-0'>
                       <div
-                        className={`w-10 h-10 rounded-full flex items-center justify-center transition-colors duration-300
-                        ${
-                          activeAnswer === pregunta.id
-                            ? `bg-color-primary shadow-lg ${
-                                company.dark
-                                  ? 'bg-color-primary-dark text-color-title-light'
-                                  : 'bg-color-primary text-color-title'
-                              }`
-                            : `${
-                                company.dark
-                                  ? 'group-hover:bg-color-primary-dark group-hover:text-color-title-light'
-                                  : 'group-hover:bg-color-primary group-hover:text-color-title'
-                              } bg-gray-100 text-color-title`
-                        }`}
+                        className={`w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300
+                          ${
+                            activeAnswer === pregunta.id
+                              ? 'bg-color-primary text-color-title-light'
+                              : company.dark
+                              ? 'bg-color-text text-color-title-light group-hover:bg-color-primary group-hover:text-color-title-light'
+                              : 'bg-color-text-light text-color-title group-hover:bg-color-primary group-hover:text-color-title-light'
+                          }`}
                       >
-                        <motion.div
-                          animate={{
-                            rotate: activeAnswer === pregunta.id ? 180 : 0,
-                          }}
-                          transition={{
-                            duration: 0.3,
-                            ease: 'easeInOut',
-                          }}
-                        >
-                          <DropDownIcon className='w-5 h-5' />
-                        </motion.div>
+                        <div className='relative w-4 h-4'>
+                          {/* Línea horizontal (siempre visible) */}
+                          <div className='absolute top-1/2 left-0 w-full h-[3px] bg-current transform -translate-y-1/2 rounded-full'></div>
+                          {/* Línea vertical (solo cuando está cerrada) */}
+                          <div
+                            className={`absolute left-1/2 top-0 w-[3px] h-full bg-current transform -translate-x-1/2 transition-all duration-300 rounded-full ${
+                              activeAnswer === pregunta.id
+                                ? 'opacity-0'
+                                : 'opacity-100'
+                            }`}
+                          ></div>
+                        </div>
                       </div>
                     </div>
                   </div>
 
-                  {/* Contenido expandible */}
+                  {/* Respuesta expandible */}
                   <AnimatePresence>
                     {activeAnswer === pregunta.id && (
                       <motion.div
@@ -127,8 +139,14 @@ const PreguntasHome = () => {
                         }}
                         className='overflow-hidden'
                       >
-                        <div className='mt-6 pt-6 border-t border-gray-100'>
-                          <p className='text-color-text-light leading-relaxed text-base md:text-lg'>
+                        <div
+                          className={`mt-6 pt-6 border-t ${
+                            company.dark
+                              ? 'border-neutral-700'
+                              : 'border-gray-100'
+                          }`}
+                        >
+                          <p className='text-color-text-light leading-relaxed text-base'>
                             {pregunta.answer}
                           </p>
                         </div>
@@ -136,6 +154,16 @@ const PreguntasHome = () => {
                     )}
                   </AnimatePresence>
                 </div>
+
+                {/* Efecto de brillo en hover */}
+                <div
+                  className={`absolute inset-0 bg-gradient-to-r from-transparent via-color-primary/5 to-transparent opacity-0 transition-opacity duration-300
+                  ${
+                    activeAnswer === pregunta.id
+                      ? 'opacity-100'
+                      : 'group-hover:opacity-100'
+                  }`}
+                ></div>
               </div>
             </motion.div>
           ))}

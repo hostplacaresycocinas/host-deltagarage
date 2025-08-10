@@ -16,16 +16,16 @@ const LogosCarousel = () => {
   ]);
 
   return (
-    <div className='flex justify-center w-[450px] md:w-[600px] lg:w-[700px] xl:w-[800px]'>
+    <div className='flex justify-center w-[450px] md:w-[600px] lg:w-[700px] xl:w-[900px]'>
       <section
         ref={emblaRef}
-        className='flex justify-center overflow-hidden relative mb-5 md:mb-10 lg:mb-14 pointer-events-none'
+        className='flex justify-center overflow-hidden relative mb-5 md:mb-10 lg:mb-14 hover:cursor-grab active:cursor-grabbing select-none'
       >
         <div className='flex items-center max-w-6xl md:pt-5'>
           <article className='flex-[0_0_25%] sm:flex-[0_0_20%] ml-10 sm:ml-16 lg:ml-10'>
             <Image
               priority
-              src='/assets/logos-carousel/audi-logo.webp'
+              src='/assets/logos-carousel/citroen.webp'
               width={300}
               height={300}
               alt='logo audi'
@@ -34,7 +34,7 @@ const LogosCarousel = () => {
           <article className='flex-[0_0_25%] sm:flex-[0_0_20%] ml-10 sm:ml-16 lg:ml-10'>
             <Image
               priority
-              src='/assets/logos-carousel/bmw-logo.webp'
+              src='/assets/logos-carousel/jeep.webp'
               width={300}
               height={300}
               alt='logo bmw'
@@ -43,7 +43,7 @@ const LogosCarousel = () => {
           <article className='flex-[0_0_25%] sm:flex-[0_0_20%] ml-10 sm:ml-16 lg:ml-10'>
             <Image
               priority
-              src='/assets/logos-carousel/ford-logo.webp'
+              src='/assets/logos-carousel/peugeot.webp'
               width={300}
               height={300}
               alt='logo ford'
@@ -52,7 +52,7 @@ const LogosCarousel = () => {
           <article className='flex-[0_0_25%] sm:flex-[0_0_20%] ml-10 sm:ml-16 lg:ml-10'>
             <Image
               priority
-              src='/assets/logos-carousel/mercedesbenz-logo.webp'
+              src='/assets/logos-carousel/audi.webp'
               width={300}
               height={300}
               alt='logo mercedesbenz'
@@ -61,7 +61,7 @@ const LogosCarousel = () => {
           <article className='flex-[0_0_25%] sm:flex-[0_0_20%] ml-10 sm:ml-16 lg:ml-10'>
             <Image
               priority
-              src='/assets/logos-carousel/peugeot-logo.webp'
+              src='/assets/logos-carousel/kia.webp'
               width={300}
               height={300}
               alt='logo peugeot'
@@ -70,7 +70,7 @@ const LogosCarousel = () => {
           <article className='flex-[0_0_25%] sm:flex-[0_0_20%] ml-10 sm:ml-16 lg:ml-10'>
             <Image
               priority
-              src='/assets/logos-carousel/volkswagen-logo.webp'
+              src='/assets/logos-carousel/volkswagen.webp'
               width={300}
               height={300}
               alt='logo volkswagen'
@@ -79,7 +79,7 @@ const LogosCarousel = () => {
           <article className='flex-[0_0_25%] sm:flex-[0_0_20%] ml-10 sm:ml-16 lg:ml-10'>
             <Image
               priority
-              src='/assets/logos-carousel/jeep-logo.webp'
+              src='/assets/logos-carousel/ford.webp'
               width={300}
               height={300}
               alt='logo jeep'
@@ -88,28 +88,10 @@ const LogosCarousel = () => {
           <article className='flex-[0_0_25%] sm:flex-[0_0_20%] ml-10 sm:ml-16 lg:ml-10'>
             <Image
               priority
-              src='/assets/logos-carousel/fiat-logo.webp'
+              src='/assets/logos-carousel/mercedes.webp'
               width={300}
               height={300}
               alt='logo fiat'
-            />
-          </article>
-          <article className='flex-[0_0_25%] sm:flex-[0_0_20%] ml-10 sm:ml-16 lg:ml-10'>
-            <Image
-              priority
-              src='/assets/logos-carousel/toyota-logo.webp'
-              width={300}
-              height={300}
-              alt='logo toyota'
-            />
-          </article>
-          <article className='flex-[0_0_25%] sm:flex-[0_0_20%] ml-10 sm:ml-16 lg:ml-10'>
-            <Image
-              priority
-              src='/assets/logos-carousel/hyundai-logo.webp'
-              width={300}
-              height={300}
-              alt='logo hyundai'
             />
           </article>
         </div>

@@ -27,7 +27,6 @@ const ImageGalleryModal = ({
   });
 
   const [selectedIndex, setSelectedIndex] = useState(currentIndex);
-  const [isDragging, setIsDragging] = useState(false);
   const [mousePressedInContent, setMousePressedInContent] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
@@ -62,32 +61,12 @@ const ImageGalleryModal = ({
   );
 
   const handleMouseDown = useCallback(() => {
-    setIsDragging(false);
     setMousePressedInContent(true);
   }, []);
 
-  const handleMouseMove = useCallback(() => {
-    setIsDragging(true);
+  const handleMouseUp = useCallback(() => {
+    setMousePressedInContent(false);
   }, []);
-
-  const handleMouseUp = useCallback(
-    (e: React.MouseEvent) => {
-      // Solo prevenir la propagación si realmente hubo drag
-      if (isDragging) {
-        e.preventDefault();
-        e.stopPropagation();
-        // Resetear el estado después de un pequeño delay para permitir clicks normales
-        setTimeout(() => {
-          setIsDragging(false);
-          setMousePressedInContent(false);
-        }, 100);
-        return;
-      }
-      setIsDragging(false);
-      setMousePressedInContent(false);
-    },
-    [isDragging]
-  );
 
   // Resetear el estado después de un tiempo como medida de seguridad
   useEffect(() => {
@@ -178,10 +157,9 @@ const ImageGalleryModal = ({
 
         {/* Contenedor del carrusel */}
         <div
-          className='overflow-hidden h-full'
+          className='overflow-hidden h-full hover:cursor-grab active:cursor-grabbing select-none'
           ref={emblaRef}
           onMouseDown={handleMouseDown}
-          onMouseMove={handleMouseMove}
           onMouseUp={handleMouseUp}
         >
           <div className='flex h-full'>
@@ -190,7 +168,6 @@ const ImageGalleryModal = ({
                 key={index}
                 className='relative min-w-full h-full'
                 onMouseDown={handleMouseDown}
-                onMouseMove={handleMouseMove}
                 onMouseUp={handleMouseUp}
               >
                 <Image
@@ -204,7 +181,6 @@ const ImageGalleryModal = ({
                   }}
                   draggable={false}
                   onMouseDown={handleMouseDown}
-                  onMouseMove={handleMouseMove}
                   onMouseUp={handleMouseUp}
                 />
               </div>
