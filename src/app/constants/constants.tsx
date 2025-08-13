@@ -44,33 +44,33 @@ export const metadataCompany = {
 export const preguntas = [
   {
     id: 'preg-1',
-    question: '¿Qué métodos de pago aceptan?',
+    question: '¿Qué opciones de pago ofrecen?',
     answer:
-      'Aceptamos transferencia bancaria, efectivo y USD. Para tu tranquilidad, podés venir con tu mecánico de confianza a ver el auto, escanearlo y salir a probarlo. En el mismo momento que abonás, retirás el vehículo y nuestra gestoría se encarga de tomar la firma en el 08 para realizar todos los trámites.',
+      'Ofrecemos diferentes opciones de pago para adaptarnos a tus necesidades. Consultanos sobre las alternativas disponibles y te asesoramos para encontrar la mejor opción para ti.',
   },
   {
     id: 'preg-2',
-    question: '¿Toman vehículos en parte de pago?',
+    question: '¿Cómo verifican el estado de los vehículos?',
     answer:
-      'Sí, tomamos vehículos en parte de pago y es nuestra prioridad que quieras dejarlo en nuestras manos. Podés enviarnos fotos, detalles y kilómetros, y nuestro equipo de ventas se encarga de cotizarlo en el momento. Te damos la posibilidad de encargarnos y gestionar toda la documentación necesaria sin honorarios, solo abonando los aranceles correspondientes. En ningún momento te quedás sin vehículo, llave contra llave.',
+      'Todos nuestros vehículos son revisados antes de ser ofrecidos. Realizamos las verificaciones necesarias para asegurar que estén en las mejores condiciones para nuestros clientes.',
   },
   {
     id: 'preg-3',
-    question: '¿Ofrecen financiación?',
+    question: '¿Incluyen algún tipo de garantía?',
     answer:
-      'Trabajamos con financieras directas con las mejores tasas, cuotas fijas y en pesos. Financiamos hasta el 40% de la unidad. Podés pedir vía WhatsApp la cotización del crédito a tu medida. Hacemos revisión de veraz en el acto. Señas el vehículo, la financiera se contacta con vos en 24hs, se arma el crédito y en 72hs estás firmando toda la documentación y retirando el vehículo.',
+      'Sí, nuestros vehículos incluyen garantía según corresponda. Te informamos sobre los términos y condiciones al momento de la compra para tu tranquilidad.',
   },
   {
     id: 'preg-4',
-    question: '¿Qué incluye la entrega del vehículo?',
+    question: '¿Puedo ver el vehículo antes de decidir?',
     answer:
-      'Todos nuestros vehículos se entregan con permiso de circulación o cédula vigente para tu tranquilidad. Es primordial para nosotros que el auto se vaya transferido en el menor tiempo posible. Gracias a que contamos con gestoría propia y mandatarios matriculados cubriendo todas las zonas, podemos llevar a cabo la transferencia de manera eficiente.',
+      'Por supuesto, te invitamos a conocer nuestros vehículos personalmente. Coordina una visita con nuestro equipo y te mostramos todo lo que necesites saber.',
   },
   {
     id: 'preg-5',
-    question: '¿Ofrecen servicios de seguro?',
+    question: '¿Brindan asesoramiento después de la compra?',
     answer:
-      'Podemos cotizarte el seguro con nuestra productora sin ningún compromiso, brindándote el precio más bajo del mercado de las compañías más prestigiosas. Si te interesa nuestro presupuesto, nos encargamos de gestionar todo para que no tengas que preocuparte y salgas cubierto del concesionario. No tiene honorarios ni adicionales, buscamos brindarte todos los servicios en un mismo lugar.',
+      'Sí, nuestro compromiso continúa después de la compra. Estamos disponibles para resolver tus dudas y brindarte el apoyo que necesites con tu vehículo.',
   },
 ];
 
