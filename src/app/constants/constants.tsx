@@ -5,24 +5,24 @@ export const company = {
   favicon: false,
   price: true,
   objectCover: '50%',
-  id: 'merakautos',
-  name: 'Merak Autos',
-  adress: 'Av. de los incas 4345',
-  city: 'Villa Urquiza',
-  email: 'merakautos@hotmail.com',
-  instagram: 'merakautos',
-  facebook: 'https://www.facebook.com/MERAKAUTOS/',
-  whatsapp: ['1165124137'],
-  googlemapsLink: 'https://maps.app.goo.gl/1ZgPVSC5zJjiSbEV6',
+  id: 'automaniasur',
+  name: 'Automania Sur',
+  adress: 'Av. H. Yrigoyen 12769',
+  city: 'Adrogué',
+  email: 'amsurautomotores@gmail.com',
+  instagram: 'automaniasur',
+  facebook: 'https://www.facebook.com/automaniaadrogue',
+  whatsapp: ['1126675011'],
+  googlemapsLink: 'https://maps.app.goo.gl/GXVPbsExYKL3gdyRA',
   googlemaps:
-    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.941892138972!2d-58.47270956410536!3d-34.58033683229093!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb7a1f7d29677%3A0x9c8a3970f96216b5!2sMerak%20autos!5e0!3m2!1sen!2sar!4v1754540375732!5m2!1sen!2sar',
+    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3276.11301433019!2d-58.40904132333158!3d-34.80309847288339!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcd30f0aa05073%3A0xd16f2f0f35d70d5b!2sAutomania%20Sur!5e0!3m2!1sen!2sar!4v1754768557001!5m2!1sen!2sar',
   openDays: [
-    { day: 'Lunes', hours: ['10:00 a 19:00hs'] },
-    { day: 'Martes', hours: ['10:00 a 19:00hs'] },
-    { day: 'Miércoles', hours: ['10:00 a 19:00hs'] },
-    { day: 'Jueves', hours: ['10:00 a 19:00hs'] },
-    { day: 'Viernes', hours: ['10:00 a 19:00hs'] },
-    { day: 'Sábado', hours: ['10:00 a 15:00hs'] },
+    { day: 'Lunes', hours: ['09:30 a 17:00hs'] },
+    { day: 'Martes', hours: ['09:30 a 17:00hs'] },
+    { day: 'Miércoles', hours: ['09:30 a 17:00hs'] },
+    { day: 'Jueves', hours: ['09:30 a 17:00hs'] },
+    { day: 'Viernes', hours: ['09:30 a 17:00hs'] },
+    { day: 'Sábado', hours: ['09:30 a 13:00hs'] },
     // { day: 'Domingo', hours: ['09:00 a 13:00hs'] },
   ],
   footer:
@@ -33,8 +33,8 @@ export const API_BASE_URL = 'https://dealership.agenciagrvity.com';
 export const TENANT = 'accotto-automotores';
 
 export const metadataCompany = {
-  metadataBase: 'https://merakautos.vercel.app/',
-  title: 'Merak Autos - Compra/Venta Automotor',
+  metadataBase: 'https://automaniasur.vercel.app/',
+  title: 'Automania Sur - Compra/Venta Automotor',
   description:
     'Compra/Venta Automotor: Tu concesionaria de confianza, usados seleccionados, financiación directa y atención personalizada.',
 };

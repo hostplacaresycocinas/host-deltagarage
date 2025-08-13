@@ -25,9 +25,9 @@ const HeroHome = () => {
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5 }}
-                  className='uppercase text-[28px] sm:text-4xl md:text-4xl lg:text-5xl xl:text-7xl font-semibold text-color-primary-light'
+                  className='text-[28px] sm:text-4xl md:text-4xl lg:text-5xl xl:text-7xl font-semibold text-color-primary-light'
                 >
-                  Compra/Venta
+                  Vehículos Buenos
                 </motion.h2>
               </div>
               <div className='md:gap-3 text-nowrap lg:mb-1'>
@@ -35,9 +35,9 @@ const HeroHome = () => {
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.1 }}
-                  className='uppercase text-[28px] sm:text-4xl md:text-4xl lg:text-5xl xl:text-7xl font-semibold text-color-title-light'
+                  className='text-[28px] sm:text-4xl md:text-4xl lg:text-5xl xl:text-7xl font-semibold text-color-title-light'
                 >
-                  Automotor
+                  Clientes Contentos
                 </motion.h2>
               </div>
             </div>
