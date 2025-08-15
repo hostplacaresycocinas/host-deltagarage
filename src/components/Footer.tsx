@@ -19,7 +19,7 @@ const Footer = () => {
       className={`relative ${company.darkmode ? 'bg-gray-900' : 'bg-gray-50'}`}
     >
       {/* Fondo con patrón sutil */}
-      <div className='absolute inset-0 opacity-100 bg-[#1B0103]'></div>
+      <div className='absolute inset-0 opacity-100 bg-color-bg-secondary-dark'></div>
 
       <div className='relative z-10 max-w-7xl mx-auto px-6 lg:px-8'>
         {/* Sección principal */}

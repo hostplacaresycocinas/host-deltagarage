@@ -11,99 +11,96 @@ const NosotrosPage = () => {
     <>
       <Header />
 
-      {/* Título y subtítulo al estilo Proceso */}
-      <div className='py-8 md:py-14 lg:py-16'>
-        <section className='flex flex-col items-center w-full'>
-          <div className='text-center mb-3 sm:mb-4 md:mb-5 lg:mb-10'>
-            <motion.h2
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className='text-2xl md:text-3xl lg:text-4xl font-extrabold text-color-title mb-2'
-            >
-              <span className='text-color-primary'>Sobre {company.name}</span>
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className='text-color-text-light max-w-sm sm:max-w-lg lg:max-w-2xl mx-auto md:text-lg font-medium'
-            >
-              En {company.name} nos especializamos en la venta de autos usados,
-              ofreciendo calidad y confianza en cada transacción.
-            </motion.p>
-          </div>
-        </section>
-      </div>
+      {/* Hero Section con imagen de fondo */}
+      <section className='relative h-48 md:h-60 lg:h-72 flex items-center justify-center overflow-hidden'>
+        {/* Imagen de fondo con overlay */}
+        <div className='absolute inset-0 z-0'>
+          <Image
+            src='/assets/nosotros/nosotros-1.webp'
+            alt={`Equipo de ${company.name}`}
+            fill
+            className='object-cover'
+            priority
+          />
+          <div className='absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-black/50'></div>
+        </div>
 
-      {/* Historia y Misión */}
-      <section className=' relative'>
-        <div className='max-w-6xl mx-auto px-6 lg:px-8'>
-          <div className='grid lg:grid-cols-2 gap-16 items-center'>
-            {/* Imagen */}
+        {/* Contenido centrado */}
+        <div className='relative z-10 text-center px-4 max-w-4xl mx-auto'>
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className='text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3 md:mb-4 lg:mb-6'
+          >
+            Sobre{' '}
+            <span className='text-color-primary-light'>{company.name}</span>
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className='text-xl md:text-2xl text-white/90 font-medium leading-relaxed'
+          >
+            Más de una década transformando sueños en realidad sobre ruedas
+          </motion.p>
+        </div>
+      </section>
+
+      {/* Sección de historia */}
+      <section className='py-10 md:py-16'>
+        <div className='max-w-6xl mx-auto px-4'>
+          <div className='grid lg:grid-cols-2 gap-12 lg:gap-16 items-center'>
+            {/* Texto */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className='relative'
             >
-              <div className='relative overflow-hidden rounded-2xl shadow-2xl'>
-                <Image
-                  src='/assets/nosotros/nosotros-1.webp'
-                  alt={`Equipo de ${company.name}`}
-                  width={600}
-                  height={600}
-                  className='object-cover w-full aspect-square'
-                  priority
-                />
-                {/* Overlay sutil */}
-                <div className='absolute inset-0 bg-gradient-to-t from-black/20 to-transparent'></div>
+              <h2 className='text-3xl md:text-4xl font-bold text-color-title-light mb-6'>
+                Nuestra Historia
+              </h2>
+              <div className='space-y-4 text-color-text-light text-lg leading-relaxed'>
+                <p>
+                  {company.name} nació de la pasión por los autos y el
+                  compromiso con nuestros clientes.
+                </p>
+                <p>
+                  Desde nuestros inicios, nos hemos dedicado a seleccionar
+                  cuidadosamente cada vehículo, garantizando que cumpla con los
+                  más altos estándares de calidad y seguridad.
+                </p>
+                <p>
+                  Hoy, somos referentes en el mercado de autos usados,
+                  reconocidos por nuestra transparencia, profesionalismo y el
+                  acompañamiento integral que brindamos a cada cliente.
+                </p>
               </div>
-
-              {/* Elemento decorativo */}
-              <div className='absolute -bottom-6 -right-6 w-24 h-24 bg-color-primary rounded-full opacity-20'></div>
             </motion.div>
 
-            {/* Contenido */}
+            {/* Estadísticas */}
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className='space-y-8'
+              className='grid grid-cols-1 gap-6'
             >
-              <div>
-                <h2 className='text-3xl md:text-4xl font-semibold text-color-title-light mb-6'>
-                  Nuestra Historia
-                </h2>
-                <div className='w-16 h-1 bg-color-primary mb-6'></div>
-                <p className='text-lg text-color-text-light leading-relaxed mb-6'>
-                  Desde nuestros inicios, nos hemos dedicado a ofrecer un
-                  servicio de calidad en la venta de autos usados, con
-                  transparencia y atención personalizada.
-                </p>
-                <p className='text-lg text-color-text-light leading-relaxed'>
-                  Nuestro equipo de profesionales del sector automotriz trabaja
-                  para ayudarte a encontrar el auto que necesitas, con opciones
-                  de financiamiento y asesoramiento integral.
-                </p>
-              </div>
-
-              <div className='grid grid-cols-2 gap-6 pt-8'>
-                <div className='text-center'>
-                  <div className='text-3xl font-bold text-color-primary mb-2'>
-                    10+
-                  </div>
-                  <div className='text-color-text-light'>
-                    Años de Experiencia
-                  </div>
+              <div className='bg-color-bg-primary rounded-2xl p-6 text-center border border-color-border'>
+                <div className='text-3xl md:text-4xl font-bold text-color-primary mb-2'>
+                  10+
                 </div>
-                <div className='text-center'>
-                  <div className='text-3xl font-bold text-color-primary mb-2'>
-                    30+
-                  </div>
-                  <div className='text-color-text-light'>Autos en Stock</div>
+                <div className='text-color-text-light font-medium'>
+                  Años de Experiencia
+                </div>
+              </div>
+              <div className='bg-color-bg-primary rounded-2xl p-6 text-center border border-color-border'>
+                <div className='text-3xl md:text-4xl font-bold text-color-primary mb-2'>
+                  40+
+                </div>
+                <div className='text-color-text-light font-medium'>
+                  Vehículos en Stock
                 </div>
               </div>
             </motion.div>
@@ -111,18 +108,9 @@ const NosotrosPage = () => {
         </div>
       </section>
 
-      {/* Valores */}
-      <section className='py-20 md:py-28 relative'>
-        {/* Fondo sutil */}
-        <div
-          className={`absolute inset-0 ${
-            company.dark
-              ? 'bg-gradient-to-b from-transparent via-gray-900/10 to-transparent'
-              : 'bg-gradient-to-b from-transparent via-gray-50/50 to-transparent'
-          }`}
-        ></div>
-
-        <div className='relative z-10 max-w-6xl mx-auto px-6 lg:px-8'>
+      {/* Sección de valores */}
+      <section className='py-10 md:py-16'>
+        <div className='max-w-6xl mx-auto px-4'>
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -130,88 +118,113 @@ const NosotrosPage = () => {
             viewport={{ once: true }}
             className='text-center mb-16'
           >
-            <h2 className='text-3xl md:text-4xl font-semibold text-color-title-light mb-6'>
+            <h2 className='text-3xl md:text-4xl font-bold text-color-title-light mb-4'>
               Nuestros Valores
             </h2>
-            <div className='w-16 h-1 bg-color-primary mx-auto mb-6'></div>
-            <p className='text-lg text-color-text-light max-w-2xl mx-auto'>
-              Los valores que nos guían en cada operación y en la atención a
-              nuestros clientes
+            <p className='text-color-text-light text-lg max-w-2xl mx-auto'>
+              Los pilares que guían cada decisión y acción en {company.name}
             </p>
           </motion.div>
 
           <div className='grid md:grid-cols-3 gap-8'>
-            {[
-              {
-                icon: (
+            {/* Valor 1 */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+              className='group relative'
+            >
+              <div className='bg-gradient-to-br from-color-primary/0 to-color-primary/5 rounded-3xl p-8 h-full border border-color-primary/20'>
+                <div className='w-16 h-16 bg-color-primary/20 rounded-2xl flex items-center justify-center mb-6'>
                   <svg
-                    className='w-12 h-12'
-                    fill='none'
+                    className='w-8 h-8 text-color-primary'
+                    fill='currentColor'
                     viewBox='0 0 24 24'
-                    stroke='currentColor'
                   >
-                    <polygon points='12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2' />
+                    <path d='M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z' />
                   </svg>
-                ),
-                title: 'Calidad Garantizada',
-                description:
-                  'Seleccionamos cada vehículo con cuidado, asegurando calidad y confiabilidad en todos nuestros autos.',
-              },
-              {
-                icon: (
-                  <svg
-                    className='w-12 h-12'
-                    fill='none'
-                    viewBox='0 0 24 24'
-                    stroke='currentColor'
-                  >
-                    <path d='M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2' />
-                    <circle cx='12' cy='7' r='4' />
-                  </svg>
-                ),
-                title: 'Atención Personalizada',
-                description:
-                  'Cada cliente es importante para nosotros. Ofrecemos asesoramiento honesto y acompañamiento en todo el proceso.',
-              },
-              {
-                icon: (
-                  <svg
-                    className='w-12 h-12'
-                    fill='none'
-                    viewBox='0 0 24 24'
-                    stroke='currentColor'
-                  >
-                    <path d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z' />
-                    <path d='m9 12 2 2 4-4' />
-                  </svg>
-                ),
-                title: 'Transparencia',
-                description:
-                  'Creemos en la honestidad. Toda la información sobre nuestros vehículos está disponible para nuestros clientes.',
-              },
-            ].map((valor, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className={`group relative p-8 rounded-2xl transition-colors duration-300 ${
-                  company.dark ? 'bg-color-bg-secondary' : 'bg-white'
-                } shadow-lg hover:shadow-xl border border-neutral-700`}
-              >
-                {/* Icono */}
-                <div className='text-color-primary mb-6'>{valor.icon}</div>
-
-                {/* Contenido */}
-                <h3 className='text-xl font-semibold text-color-title-light mb-4'>
-                  {valor.title}
+                </div>
+                <h3 className='text-xl font-bold text-color-title-light mb-4'>
+                  Excelencia
                 </h3>
                 <p className='text-color-text-light leading-relaxed'>
-                  {valor.description}
+                  Buscamos la perfección en cada detalle, desde la selección de
+                  vehículos hasta el servicio postventa, garantizando la mejor
+                  experiencia posible.
                 </p>
-              </motion.div>
-            ))}
+              </div>
+            </motion.div>
+
+            {/* Valor 2 */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              className='group relative'
+            >
+              <div className='bg-gradient-to-br from-color-primary/0 to-color-primary/5 rounded-3xl p-8 h-full border border-color-primary/20'>
+                <div className='w-16 h-16 bg-color-primary/20 rounded-2xl flex items-center justify-center mb-6'>
+                  <svg
+                    className='w-8 h-8 text-color-primary'
+                    fill='none'
+                    viewBox='0 0 24 24'
+                    stroke='currentColor'
+                  >
+                    <path
+                      strokeLinecap='round'
+                      strokeLinejoin='round'
+                      strokeWidth={2}
+                      d='M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z'
+                    />
+                  </svg>
+                </div>
+                <h3 className='text-xl font-bold text-color-title-light mb-4'>
+                  Confianza
+                </h3>
+                <p className='text-color-text-light leading-relaxed'>
+                  Construimos relaciones duraderas basadas en la transparencia,
+                  honestidad y el cumplimiento de cada promesa que hacemos a
+                  nuestros clientes.
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Valor 3 */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              viewport={{ once: true }}
+              className='group relative'
+            >
+              <div className='bg-gradient-to-br from-color-primary/0 to-color-primary/5 rounded-3xl p-8 h-full border border-color-primary/20'>
+                <div className='w-16 h-16 bg-color-primary/20 rounded-2xl flex items-center justify-center mb-6'>
+                  <svg
+                    className='w-8 h-8 text-color-primary'
+                    fill='none'
+                    viewBox='0 0 24 24'
+                    stroke='currentColor'
+                  >
+                    <path
+                      strokeLinecap='round'
+                      strokeLinejoin='round'
+                      strokeWidth={2}
+                      d='M13 10V3L4 14h7v7l9-11h-7z'
+                    />
+                  </svg>
+                </div>
+                <h3 className='text-xl font-bold text-color-title-light mb-4'>
+                  Innovación
+                </h3>
+                <p className='text-color-text-light leading-relaxed'>
+                  Nos mantenemos a la vanguardia de las tendencias del mercado,
+                  implementando nuevas tecnologías y procesos para mejorar
+                  continuamente.
+                </p>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
