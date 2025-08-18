@@ -20,7 +20,7 @@ const PreguntasHome = () => {
         className={`absolute inset-0 ${
           company.dark
             ? 'bg-gradient-to-b from-transparent via-gray-900/20 to-transparent'
-            : 'bg-gradient-to-b from-transparent via-gray-50/30 to-transparent'
+            : 'bg-gradient-to-b from-transparent via-gray-900/20 to-transparent'
         }`}
       ></div>
 
@@ -74,10 +74,10 @@ const PreguntasHome = () => {
                             ? 'border-color-primary/40 shadow-lg shadow-color-primary/20'
                             : 'border-gray-700 hover:border-gray-600 hover:shadow-md'
                         }`
-                      : `bg-white ${
+                      : `bg-color-bg-secondary ${
                           activeAnswer === pregunta.id
-                            ? 'border-color-primary/30 shadow-lg shadow-color-primary/10'
-                            : 'border-gray-200 hover:border-gray-300 hover:shadow-md'
+                            ? 'border-color-primary/40 shadow-lg shadow-color-primary/20'
+                            : 'border-gray-700 hover:border-gray-600 hover:shadow-md'
                         }`
                   }`}
               >
@@ -103,10 +103,14 @@ const PreguntasHome = () => {
                         className={`w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300
                           ${
                             activeAnswer === pregunta.id
-                              ? 'bg-color-primary text-color-title-light'
+                              ? `bg-color-primary ${
+                                  company.dark
+                                    ? 'text-color-title-light'
+                                    : 'text-color-title'
+                                }`
                               : company.dark
                               ? 'bg-color-text text-color-title-light group-hover:bg-color-primary group-hover:text-color-title-light'
-                              : 'bg-color-text-light text-color-title group-hover:bg-color-primary group-hover:text-color-title-light'
+                              : 'bg-color-text-light text-color-title group-hover:bg-color-primary group-hover:text-color-title'
                           }`}
                       >
                         <div className='relative w-4 h-4'>

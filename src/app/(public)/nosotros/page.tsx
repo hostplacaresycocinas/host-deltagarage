@@ -31,10 +31,9 @@ const NosotrosPage = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className='text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3 md:mb-4 lg:mb-6'
+            className='text-2xl md:text-3xl lg:text-4xl font-semibold text-color-primary-light mb-3 md:mb-4 lg:mb-6'
           >
-            Sobre{' '}
-            <span className='text-color-primary-light'>{company.name}</span>
+            Nosotros
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 30 }}

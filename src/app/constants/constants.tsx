@@ -1,21 +1,21 @@
 export const company = {
-  dark: true,
+  dark: false,
   darkmode: true,
   shortAdress: true,
-  favicon: false,
+  favicon: true,
   price: true,
   objectCover: '50%',
-  id: 'thebestluxurycars',
-  name: 'The Best Luxury Cars',
-  adress: 'Av. Agustín M. García 9340',
-  city: 'Benavidez',
-  email: null,
-  instagram: 'thebest_luxurycars',
-  facebook: 'https://www.facebook.com/thebestluxurycars/',
-  whatsapp: ['1158705036'],
-  googlemapsLink: 'https://maps.app.goo.gl/oexYAMDQHRrwmq5YA',
+  id: 'draccomotors',
+  name: 'Dracco Motors',
+  adress: 'Los Robles 289',
+  city: 'Gral. Rodríguez',
+  email: 'draccodetailing@hotmail.com',
+  instagram: 'draccomotors_',
+  facebook: null,
+  whatsapp: ['1126212826'],
+  googlemapsLink: 'https://maps.app.goo.gl/PwXuEJ2JSMcEKi3j9',
   googlemaps:
-    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3292.2874511575396!2d-58.66284878777424!3d-34.39403897291772!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bca139b2aabe4d%3A0xbcdc2bab742f91bf!2sND%20CARS%20-%20Agencia%20multimarca!5e0!3m2!1sen!2sar!4v1754718570424!5m2!1sen!2sar',
+    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d205.27187785120387!2d-58.941554965672694!3d-34.595308962431396!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bc912966fa0a91%3A0x273813fd475740fa!2sDracco%20Motors%20-%20Concesionaria%20de%20veh%C3%ADculos%20y%20Est%C3%A9tica%20vehicular!5e0!3m2!1sen!2sar!4v1754724689048!5m2!1sen!2sar',
   openDays: ['Lunes a Viernes 09:00 a 18:00hs', 'Sábados 09:00 a 14:00hs'],
   footer:
     'Compra y Venta de Autos: Vehículos seleccionados, atención personalizada.',
@@ -25,8 +25,8 @@ export const API_BASE_URL = 'https://dealership.agenciagrvity.com';
 export const TENANT = 'accotto-automotores';
 
 export const metadataCompany = {
-  metadataBase: 'https://thebestluxurycars.vercel.app/',
-  title: 'The Best Luxury Cars - Compra y Venta de Autos',
+  metadataBase: 'https://draccomotors.vercel.app/',
+  title: 'Dracco Motors - Compra y Venta de Autos',
   description:
     'Compra y Venta de Autos: Vehículos seleccionados, atención personalizada.',
 };

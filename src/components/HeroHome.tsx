@@ -61,7 +61,7 @@ const HeroHome = () => {
                 className={`${
                   company.dark
                     ? 'text-color-title-light bg-color-primary hover:bg-color-primary-dark border-2 border-color-primary hover:border-color-primary-dark'
-                    : 'text-color-title-light bg-color-primary hover:bg-color-primary-dark border-2 border-color-primary hover:border-color-primary-dark'
+                    : 'text-color-title bg-color-primary hover:bg-color-primary-dark border-2 border-color-primary hover:border-color-primary-dark'
                 } lg:text-lg transition-all duration-300 py-3 md:py-4 px-6 md:px-10 rounded-full font-medium`}
               >
                 Ver Catálogo
