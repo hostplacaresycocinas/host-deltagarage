@@ -141,7 +141,7 @@ const ImageGalleryModal = ({
       onClick={handleBackdropClick}
     >
       <div
-        className={`relative rounded-lg overflow-hidden max-w-4xl w-full aspect-[4/3] max-h-[65vh] md:max-h-[75vh] transition-all duration-200 ease-out transform ${
+        className={`relative rounded-lg overflow-hidden max-w-4xl w-full aspect-[4/3] max-h-[75vh] transition-all duration-200 ease-out transform ${
           isVisible && !isClosing
             ? 'opacity-100 scale-100'
             : 'opacity-0 scale-95'
