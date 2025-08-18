@@ -20,13 +20,13 @@ const ContactoPage = () => {
         {/* Imagen de fondo con overlay */}
         <div className='absolute inset-0 z-0'>
           <Image
-            src='/assets/nosotros/nosotros-1.webp'
+            src='/assets/contacto/contacto-1.webp'
             alt={`Equipo de ${company.name}`}
             fill
             className='object-cover'
             priority
           />
-          <div className='absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-black/50'></div>
+          <div className='absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-black/80'></div>
         </div>
 
         {/* Contenido centrado */}
