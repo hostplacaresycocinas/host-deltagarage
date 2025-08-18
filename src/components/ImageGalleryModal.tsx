@@ -133,7 +133,7 @@ const ImageGalleryModal = ({
 
   return (
     <div
-      className={`fixed inset-0 z-50 flex items-center justify-center p-4 md:p-8 transition-all duration-200 ease-out ${
+      className={`fixed inset-0 z-50 flex items-center justify-center md:p-8 transition-all duration-200 ease-out ${
         isVisible && !isClosing
           ? 'bg-black/60 opacity-100'
           : 'bg-black/0 opacity-0'
