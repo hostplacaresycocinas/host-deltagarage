@@ -124,7 +124,11 @@ const ContactoPage = () => {
                   className='group flex items-center p-6 bg-color-bg-secondary rounded-2xl shadow-lg hover:shadow-xl transition-colors duration-300 border border-gray-700 hover:border-color-primary/30 hover:scale-[1.02]'
                 >
                   <div className='flex-shrink-0 w-14 h-14 bg-color-primary rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg'>
-                    <LocationIcon className='w-7 h-7 text-white' />
+                    <LocationIcon
+                      className={`${
+                        company.dark ? 'text-white' : 'text-black'
+                      } w-7 h-7`}
+                    />
                   </div>
                   <div className='ml-6 flex-1'>
                     <h3 className='text-lg font-semibold text-color-title-light group-hover:text-color-primary transition-colors'>
@@ -153,7 +157,11 @@ const ContactoPage = () => {
               <div className='bg-gradient-to-br from-color-bg-secondary to-color-bg-secondary-dark rounded-3xl shadow-xl p-4 sm:p-6 lg:p-8 border border-gray-700 h-full'>
                 <div className='text-center mb-6 sm:mb-8'>
                   <div className='inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-color-primary rounded-xl sm:rounded-2xl shadow-lg mb-3 sm:mb-4'>
-                    <ClockIcon className='w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 text-white' />
+                    <ClockIcon
+                      className={`${
+                        company.dark ? 'text-white' : 'text-black'
+                      } w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8`}
+                    />
                   </div>
                   <h3 className='text-xl sm:text-2xl lg:text-3xl font-bold text-color-title-light mb-2'>
                     Horarios de Atención
