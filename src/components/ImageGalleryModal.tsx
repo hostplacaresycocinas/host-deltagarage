@@ -5,6 +5,7 @@ import Image from 'next/image';
 import useEmblaCarousel from 'embla-carousel-react';
 import ArrowIcon from './icons/ArrowIcon';
 import CloseIcon from './icons/CloseIcon';
+import { company } from '@/app/constants/constants';
 
 interface ImageGalleryModalProps {
   images: string[];
@@ -150,7 +151,9 @@ const ImageGalleryModal = ({
         {/* Botón cerrar */}
         <button
           onClick={handleClose}
-          className='absolute top-2 right-2 text-white transition-colors z-50 bg-color-primary hover:bg-color-primary-dark p-1.5 rounded-full'
+          className={`absolute top-2 right-2 transition-colors z-50 bg-color-primary hover:bg-color-primary-dark p-1.5 rounded-full ${
+            company.dark ? 'text-white' : 'text-black'
+          }`}
         >
           <CloseIcon className='w-6 h-6 lg:w-8 lg:h-8' />
         </button>
@@ -196,7 +199,9 @@ const ImageGalleryModal = ({
                 e.stopPropagation();
                 scrollPrev();
               }}
-              className='absolute left-2 top-1/2 -translate-y-1/2 text-white transition-colors bg-color-primary hover:bg-color-primary-dark p-2 rounded-full opacity-100 cursor-pointer'
+              className={`absolute left-2 top-1/2 -translate-y-1/2  transition-colors bg-color-primary hover:bg-color-primary-dark p-2 rounded-full opacity-100 cursor-pointer ${
+                company.dark ? 'text-white' : 'text-black'
+              }`}
             >
               <ArrowIcon className='w-6 h-6 rotate-180' />
             </button>
@@ -206,7 +211,9 @@ const ImageGalleryModal = ({
                 e.stopPropagation();
                 scrollNext();
               }}
-              className='absolute right-2 top-1/2 -translate-y-1/2 text-white transition-colors bg-color-primary hover:bg-color-primary-dark p-2 rounded-full opacity-100 cursor-pointer'
+              className={`absolute right-2 top-1/2 -translate-y-1/2  transition-colors bg-color-primary hover:bg-color-primary-dark p-2 rounded-full opacity-100 cursor-pointer ${
+                company.dark ? 'text-white' : 'text-black'
+              }`}
             >
               <ArrowIcon className='w-6 h-6' />
             </button>
