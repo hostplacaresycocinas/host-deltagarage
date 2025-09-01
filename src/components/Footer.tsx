@@ -183,7 +183,10 @@ const Footer = () => {
               </h3>
               <div className='space-y-3'>
                 {company.openDays.map((day) => (
-                  <div className='text-color-text-light text-sm'>
+                  <div
+                    key={day.title}
+                    className='text-color-text-light text-sm'
+                  >
                     <p className='font-semibold text-color-title-light'>
                       {day.title}
                     </p>
