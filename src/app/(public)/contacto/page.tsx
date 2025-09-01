@@ -16,7 +16,7 @@ const ContactoPage = () => {
     <>
       <Header />
       {/* Hero Section con imagen de fondo */}
-      <section className='relative h-48 md:h-60 lg:h-72 flex items-center justify-center overflow-hidden'>
+      <section className='relative h-44 md:h-60 lg:h-72 flex items-center justify-center overflow-hidden'>
         {/* Imagen de fondo con overlay */}
         <div className='absolute inset-0 z-0'>
           <Image

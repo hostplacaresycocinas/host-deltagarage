@@ -13,7 +13,7 @@ const NosotrosPage = () => {
       <Header />
 
       {/* Hero Section con imagen de fondo */}
-      <section className='relative h-48 md:h-60 lg:h-72 flex items-center justify-center overflow-hidden'>
+      <section className='relative h-44 md:h-60 lg:h-72 flex items-center justify-center overflow-hidden'>
         {/* Imagen de fondo con overlay */}
         <div className='absolute inset-0 z-0'>
           <Image
@@ -46,30 +46,14 @@ const NosotrosPage = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className='text-xl md:text-2xl text-white/90 font-medium leading-relaxed'
           >
-            Más de una década transformando sueños en realidad sobre ruedas
+            Transparencia y confianza en cada vehículo
           </motion.p>
         </div>
       </section>
 
       {/* Sección de historia */}
-      <section className='py-16 md:py-20'>
+      <section className='pt-8 mb-12 md:pt-12 md:mb-16'>
         <div className='max-w-6xl mx-auto px-4'>
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className='text-center mb-16'
-          >
-            <h2 className='text-3xl md:text-4xl font-bold text-color-primary-light mb-4'>
-              Nuestra Historia
-            </h2>
-            <p className='text-color-text-light text-lg max-w-3xl mx-auto'>
-              Una empresa familiar que nació de la pasión por los autos y el
-              compromiso inquebrantable con la excelencia
-            </p>
-          </motion.div>
-
           <div className='grid lg:grid-cols-2 gap-12 lg:gap-16 items-center'>
             {/* Texto */}
             <motion.div
@@ -80,11 +64,12 @@ const NosotrosPage = () => {
             >
               <div className='space-y-6 text-color-text-light text-lg leading-relaxed'>
                 <p>
-                  {company.name} nació de la pasión por los automóviles y el
-                  compromiso inquebrantable con la excelencia en el servicio.
-                  Desde nuestros inicios, nos hemos dedicado a seleccionar
-                  cuidadosamente cada vehículo, garantizando que cumpla con los
-                  más altos estándares de calidad y seguridad.
+                  <span className='text-color-primary-light font-bold'>
+                    {company.name}
+                  </span>{' '}
+                  nació de la pasión por los automóviles y el compromiso con la
+                  excelencia en el servicio. Desde nuestros inicios, nos hemos
+                  dedicado a seleccionar cuidadosamente cada vehículo.
                 </p>
                 <p>
                   Hoy, seguimos siendo fieles a esos principios fundamentales.
@@ -103,7 +88,7 @@ const NosotrosPage = () => {
               viewport={{ once: true }}
               className='relative'
             >
-              <div className='relative h-80 lg:h-96 rounded-3xl overflow-hidden shadow-2xl'>
+              <div className='relative h-80 lg:h-96 rounded-xl overflow-hidden shadow-2xl'>
                 <Image
                   src='/assets/nosotros/nosotros-1.webp'
                   alt='Nuestro equipo trabajando'
