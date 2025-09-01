@@ -20,13 +20,13 @@ const ContactoPage = () => {
         {/* Imagen de fondo con overlay */}
         <div className='absolute inset-0 z-0'>
           <Image
-            src='/assets/contacto/contacto-1.webp'
+            src='/assets/contacto/contacto-banner.webp'
             alt={`Equipo de ${company.name}`}
             fill
             className='object-cover'
             priority
           />
-          <div className='absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-black/80'></div>
+          <div className='absolute inset-0 bg-black/80'></div>
         </div>
 
         {/* Contenido centrado */}
@@ -35,7 +35,11 @@ const ContactoPage = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className='text-2xl md:text-3xl lg:text-4xl font-semibold text-color-primary-light mb-3 md:mb-4 lg:mb-6'
+            className={`${
+              company.secondaryColor
+                ? 'text-color-secondary-light'
+                : 'text-color-primary-light'
+            } text-2xl md:text-3xl lg:text-4xl font-semibold mb-3 md:mb-4 lg:mb-6`}
           >
             Contacto
           </motion.h1>
@@ -69,7 +73,7 @@ const ContactoPage = () => {
                   viewport={{ once: true }}
                   className='group flex items-center p-6 bg-color-bg-secondary rounded-2xl shadow-lg hover:shadow-xl transition-colors duration-300 border border-gray-700 hover:border-color-primary/30 hover:scale-[1.02]'
                 >
-                  <div className='flex-shrink-0 w-14 h-14 bg-green-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg'>
+                  <div className='flex-shrink-0 w-14 h-14 bg-neutral-700 transition-colors rounded-xl flex items-center justify-center shadow-lg'>
                     <WhatsappFillIcon className='w-7 h-7 text-white' />
                   </div>
                   <div className='ml-6 flex-1'>
@@ -96,7 +100,7 @@ const ContactoPage = () => {
                   viewport={{ once: true }}
                   className='group flex items-center p-6 bg-color-bg-secondary rounded-2xl shadow-lg hover:shadow-xl transition-colors duration-300 border border-gray-700 hover:border-color-primary/30 hover:scale-[1.02]'
                 >
-                  <div className='flex-shrink-0 w-14 h-14 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg'>
+                  <div className='flex-shrink-0 w-14 h-14 bg-neutral-700 transition-colors rounded-xl flex items-center justify-center shadow-lg'>
                     <InstagramIcon className='w-7 h-7 text-white' />
                   </div>
                   <div className='ml-6 flex-1'>
@@ -123,7 +127,7 @@ const ContactoPage = () => {
                   viewport={{ once: true }}
                   className='group flex items-center p-6 bg-color-bg-secondary rounded-2xl shadow-lg hover:shadow-xl transition-colors duration-300 border border-gray-700 hover:border-color-primary/30 hover:scale-[1.02]'
                 >
-                  <div className='flex-shrink-0 w-14 h-14 bg-color-primary rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg'>
+                  <div className='flex-shrink-0 w-14 h-14 bg-neutral-700 transition-colors rounded-xl flex items-center justify-center shadow-lg'>
                     <LocationIcon
                       className={`${
                         company.dark ? 'text-white' : 'text-black'
@@ -156,7 +160,7 @@ const ContactoPage = () => {
               {/* Horarios */}
               <div className='bg-gradient-to-br from-color-bg-secondary to-color-bg-secondary-dark rounded-3xl shadow-xl p-4 sm:p-6 lg:p-8 border border-gray-700 h-full'>
                 <div className='text-center mb-6 sm:mb-8'>
-                  <div className='inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-color-primary rounded-xl sm:rounded-2xl shadow-lg mb-3 sm:mb-4'>
+                  <div className='inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-neutral-700 transition-colors rounded-xl sm:rounded-2xl shadow-lg mb-3 sm:mb-4'>
                     <ClockIcon
                       className={`${
                         company.dark ? 'text-white' : 'text-black'
@@ -173,34 +177,22 @@ const ContactoPage = () => {
 
                 <div className='space-y-2 sm:space-y-3'>
                   <div className='relative flex flex-col gap-2 sm:gap-3'>
-                    <motion.div
-                      initial={{ opacity: 0, y: 30 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.5, delay: 0.4 }}
-                      viewport={{ once: true }}
-                      className='flex items-center justify-between p-3 sm:p-4 bg-gradient-to-r from-color-bg-secondary-dark/80 to-color-bg-secondary/80 rounded-xl sm:rounded-2xl border border-neutral-800'
-                    >
-                      <div className='flex items-center space-x-2 sm:space-x-4'>
-                        <div className='w-2 h-2 sm:w-3 sm:h-3 bg-color-primary rounded-full shadow-sm'></div>
-                        <span className='font-bold text-color-title-light text-sm sm:text-base lg:text-lg'>
-                          Lunes a Viernes: 10:00 a 19:00hs
-                        </span>
-                      </div>
-                    </motion.div>
-                    <motion.div
-                      initial={{ opacity: 0, y: 30 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.5, delay: 0.5 }}
-                      viewport={{ once: true }}
-                      className='flex items-center justify-between p-3 sm:p-4 bg-gradient-to-r from-color-bg-secondary-dark/80 to-color-bg-secondary/80 rounded-xl sm:rounded-2xl border border-neutral-800'
-                    >
-                      <div className='flex items-center space-x-2 sm:space-x-4'>
-                        <div className='w-2 h-2 sm:w-3 sm:h-3 bg-color-primary rounded-full shadow-sm'></div>
-                        <span className='font-bold text-color-title-light text-sm sm:text-base lg:text-lg'>
-                          Sábados: 10:00 a 15:00hs
-                        </span>
-                      </div>
-                    </motion.div>
+                    {company.openDays.map((day, index) => (
+                      <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
+                        viewport={{ once: true }}
+                        className='flex items-center justify-between p-3 sm:p-4 bg-gradient-to-r from-color-bg-secondary-dark/80 to-color-bg-secondary/80 rounded-xl sm:rounded-2xl border border-neutral-800'
+                      >
+                        <div className='flex items-center space-x-2 sm:space-x-4'>
+                          <div className='w-2 h-2 sm:w-3 sm:h-3 bg-color-primary rounded-full shadow-sm'></div>
+                          <span className='font-bold text-color-title-light text-sm sm:text-base lg:text-lg'>
+                            {day.title}: {day.time}
+                          </span>
+                        </div>
+                      </motion.div>
+                    ))}
                   </div>
                 </div>
               </div>

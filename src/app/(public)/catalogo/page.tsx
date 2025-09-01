@@ -329,8 +329,8 @@ const CatalogoPage = () => {
                 <div className='flex items-center'>
                   <div
                     className={`${
-                      company.dark
-                        ? 'bg-color-primary-light'
+                      company.secondaryColor
+                        ? 'bg-color-secondary-light'
                         : 'bg-color-primary'
                     } w-1 h-5 rounded mr-3`}
                   ></div>
@@ -583,7 +583,11 @@ const CatalogoPage = () => {
                         setSearchValue('');
                         router.push('/catalogo');
                       }}
-                      className='flex items-center gap-2 px-3 py-2 rounded-full bg-color-primary hover:bg-color-primary/80 text-black transition-colors'
+                      className={`${
+                        company.dark
+                          ? 'text-color-title-light'
+                          : 'text-color-title'
+                      } flex items-center gap-2 px-3 py-2 rounded-full bg-color-primary hover:bg-color-primary/80 transition-colors`}
                     >
                       <span>Limpiar filtros</span>
                       <CloseIcon className='w-4 h-4 stroke-[2]' />
@@ -870,7 +874,9 @@ const CatalogoPage = () => {
                 )}
               </div>
               <Link
-                className='mt-5 border-2 border-transparent bg-color-primary hover:bg-color-primary/80 transition-colors px-4 md:px-6 py-3 text-color-title font-semibold rounded'
+                className={`${
+                  company.dark ? 'text-color-title-light' : 'text-color-title'
+                } mt-5 border-2 border-transparent bg-color-primary hover:bg-color-primary/80 transition-colors px-4 md:px-6 py-3 font-semibold rounded`}
                 href='/catalogo'
                 onClick={(e) => {
                   e.preventDefault();

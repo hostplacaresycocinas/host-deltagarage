@@ -15,116 +15,55 @@ import WhatsappFillIcon from './icons/WhatsappFillIcon';
 
 const Footer = () => {
   return (
-    <footer
-      className={`relative ${company.darkmode ? 'bg-gray-900' : 'bg-gray-50'}`}
-    >
-      {/* Fondo con patrón sutil */}
-      <div className='absolute inset-0 opacity-100 bg-color-bg-secondary-dark'></div>
-
+    <footer className='relative bg-neutral-950 overflow-hidden'>
       <div className='relative z-10 max-w-7xl mx-auto px-6 lg:px-8'>
         {/* Sección principal */}
-        <div className='py-16 md:py-20'>
-          <div className='grid grid-cols-1 lg:grid-cols-4 gap-12'>
-            {/* Columna 1 - Logo y descripción */}
-            <div className='lg:col-span-2'>
-              <div className='mb-6'>
-                {company.favicon ? (
-                  <div className='w-56 sm:w-56 lg:w-60 xl:w-60 h-[52px] md:h-[60px]'>
-                    <Image
-                      className='w-full h-full object-contain object-left'
-                      src='/assets/company/logo.webp'
-                      alt={`${company.name} logo`}
-                      width={288}
-                      height={72}
-                    />
-                  </div>
-                ) : (
-                  <div className='w-52 sm:w-52 lg:w-56 xl:w-56 h-14 md:h-16'>
-                    <Image
-                      className='w-full h-full object-contain object-left'
-                      src='/assets/company/logo.webp'
-                      alt={`${company.name} logo`}
-                      width={288}
-                      height={72}
-                    />
-                  </div>
-                )}
-              </div>
-
-              <p
-                className={`${
-                  company.darkmode ? 'text-gray-300' : 'text-gray-600'
-                } text-base leading-relaxed mb-8 max-w-md`}
-              >
-                {company.footer}
-              </p>
-
-              {/* Redes sociales */}
-              <div className='flex gap-4'>
-                {company.instagram && (
-                  <a
-                    href={`https://www.instagram.com/${company.instagram}/`}
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 ${
-                      company.darkmode
-                        ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white'
-                        : 'bg-gradient-to-r from-purple-500 to-pink-500 text-white'
-                    } shadow-lg hover:shadow-xl hover:scale-110`}
-                  >
-                    <InstagramIcon className='w-5 h-5' />
-                  </a>
-                )}
-                {company.facebook && (
-                  <a
-                    href={`${company.facebook}`}
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 ${
-                      company.darkmode
-                        ? 'bg-blue-600 text-white'
-                        : 'bg-blue-600 text-white'
-                    } shadow-lg hover:shadow-xl hover:scale-110`}
-                  >
-                    <FacebookIcon className='w-5 h-5' />
-                  </a>
-                )}
-                {company.whatsapp && (
-                  <a
-                    href={`https://api.whatsapp.com/send?phone=549${company.whatsapp[0]}&text=Hola! Quería hacer una consulta`}
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 ${
-                      company.darkmode
-                        ? 'bg-green-500 text-white'
-                        : 'bg-green-500 text-white'
-                    } shadow-lg hover:shadow-xl hover:scale-110`}
-                  >
-                    <WhatsappFillIcon className='w-5 h-5' />
-                  </a>
-                )}
-              </div>
+        <div className='pt-8 pb-12 md:pt-12 md:pb-16'>
+          {/* Header del footer */}
+          <div className='flex flex-col items-start md:items-center justify-center md:text-center mb-8 md:mb-12'>
+            <div className='inline-block mb-6'>
+              {company.favicon ? (
+                <div className='w-48 sm:w-52 md:w-52 lg:w-56 h-12 sm:h-14'>
+                  <Image
+                    className='w-full h-full object-contain object-left md:object-center'
+                    src='/assets/company/logo.webp'
+                    alt={`${company.name} logo`}
+                    width={256}
+                    height={64}
+                  />
+                </div>
+              ) : (
+                <div className='w-52 sm:w-52 md:w-56 lg:w-64 h-14 md:h-16'>
+                  <Image
+                    className='w-full h-full object-contain object-left md:object-center'
+                    src='/assets/company/logo.webp'
+                    alt={`${company.name} logo`}
+                    width={240}
+                    height={56}
+                  />
+                </div>
+              )}
             </div>
 
-            {/* Columna 2 - Navegación */}
-            <div>
-              <h3
-                className={`text-lg font-semibold mb-6 ${
-                  company.darkmode ? 'text-white' : 'text-gray-900'
-                }`}
-              >
+            <p className='text-color-text-light text-lg max-w-lg leading-relaxed'>
+              {company.footer}
+            </p>
+          </div>
+
+          {/* Grid principal */}
+          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-12 lg:gap-16 mb-8 md:mb-12'>
+            {/* Navegación */}
+            <div className='lg:col-span-1'>
+              <h3 className='text-color-title-light text-xl font-bold mb-6 relative'>
                 Navegación
+                <div className='absolute -bottom-2 left-0 w-12 h-0.5 bg-color-primary rounded-full'></div>
               </h3>
-              <ul className='space-y-3'>
+              <ul className='space-y-4'>
                 {navigation.map((link) => (
                   <li key={link.id}>
                     <Link
                       href={`${link.url}`}
-                      className={`${
-                        company.darkmode
-                          ? 'text-gray-300 hover:text-white'
-                          : 'text-gray-600 hover:text-gray-900'
-                      } transition-all duration-300 hover:pl-2 inline-block`}
+                      className='text-color-text-light hover:text-color-title-light transition-all duration-300 flex items-center group'
                     >
                       {link.title}
                     </Link>
@@ -133,181 +72,153 @@ const Footer = () => {
               </ul>
             </div>
 
-            {/* Columna 3 - Contacto */}
-            <div>
-              <h3
-                className={`text-lg font-semibold mb-6 ${
-                  company.darkmode ? 'text-white' : 'text-gray-900'
-                }`}
-              >
+            {/* Contacto */}
+            <div className='lg:col-span-1'>
+              <h3 className='text-color-title-light text-xl font-bold mb-6 relative'>
                 Contacto
+                <div className='absolute -bottom-2 left-0 w-12 h-0.5 bg-color-primary rounded-full'></div>
               </h3>
               <div className='space-y-4'>
                 {/* Dirección */}
                 {(company.adress || company.city) && (
-                  <div className='flex items-center gap-3'>
-                    <div
-                      className={`w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 ${
-                        company.darkmode ? 'bg-gray-800' : 'bg-gray-100'
-                      }`}
-                    >
-                      <LocationIcon
-                        className={`w-5 h-5 ${
-                          company.darkmode ? 'text-gray-300' : 'text-gray-600'
-                        }`}
-                      />
+                  <a
+                    href={`${company.googlemapsLink}`}
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    className='flex items-center gap-3 group'
+                  >
+                    <div className='w-10 h-10 rounded-lg bg-neutral-700 flex items-center justify-center flex-shrink-0 group-hover:bg-neutral-600 transition-colors'>
+                      <LocationIcon className='w-5 h-5 text-color-title-light' />
                     </div>
-                    <div>
-                      <a
-                        href={`${company.googlemapsLink}`}
-                        target='_blank'
-                        rel='noopener noreferrer'
-                        className={`${
-                          company.darkmode
-                            ? 'text-gray-300 hover:text-white'
-                            : 'text-gray-600 hover:text-gray-900'
-                        } text-base transition-all duration-300 hover:pl-2 inline-block`}
-                      >
-                        {company.adress && `${company.adress}, `}
-                        {company.city && `${company.city}`}
-                      </a>
-                    </div>
-                  </div>
+                    <span className='text-color-text-light group-hover:text-color-title-light transition-colors text-sm leading-relaxed'>
+                      {company.adress && `${company.adress}, `}
+                      {company.city && `${company.city}`}
+                    </span>
+                  </a>
                 )}
 
                 {/* WhatsApp */}
                 {company.whatsapp &&
                   company.whatsapp.map((whatsappNumber, idx) => (
-                    <div key={idx} className='flex items-center gap-3'>
-                      <div
-                        className={`w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 ${
-                          company.darkmode ? 'bg-gray-800' : 'bg-gray-100'
-                        }`}
-                      >
-                        <WhatsappFillIcon
-                          className={`w-5 h-5 ${
-                            company.darkmode ? 'text-gray-300' : 'text-gray-600'
-                          }`}
-                        />
-                      </div>
-                      <a
-                        href={`https://api.whatsapp.com/send?phone=549${whatsappNumber}&text=Hola! Quería hacer una consulta`}
-                        target='_blank'
-                        rel='noopener noreferrer'
-                        className={`${
-                          company.darkmode
-                            ? 'text-gray-300 hover:text-white'
-                            : 'text-gray-600 hover:text-gray-900'
-                        } text-base transition-all duration-300 hover:pl-2 inline-block`}
-                      >
-                        {whatsappNumber}
-                      </a>
-                    </div>
-                  ))}
-
-                {/* Instagram */}
-                {company.instagram && (
-                  <div className='flex items-center gap-3'>
-                    <div
-                      className={`w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 ${
-                        company.darkmode ? 'bg-gray-800' : 'bg-gray-100'
-                      }`}
-                    >
-                      <InstagramIcon
-                        className={`w-5 h-5 ${
-                          company.darkmode ? 'text-gray-300' : 'text-gray-600'
-                        }`}
-                      />
-                    </div>
                     <a
-                      href={`https://www.instagram.com/${company.instagram}/`}
+                      key={idx}
+                      href={`https://api.whatsapp.com/send?phone=549${whatsappNumber}&text=Hola! Quería hacer una consulta`}
                       target='_blank'
                       rel='noopener noreferrer'
-                      className={`${
-                        company.darkmode
-                          ? 'text-gray-300 hover:text-white'
-                          : 'text-gray-600 hover:text-gray-900'
-                      } text-base transition-all duration-300 hover:pl-2 inline-block`}
+                      className='flex items-center gap-3 group'
                     >
-                      @{company.instagram}
+                      <div className='w-10 h-10 rounded-lg bg-neutral-700 flex items-center justify-center flex-shrink-0 group-hover:bg-neutral-600 transition-colors'>
+                        <WhatsappFillIcon className='w-5 h-5 text-color-title-light' />
+                      </div>
+                      <span className='text-color-text-light group-hover:text-color-title-light transition-colors text-sm'>
+                        {whatsappNumber}
+                      </span>
                     </a>
-                  </div>
-                )}
+                  ))}
 
                 {/* Email */}
                 {company.email && (
-                  <div className='flex items-center gap-3'>
-                    <div
-                      className={`w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 ${
-                        company.darkmode ? 'bg-gray-800' : 'bg-gray-100'
-                      }`}
-                    >
-                      <EmailFillIcon
-                        className={`w-5 h-5 ${
-                          company.darkmode ? 'text-gray-300' : 'text-gray-600'
-                        }`}
-                      />
+                  <a
+                    href={`mailto:${company.email}`}
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    className='flex items-center gap-3 group'
+                  >
+                    <div className='w-10 h-10 rounded-lg bg-neutral-700 flex items-center justify-center flex-shrink-0 group-hover:bg-neutral-600 transition-colors'>
+                      <EmailFillIcon className='w-5 h-5 text-color-title-light' />
                     </div>
-                    <a
-                      href={`mailto:${company.email}`}
-                      className={`${
-                        company.darkmode
-                          ? 'text-gray-300 hover:text-white'
-                          : 'text-gray-600 hover:text-gray-900'
-                      } text-base transition-all duration-300 hover:pl-2 inline-block`}
-                    >
+                    <span className='text-color-text-light group-hover:text-color-title-light transition-colors text-sm'>
                       {company.email}
-                    </a>
-                  </div>
+                    </span>
+                  </a>
                 )}
               </div>
             </div>
+
+            {/* Redes sociales */}
+            <div className='lg:col-span-1'>
+              <h3 className='text-color-title-light text-xl font-bold mb-6 relative'>
+                Síguenos
+                <div className='absolute -bottom-2 left-0 w-12 h-0.5 bg-color-primary rounded-full'></div>
+              </h3>
+              <div className='space-y-4'>
+                {company.instagram && (
+                  <a
+                    href={`https://www.instagram.com/${company.instagram}/`}
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    className='flex items-center gap-3 group'
+                  >
+                    <div className='w-10 h-10 rounded-lg bg-neutral-700 group-hover:bg-neutral-600 transition-colors flex items-center justify-center'>
+                      <InstagramIcon className='w-5 h-5 text-color-title-light' />
+                    </div>
+                    <span className='text-color-text-light group-hover:text-color-title-light transition-colors text-sm'>
+                      @{company.instagram}
+                    </span>
+                  </a>
+                )}
+                {company.facebook && (
+                  <a
+                    href={`${company.facebook}`}
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    className='flex items-center gap-3 group'
+                  >
+                    <div className='w-10 h-10 rounded-lg bg-neutral-700 flex items-center justify-center group-hover:bg-neutral-600 transition-colors'>
+                      <FacebookIcon className='w-5 h-5 text-color-title-light' />
+                    </div>
+                    <span className='text-color-text-light group-hover:text-color-title-light transition-colors text-sm'>
+                      Facebook
+                    </span>
+                  </a>
+                )}
+              </div>
+            </div>
+
+            {/* Horarios o información adicional */}
+            <div className='lg:col-span-1'>
+              <h3 className='text-color-title-light text-xl font-bold mb-6 relative'>
+                Horarios
+                <div className='absolute -bottom-2 left-0 w-12 h-0.5 bg-color-primary rounded-full'></div>
+              </h3>
+              <div className='space-y-3'>
+                {company.openDays.map((day) => (
+                  <div className='text-color-text-light text-sm'>
+                    <p className='font-semibold text-color-title-light'>
+                      {day.title}
+                    </p>
+                    <p>{day.time}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Línea separadora decorativa */}
+          <div className='relative'>
+            <div className='h-0.5 bg-gradient-to-r from-transparent via-color-primary to-transparent'></div>
           </div>
         </div>
 
-        {/* Línea separadora */}
-        <div
-          className={`border-t ${
-            company.darkmode ? 'border-gray-800' : 'border-gray-200'
-          }`}
-        ></div>
-
         {/* Sección inferior */}
-        <div className='pt-6 pb-10'>
-          <div className='flex flex-col md:flex-row justify-between items-center gap-4'>
-            <div
-              className={`${
-                company.darkmode
-                  ? 'text-color-text-light'
-                  : 'text-color-text-light'
-              } text-base text-center md:text-left`}
-            >
-              © Copyright {new Date().getFullYear()} - {company.name}
+        <div className='pb-8 md:pb-12'>
+          <div className='flex flex-col lg:flex-row justify-between items-center gap-6'>
+            <div className='text-color-text-light text-sm text-center lg:text-left'>
+              © Copyright {new Date().getFullYear()} - {company.name}. Todos los
+              derechos reservados.
             </div>
 
-            <div className='flex items-center gap-3'>
-              <span
-                className={`text-base ${
-                  company.darkmode
-                    ? 'text-color-text-light'
-                    : 'text-color-text-light'
-                }`}
-              >
+            <div className='flex items-center gap-1.5'>
+              <span className='text-color-text-light text-sm'>
                 Desarrollado por:
               </span>
               <a
                 href='https://www.agenciagravity.com/'
                 target='_blank'
                 rel='noopener noreferrer'
-                className='transition-transform duration-300'
+                className=''
               >
-                <GravityLogo
-                  className={`w-20 md:w-24 ${
-                    company.darkmode
-                      ? 'text-white hover:text-[#D1FA2D]'
-                      : 'text-black hover:text-black/70'
-                  } transition-colors`}
-                />
+                <GravityLogo className='w-20 text-color-title-light hover:text-[#D1FA2D] transition-colors' />
               </a>
             </div>
           </div>

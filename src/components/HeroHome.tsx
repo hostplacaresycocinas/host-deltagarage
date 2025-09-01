@@ -69,8 +69,8 @@ const HeroHome = () => {
               <Link
                 href='/contacto'
                 className={`${
-                  company.dark
-                    ? 'text-color-title-light bg-neutral-600 hover:bg-neutral-700 border-2 border-neutral-500 hover:border-neutral-700'
+                  company.secondaryColor
+                    ? 'text-color-title-light bg-color-secondary-light hover:bg-color-secondary-dark border-2 border-color-secondary-light hover:border-color-secondary-dark'
                     : 'text-color-title-light bg-neutral-600 hover:bg-neutral-700 border-2 border-neutral-500 hover:border-neutral-700'
                 } lg:text-lg transition-all duration-300 py-3 md:py-4 px-6 md:px-10 rounded-full`}
               >

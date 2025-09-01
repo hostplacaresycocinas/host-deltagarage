@@ -130,7 +130,13 @@ const CarsHome = ({ title }: CarsHomeProps) => {
       <section className='flex justify-center w-full bg-color-bg-primary'>
         <div className='max-w-7xl w-full mx-4 sm:mx-6 md:mx-8 lg:mx-10 overflow-hidden'>
           <div className='flex items-center mb-4 md:mb-6 lg:mb-8'>
-            <div className='h-10 w-1 bg-color-primary mr-4'></div>
+            <div
+              className={`${
+                company.secondaryColor
+                  ? 'bg-color-secondary-light'
+                  : 'bg-color-primary'
+              } h-10 w-1 mr-4`}
+            ></div>
             <h3 className='text-2xl sm:text-3xl text-color-title-light tracking-wide'>
               {title}
             </h3>
@@ -148,7 +154,13 @@ const CarsHome = ({ title }: CarsHomeProps) => {
       <section className='flex justify-center w-full bg-color-bg-primary'>
         <div className='max-w-7xl w-full mx-4 sm:mx-6 md:mx-8 lg:mx-10 overflow-hidden'>
           <div className='flex items-center mb-4 md:mb-6 lg:mb-8'>
-            <div className='h-10 w-1 bg-color-primary mr-4'></div>
+            <div
+              className={`${
+                company.secondaryColor
+                  ? 'bg-color-secondary-light'
+                  : 'bg-color-primary'
+              } h-10 w-1 mr-4`}
+            ></div>
             <h3 className='text-2xl sm:text-3xl text-color-title-light tracking-wide'>
               {title}
             </h3>
@@ -164,7 +176,13 @@ const CarsHome = ({ title }: CarsHomeProps) => {
       <section className='flex justify-center w-full bg-color-bg-primary'>
         <div className='max-w-7xl w-full mx-4 sm:mx-6 md:mx-8 lg:mx-10 overflow-hidden'>
           <div className='flex items-center mb-4 md:mb-6 lg:mb-8'>
-            <div className='h-10 w-1 bg-color-primary mr-4'></div>
+            <div
+              className={`${
+                company.secondaryColor
+                  ? 'bg-color-secondary-light'
+                  : 'bg-color-primary'
+              } h-10 w-1 mr-4`}
+            ></div>
             <h3 className='text-2xl sm:text-3xl text-color-title-light tracking-wide'>
               {title}
             </h3>
@@ -181,7 +199,13 @@ const CarsHome = ({ title }: CarsHomeProps) => {
     <section className='flex justify-center w-full bg-color-bg-primary'>
       <div className='max-w-7xl w-full mx-4 sm:mx-6 md:mx-8 lg:mx-10 overflow-hidden'>
         <div className='flex items-center mb-4 md:mb-6 lg:mb-8'>
-          <div className='h-10 w-1 bg-color-primary mr-4'></div>
+          <div
+            className={`${
+              company.secondaryColor
+                ? 'bg-color-secondary-light'
+                : 'bg-color-primary'
+            } h-10 w-1 mr-4`}
+          ></div>
           <h3 className='text-2xl sm:text-3xl text-color-title-light tracking-wide'>
             {title}
           </h3>

@@ -1,22 +1,26 @@
 export const company = {
-  dark: false,
+  dark: true,
   darkmode: true,
   shortAdress: true,
-  favicon: true,
+  favicon: false,
   price: true,
+  secondaryColor: true,
   objectCover: '50%',
-  id: 'draccomotors',
-  name: 'Dracco Motors',
-  adress: 'Los Robles 289',
-  city: 'Gral. Rodríguez',
-  email: 'draccodetailing@hotmail.com',
-  instagram: 'draccomotors_',
+  id: 'digitalcars',
+  name: 'Digital Cars',
+  adress: 'Bolívar 4118',
+  city: 'Buenos Aires',
+  email: 'digitalcars.ar@gmail.com',
+  instagram: 'digitalcars.ar',
   facebook: null,
-  whatsapp: ['1126212826'],
-  googlemapsLink: 'https://maps.app.goo.gl/PwXuEJ2JSMcEKi3j9',
+  whatsapp: ['1166449640'],
+  googlemapsLink: 'https://maps.app.goo.gl/3YNWMEDCtZsd8cg37',
   googlemaps:
-    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d205.27187785120387!2d-58.941554965672694!3d-34.595308962431396!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bc912966fa0a91%3A0x273813fd475740fa!2sDracco%20Motors%20-%20Concesionaria%20de%20veh%C3%ADculos%20y%20Est%C3%A9tica%20vehicular!5e0!3m2!1sen!2sar!4v1754724689048!5m2!1sen!2sar',
-  openDays: ['Lunes a Viernes 09:00 a 18:00hs', 'Sábados 09:00 a 14:00hs'],
+    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3282.1442575380256!2d-58.559621099999994!3d-34.651059599999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcc98a3225b9b7%3A0x78247fe6e28c307c!2sdigitalcars!5e0!3m2!1sen!2sar!4v1756161435322!5m2!1sen!2sar',
+  openDays: [
+    { title: 'Lunes a Viernes', time: '10:00 a 18:00hs' },
+    { title: 'Sábados', time: '10:00 a 18:00hs' },
+  ],
   footer:
     'Compra y Venta de Autos: Vehículos seleccionados, atención personalizada.',
 };
@@ -25,8 +29,8 @@ export const API_BASE_URL = 'https://dealership.agenciagrvity.com';
 export const TENANT = 'accotto-automotores';
 
 export const metadataCompany = {
-  metadataBase: 'https://draccomotors.vercel.app/',
-  title: 'Dracco Motors - Compra y Venta de Autos',
+  metadataBase: 'https://digitalcars.vercel.app/',
+  title: 'Digital Cars - Compra y Venta de Autos',
   description:
     'Compra y Venta de Autos: Vehículos seleccionados, atención personalizada.',
 };

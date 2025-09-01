@@ -41,7 +41,11 @@ const PreguntasHome = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className='w-24 h-0.5 bg-color-primary mx-auto mb-6'
+            className={`w-24 h-0.5 ${
+              company.secondaryColor
+                ? 'bg-color-secondary-light'
+                : 'bg-color-primary'
+            } mx-auto mb-6`}
           ></motion.div>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
