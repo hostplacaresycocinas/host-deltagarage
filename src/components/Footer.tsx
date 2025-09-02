@@ -9,9 +9,9 @@ import FacebookIcon from './icons/FacebookIcon';
 import LocationIcon from './icons/LocationIcon';
 
 import Link from 'next/link';
-import GravityLogo from './icons/GravityLogo';
 import EmailFillIcon from './icons/EmailFillIcon';
 import WhatsappFillIcon from './icons/WhatsappFillIcon';
+import OnlymotorsLogo from './icons/OnlymotorsLogo';
 
 const Footer = () => {
   return (
@@ -212,16 +212,23 @@ const Footer = () => {
             </div>
 
             <div className='flex items-center gap-1.5'>
-              <span className='text-color-text-light text-sm'>
+              <span
+                className={`${
+                  company.darkmode ? 'text-color-text-light' : 'text-color-text'
+                }`}
+              >
                 Desarrollado por:
               </span>
               <a
-                href='https://www.agenciagravity.com/'
+                href='https://www.onlymotors.com.ar/'
                 target='_blank'
                 rel='noopener noreferrer'
-                className=''
               >
-                <GravityLogo className='w-20 text-color-title-light hover:text-[#D1FA2D] transition-colors' />
+                <OnlymotorsLogo
+                  className='w-24 md:w-28 hover:opacity-80 transition-opacity duration-300'
+                  gradientStart='#ffffff'
+                  gradientEnd='#A1A1A1'
+                />
               </a>
             </div>
           </div>
