@@ -143,7 +143,7 @@ const ConsignacionPage = () => {
         <section className='w-full pt-8 pb-6 md:pt-14 md:pb-12 lg:pt-16 lg:pb-10 flex justify-center items-center'>
           <div className='max-w-6xl w-full flex justify-center mx-4 sm:mx-6 md:mx-8 lg:mx-10'>
             <div className='text-center'>
-              <h3 className='text-sm sm:text-base text-color-primary uppercase tracking-wider mb-1'>
+              <h3 className='text-base sm:text-base text-color-primary uppercase tracking-wider mb-1'>
                 VENDEMOS TU VEHÍCULO
               </h3>
               <h2 className='text-3xl sm:text-4xl lg:text-5xl font-bold text-color-title mb-2 md:mb-4'>

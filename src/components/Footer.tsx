@@ -63,7 +63,7 @@ const Footer = () => {
                   <li key={link.id}>
                     <Link
                       href={`${link.url}`}
-                      className='text-color-text-light hover:text-color-title-light transition-all duration-300 flex items-center group'
+                      className='text-color-text-light hover:text-color-title-light transition-all duration-300 flex items-center group text-base'
                     >
                       {link.title}
                     </Link>
@@ -90,7 +90,7 @@ const Footer = () => {
                     <div className='w-10 h-10 rounded-lg bg-neutral-700 flex items-center justify-center flex-shrink-0 group-hover:bg-neutral-600 transition-colors'>
                       <LocationIcon className='w-5 h-5 text-color-title-light' />
                     </div>
-                    <span className='text-color-text-light group-hover:text-color-title-light transition-colors text-sm leading-relaxed'>
+                    <span className='text-color-text-light group-hover:text-color-title-light transition-colors text-base leading-relaxed'>
                       {company.adress && `${company.adress}, `}
                       {company.city && `${company.city}`}
                     </span>
@@ -110,7 +110,7 @@ const Footer = () => {
                       <div className='w-10 h-10 rounded-lg bg-neutral-700 flex items-center justify-center flex-shrink-0 group-hover:bg-neutral-600 transition-colors'>
                         <WhatsappFillIcon className='w-5 h-5 text-color-title-light' />
                       </div>
-                      <span className='text-color-text-light group-hover:text-color-title-light transition-colors text-sm'>
+                      <span className='text-color-text-light group-hover:text-color-title-light transition-colors text-base'>
                         {whatsappNumber}
                       </span>
                     </a>
@@ -127,7 +127,7 @@ const Footer = () => {
                     <div className='w-10 h-10 rounded-lg bg-neutral-700 flex items-center justify-center flex-shrink-0 group-hover:bg-neutral-600 transition-colors'>
                       <EmailFillIcon className='w-5 h-5 text-color-title-light' />
                     </div>
-                    <span className='text-color-text-light group-hover:text-color-title-light transition-colors text-sm'>
+                    <span className='text-color-text-light group-hover:text-color-title-light transition-colors text-base'>
                       {company.email}
                     </span>
                   </a>
@@ -152,7 +152,7 @@ const Footer = () => {
                     <div className='w-10 h-10 rounded-lg bg-neutral-700 group-hover:bg-neutral-600 transition-colors flex items-center justify-center'>
                       <InstagramIcon className='w-5 h-5 text-color-title-light' />
                     </div>
-                    <span className='text-color-text-light group-hover:text-color-title-light transition-colors text-sm'>
+                    <span className='text-color-text-light group-hover:text-color-title-light transition-colors text-base'>
                       @{company.instagram}
                     </span>
                   </a>
@@ -167,7 +167,7 @@ const Footer = () => {
                     <div className='w-10 h-10 rounded-lg bg-neutral-700 flex items-center justify-center group-hover:bg-neutral-600 transition-colors'>
                       <FacebookIcon className='w-5 h-5 text-color-title-light' />
                     </div>
-                    <span className='text-color-text-light group-hover:text-color-title-light transition-colors text-sm'>
+                    <span className='text-color-text-light group-hover:text-color-title-light transition-colors text-base'>
                       Facebook
                     </span>
                   </a>
@@ -185,7 +185,7 @@ const Footer = () => {
                 {company.openDays.map((day) => (
                   <div
                     key={day.title}
-                    className='text-color-text-light text-sm'
+                    className='text-color-text-light text-base'
                   >
                     <p className='font-semibold text-color-title-light'>
                       {day.title}
@@ -206,12 +206,12 @@ const Footer = () => {
         {/* Sección inferior */}
         <div className='pb-8 md:pb-12'>
           <div className='flex flex-col lg:flex-row justify-between items-center gap-6'>
-            <div className='text-color-text-light text-sm text-center lg:text-left'>
+            <div className='text-color-text-light text-base text-center lg:text-left'>
               © Copyright {new Date().getFullYear()} - {company.name}. Todos los
               derechos reservados.
             </div>
 
-            <div className='flex items-center gap-1.5'>
+            <div className='flex items-center gap-1.5 text-base'>
               <span
                 className={`${
                   company.darkmode ? 'text-color-text-light' : 'text-color-text'

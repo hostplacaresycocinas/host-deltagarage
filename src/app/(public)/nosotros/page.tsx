@@ -54,7 +54,7 @@ const NosotrosPage = () => {
       {/* Sección de historia */}
       <section className='pt-8 mb-12 md:pt-12 md:mb-16'>
         <div className='max-w-6xl mx-auto px-4'>
-          <div className='grid lg:grid-cols-2 gap-12 lg:gap-16 items-center'>
+          <div className='grid lg:grid-cols-2 gap-12 lg:gap-12 items-center'>
             {/* Texto */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
@@ -62,7 +62,7 @@ const NosotrosPage = () => {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <div className='space-y-6 text-color-text-light text-lg leading-relaxed'>
+              <div className='space-y-6 text-color-text-light text-lg lg:text-xl leading-relaxed'>
                 <p>
                   <span className='text-color-primary-light font-bold'>
                     {company.name}
@@ -147,7 +147,7 @@ const NosotrosPage = () => {
               <h3 className='text-lg font-semibold text-color-title-light mb-2'>
                 Calidad Garantizada
               </h3>
-              <p className='text-color-text-light text-sm'>
+              <p className='text-color-text-light'>
                 Cada vehículo pasa por rigurosas inspecciones
               </p>
             </motion.div>
@@ -178,7 +178,7 @@ const NosotrosPage = () => {
               <h3 className='text-lg font-semibold text-color-title-light mb-2'>
                 Respuesta Rápida
               </h3>
-              <p className='text-color-text-light text-sm'>
+              <p className='text-color-text-light'>
                 Te respondemos en el menor tiempo posible
               </p>
             </motion.div>
@@ -209,7 +209,7 @@ const NosotrosPage = () => {
               <h3 className='text-lg font-semibold text-color-title-light mb-2'>
                 Financiación Flexible
               </h3>
-              <p className='text-color-text-light text-sm'>
+              <p className='text-color-text-light'>
                 Opciones de pago adaptadas a tus necesidades
               </p>
             </motion.div>
@@ -228,7 +228,7 @@ const NosotrosPage = () => {
               <h3 className='text-lg font-semibold text-color-title-light mb-2'>
                 Amplio Stock
               </h3>
-              <p className='text-color-text-light text-sm'>
+              <p className='text-color-text-light'>
                 Gran variedad de vehículos para elegir
               </p>
             </motion.div>

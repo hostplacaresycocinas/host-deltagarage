@@ -200,7 +200,7 @@ const CarrouselFavorites = ({ title }: CarrouselFavoritesProps) => {
                 <div className='relative overflow-hidden group-hover:border-color-primary transition-all duration-500 h-full shadow-[0_8px_30px_-15px_rgba(0,0,0,0.7)] group-hover:shadow-[0_8px_30px_-10px_rgba(233,0,2,0.2)]'>
                   {!auto.active && (
                     <div className='absolute top-0 left-0 w-full h-full bg-black/70 flex items-center justify-center z-20'>
-                      <span className='bg-red-500 text-white text-sm font-medium px-3 py-1.5 rounded'>
+                      <span className='bg-red-500 text-white text-base font-medium px-3 py-1.5 rounded'>
                         Pausado
                       </span>
                     </div>
@@ -256,7 +256,7 @@ const CarrouselFavorites = ({ title }: CarrouselFavoritesProps) => {
                             />
                           </svg>
                         </div>
-                        <span className='text-sm font-medium tracking-wide'>
+                        <span className='text-base font-medium tracking-wide'>
                           Ver más
                         </span>
                       </div>
@@ -302,12 +302,12 @@ const CarrouselFavorites = ({ title }: CarrouselFavoritesProps) => {
                     {/* Precio o etiqueta destacada */}
                     <div className='flex justify-between items-center text-color-text mt-0.5'>
                       {auto.mileage === 0 ? (
-                        <span className='text-sm font-semibold uppercase tracking-wider text-color-primary'>
+                        <span className='text-base font-semibold uppercase tracking-wider text-color-primary'>
                           Nuevo <span className='text-color-primary'>•</span>{' '}
                           {auto.mileage.toLocaleString('es-ES')} km
                         </span>
                       ) : (
-                        <span className='text-sm text-color-text font-medium uppercase tracking-wider'>
+                        <span className='text-base text-color-text font-medium uppercase tracking-wider'>
                           Usado <span className='text-color-primary'>•</span>{' '}
                           {auto.mileage.toLocaleString('es-ES')} km
                         </span>

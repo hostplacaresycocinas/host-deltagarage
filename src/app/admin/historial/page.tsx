@@ -256,7 +256,7 @@ export default function HistorialPage() {
                       <span className='text-gray-400'>Sin imagen</span>
                     </div>
                   )}
-                  <div className='absolute top-3 right-3 bg-red-500 text-white px-3 py-1.5 rounded-full text-sm font-medium'>
+                  <div className='absolute top-3 right-3 bg-red-500 text-white px-3 py-1.5 rounded-full text-base font-medium'>
                     Vendido
                   </div>
                 </div>
@@ -286,7 +286,7 @@ export default function HistorialPage() {
                     <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
                       {auto.price && parseFloat(auto.price) > 0 ? (
                         <div>
-                          <p className='text-sm text-gray-500'>
+                          <p className='text-base text-gray-500'>
                             Precio de venta
                           </p>
                           {auto.price && parseFloat(auto.price) > 0 ? (
@@ -305,7 +305,9 @@ export default function HistorialPage() {
                       )}
 
                       <div>
-                        <p className='text-sm text-gray-500'>Fecha de venta</p>
+                        <p className='text-base text-gray-500'>
+                          Fecha de venta
+                        </p>
                         <p className='text-lg font-medium text-gray-700 mt-1'>
                           {new Date(auto.sellDate).toLocaleDateString('es-AR')}
                         </p>

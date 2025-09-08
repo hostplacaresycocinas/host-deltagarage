@@ -77,7 +77,7 @@ const VentaPage = () => {
         <section className='w-full pt-8 pb-6 md:pt-14 md:pb-12 lg:pt-16 lg:pb-10 flex justify-center items-center'>
           <div className='max-w-6xl w-full flex justify-center mx-4 sm:mx-6 md:mx-8 lg:mx-10'>
             <div className='text-center'>
-              <h3 className='text-sm sm:text-base text-color-primary uppercase tracking-wider mb-1'>
+              <h3 className='text-base sm:text-base text-color-primary uppercase tracking-wider mb-1'>
                 COMPRAMOS TU VEHÍCULO
               </h3>
               <h2 className='text-3xl sm:text-4xl lg:text-5xl font-bold text-color-title mb-2 md:mb-4'>
@@ -115,7 +115,7 @@ const VentaPage = () => {
                 </h3>
                 <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
                   <div>
-                    <label className='block text-sm font-medium text-color-text mb-2'>
+                    <label className='block text-base font-medium text-color-text mb-2'>
                       Marca *
                     </label>
                     <input
@@ -128,7 +128,7 @@ const VentaPage = () => {
                     />
                   </div>
                   <div>
-                    <label className='block text-sm font-medium text-color-text mb-2'>
+                    <label className='block text-base font-medium text-color-text mb-2'>
                       Modelo *
                     </label>
                     <input
@@ -141,7 +141,7 @@ const VentaPage = () => {
                     />
                   </div>
                   <div>
-                    <label className='block text-sm font-medium text-color-text mb-2'>
+                    <label className='block text-base font-medium text-color-text mb-2'>
                       Año de fabricación *
                     </label>
                     <input
@@ -156,7 +156,7 @@ const VentaPage = () => {
                     />
                   </div>
                   <div>
-                    <label className='block text-sm font-medium text-color-text mb-2'>
+                    <label className='block text-base font-medium text-color-text mb-2'>
                       Kilometraje *
                     </label>
                     <input
@@ -170,7 +170,7 @@ const VentaPage = () => {
                     />
                   </div>
                   <div>
-                    <label className='block text-sm font-medium text-color-text mb-2'>
+                    <label className='block text-base font-medium text-color-text mb-2'>
                       Versión/Motor/Caja *
                     </label>
                     <input
@@ -183,7 +183,7 @@ const VentaPage = () => {
                     />
                   </div>
                   <div>
-                    <label className='block text-sm font-medium text-color-text mb-2'>
+                    <label className='block text-base font-medium text-color-text mb-2'>
                       Color *
                     </label>
                     <input
@@ -196,7 +196,7 @@ const VentaPage = () => {
                     />
                   </div>
                   <div className='md:col-span-2'>
-                    <label className='block text-sm font-medium text-color-text mb-2'>
+                    <label className='block text-base font-medium text-color-text mb-2'>
                       Estado general *
                     </label>
                     <textarea
@@ -218,7 +218,7 @@ const VentaPage = () => {
                 </h3>
                 <div className='space-y-6'>
                   <div>
-                    <label className='block text-sm font-medium text-color-text mb-2'>
+                    <label className='block text-base font-medium text-color-text mb-2'>
                       Posee título y documentación al día *
                     </label>
                     <select
@@ -234,7 +234,7 @@ const VentaPage = () => {
                     </select>
                   </div>
                   <div>
-                    <label className='block text-sm font-medium text-color-text mb-2'>
+                    <label className='block text-base font-medium text-color-text mb-2'>
                       Posee verificación técnica vigente *
                     </label>
                     <select
@@ -250,7 +250,7 @@ const VentaPage = () => {
                     </select>
                   </div>
                   <div>
-                    <label className='block text-sm font-medium text-color-text mb-2'>
+                    <label className='block text-base font-medium text-color-text mb-2'>
                       Observaciones adicionales
                     </label>
                     <textarea
@@ -271,7 +271,7 @@ const VentaPage = () => {
                 </h3>
                 <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
                   <div>
-                    <label className='block text-sm font-medium text-color-text mb-2'>
+                    <label className='block text-base font-medium text-color-text mb-2'>
                       Nombre completo *
                     </label>
                     <input
@@ -284,7 +284,7 @@ const VentaPage = () => {
                     />
                   </div>
                   <div>
-                    <label className='block text-sm font-medium text-color-text mb-2'>
+                    <label className='block text-base font-medium text-color-text mb-2'>
                       Teléfono *
                     </label>
                     <input
@@ -297,7 +297,7 @@ const VentaPage = () => {
                     />
                   </div>
                   <div>
-                    <label className='block text-sm font-medium text-color-text mb-2'>
+                    <label className='block text-base font-medium text-color-text mb-2'>
                       Email *
                     </label>
                     <input
@@ -310,7 +310,7 @@ const VentaPage = () => {
                     />
                   </div>
                   <div>
-                    <label className='block text-sm font-medium text-color-text mb-2'>
+                    <label className='block text-base font-medium text-color-text mb-2'>
                       Localidad *
                     </label>
                     <input

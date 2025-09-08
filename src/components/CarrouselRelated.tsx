@@ -7,6 +7,7 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { company } from '@/app/constants/constants';
 import data from '@/data/data.json';
+import AutoScroll from 'embla-carousel-auto-scroll';
 
 interface Imagen {
   id: string;
@@ -58,7 +59,14 @@ interface CarrouselRelatedProps {
 }
 
 const CarrouselRelated = ({ title, currentCarId }: CarrouselRelatedProps) => {
-  const [emblaRef] = useEmblaCarousel({ dragFree: true });
+  const [emblaRef] = useEmblaCarousel({ dragFree: true, loop: true }, [
+    AutoScroll({
+      speed: 1,
+      stopOnInteraction: false,
+      startDelay: 0,
+      stopOnFocusIn: false,
+    }),
+  ]);
   const [clicked, setClicked] = useState(false);
   const [relatedCars, setRelatedCars] = useState<Auto[]>([]);
   const [cargando, setCargando] = useState(true);
@@ -237,20 +245,22 @@ const CarrouselRelated = ({ title, currentCarId }: CarrouselRelatedProps) => {
           onMouseUp={() => setClicked(false)}
           onMouseDown={() => setClicked(true)}
           ref={emblaRef}
-          className={`${clicked ? 'cursor-grabbing' : 'cursor-grab'}`}
+          className={`${
+            clicked ? 'cursor-grabbing' : 'cursor-grab'
+          } select-none`}
         >
-          <div className='flex gap-6 sm:gap-7 md:gap-8'>
+          <div className='flex'>
             {relatedCars.map((auto) => (
               <Link
                 href={`/catalogo/${auto.id}`}
-                className='w-full relative overflow-hidden flex-[0_0_75%] min-[500px]:flex-[0_0_55%] sm:flex-[0_0_40%] lg:flex-[0_0_30%] xl:flex-[0_0_26%]'
+                className='w-full relative overflow-hidden flex-[0_0_75%] min-[500px]:flex-[0_0_55%] sm:flex-[0_0_40%] lg:flex-[0_0_30%] xl:flex-[0_0_26%] ml-6 sm:ml-7 md:ml-8'
                 key={auto.id}
               >
                 {/* Card container con borde que se ilumina */}
-                <div className='relative overflow-hidden group-hover:border-color-primary transition-all duration-500 h-full shadow-[0_8px_30px_-15px_rgba(0,0,0,0.7)] group-hover:shadow-[0_8px_30px_-10px_rgba(233,0,2,0.2)]'>
+                <div className='relative overflow-hidden group-hover:border-color-primary transition-all duration-500 h-full shadow-[0_8px_30px_-15px_rgba(0,0,0,0.7)] group-hover:shadow-[0_8px_30px_-10px_rgba(233,0,2,0.2)] select-none'>
                   {!auto.active && (
                     <div className='absolute top-0 left-0 w-full h-full bg-black/70 flex items-center justify-center z-20'>
-                      <span className='bg-red-500 text-white text-sm font-medium px-3 py-1.5 rounded'>
+                      <span className='bg-red-500 text-white text-base font-medium px-3 py-1.5 rounded'>
                         Pausado
                       </span>
                     </div>
@@ -268,7 +278,7 @@ const CarrouselRelated = ({ title, currentCarId }: CarrouselRelatedProps) => {
                         priority
                         width={600}
                         height={600}
-                        className='object-cover w-full h-full transition-transform duration-700'
+                        className='object-cover w-full h-full transition-transform duration-700 select-none pointer-events-none'
                         style={{
                           objectPosition: `center ${company.objectCover}`,
                         }}
@@ -306,7 +316,7 @@ const CarrouselRelated = ({ title, currentCarId }: CarrouselRelatedProps) => {
                             />
                           </svg>
                         </div>
-                        <span className='text-sm font-medium tracking-wide'>
+                        <span className='text-base font-medium tracking-wide'>
                           Ver más
                         </span>
                       </div>
@@ -358,12 +368,12 @@ const CarrouselRelated = ({ title, currentCarId }: CarrouselRelatedProps) => {
                       {/* Precio o etiqueta destacada */}
                       <div className='flex justify-between items-center text-color-text-light mt-0.5'>
                         {auto.mileage === 0 ? (
-                          <span className='text-sm font-semibold uppercase tracking-wider text-color-primary'>
+                          <span className='text-base font-semibold uppercase tracking-wider text-color-primary'>
                             Nuevo <span className='text-color-primary'>•</span>{' '}
                             {auto.mileage.toLocaleString('es-ES')} km
                           </span>
                         ) : (
-                          <span className='text-sm text-color-text-light font-medium uppercase tracking-wider'>
+                          <span className='text-base text-color-text-light font-medium uppercase tracking-wider'>
                             Usado <span className='text-color-primary'>•</span>{' '}
                             {auto.mileage.toLocaleString('es-ES')} km
                           </span>

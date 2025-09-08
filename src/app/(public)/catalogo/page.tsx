@@ -372,7 +372,7 @@ const CatalogoPage = () => {
                       updateFilters('marca', value === 'all' ? '' : value);
                     }}
                   >
-                    <SelectTrigger className='h-10 flex-1 px-3 py-2 border border-neutral-700 rounded-md bg-neutral-800/80 text-white text-sm outline-none focus:border-color-primary focus:ring-1 focus:ring-color-primary/40 transition-all appearance-none'>
+                    <SelectTrigger className='h-10 flex-1 px-3 py-2 border border-neutral-700 rounded-md bg-neutral-800/80 text-white text-base outline-none focus:border-color-primary focus:ring-1 focus:ring-color-primary/40 transition-all appearance-none'>
                       <SelectValue placeholder='Marcas' />
                     </SelectTrigger>
                     <SelectContent className='bg-neutral-800 border border-neutral-700 text-white rounded-lg shadow-lg max-h-60 overflow-y-auto'>
@@ -400,7 +400,7 @@ const CatalogoPage = () => {
                       updateFilters('categoria', value === 'all' ? '' : value);
                     }}
                   >
-                    <SelectTrigger className='h-10 flex-1 px-3 py-2 border border-neutral-700 rounded-md bg-neutral-800/80 text-white text-sm outline-none focus:border-color-primary focus:ring-1 focus:ring-color-primary/40 transition-all appearance-none'>
+                    <SelectTrigger className='h-10 flex-1 px-3 py-2 border border-neutral-700 rounded-md bg-neutral-800/80 text-white text-base outline-none focus:border-color-primary focus:ring-1 focus:ring-color-primary/40 transition-all appearance-none'>
                       <SelectValue placeholder='Categorías' />
                     </SelectTrigger>
                     <SelectContent className='bg-neutral-800 border border-neutral-700 text-white rounded-lg shadow-lg max-h-60 overflow-y-auto'>
@@ -632,7 +632,7 @@ const CatalogoPage = () => {
                         <div className='relative overflow-hidden group-hover:border-color-primary transition-all duration-500 h-full'>
                           {!car.active && (
                             <div className='absolute top-0 left-0 w-full h-full bg-black/70 flex items-center justify-center z-20'>
-                              <span className='bg-red-500 text-white text-sm font-medium px-3 py-1.5 rounded'>
+                              <span className='bg-red-500 text-white text-base font-medium px-3 py-1.5 rounded'>
                                 Pausado
                               </span>
                             </div>
@@ -690,7 +690,7 @@ const CatalogoPage = () => {
                                     />
                                   </svg>
                                 </div>
-                                <span className='text-sm font-medium tracking-wide'>
+                                <span className='text-base font-medium tracking-wide'>
                                   Ver más
                                 </span>
                               </div>
@@ -742,7 +742,7 @@ const CatalogoPage = () => {
                               {/* Precio o etiqueta destacada */}
                               <div className='flex justify-between items-center text-color-text-light mt-0.5'>
                                 {car.mileage === 0 ? (
-                                  <span className='text-sm font-semibold uppercase tracking-wider text-color-primary'>
+                                  <span className='text-base font-semibold uppercase tracking-wider text-color-primary'>
                                     Nuevo{' '}
                                     <span className='text-color-primary'>
                                       •
@@ -750,7 +750,7 @@ const CatalogoPage = () => {
                                     {car.mileage.toLocaleString('es-ES')} km
                                   </span>
                                 ) : (
-                                  <span className='text-sm text-color-text-light font-medium uppercase tracking-wider'>
+                                  <span className='text-base text-color-text-light font-medium uppercase tracking-wider'>
                                     Usado{' '}
                                     <span className='text-color-primary'>
                                       •

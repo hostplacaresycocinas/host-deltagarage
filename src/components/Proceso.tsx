@@ -85,7 +85,16 @@ const Proceso = () => {
             viewport={{ once: true, margin: '0px 0px -100px 0px' }}
             className='text-2xl md:text-3xl lg:text-4xl font-extrabold text-color-title-light mb-2'
           >
-            La mejor <span className='text-color-secondary'>experiencia</span>{' '}
+            La mejor{' '}
+            <span
+              className={`${
+                company.secondaryColor
+                  ? 'text-color-secondary-light'
+                  : 'text-color-primary'
+              }`}
+            >
+              experiencia
+            </span>{' '}
             en tu compra
           </motion.h2>
           <motion.p

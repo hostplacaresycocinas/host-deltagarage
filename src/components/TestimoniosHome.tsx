@@ -137,7 +137,7 @@ const TestimoniosHome = () => {
                           />
                         </div>
                         <div>
-                          <h4 className='font-semibold text-color-title-light text-sm'>
+                          <h4 className='font-semibold text-color-title-light text-base'>
                             {testimonio.nombre}
                           </h4>
                         </div>
@@ -178,7 +178,7 @@ const TestimoniosHome = () => {
                     </div>
 
                     {/* Comentario del cliente */}
-                    <blockquote className='text-color-text-light text-sm leading-relaxed mb-4'>
+                    <blockquote className='text-color-text-light text-base leading-relaxed mb-4'>
                       &quot;{testimonio.comentario}&quot;
                     </blockquote>
                   </div>

@@ -227,7 +227,7 @@ const SortableAutoCard = ({
                 ) : (
                   ''
                 )}
-                <p className='text-sm lg:text-base text-gray-500 mt-2'>
+                <p className='text-base lg:text-base text-gray-500 mt-2'>
                   {auto.kilometraje.toLocaleString('es-AR')} km •{' '}
                   {auto.combustible}
                 </p>
@@ -238,7 +238,7 @@ const SortableAutoCard = ({
                     e.stopPropagation();
                     onToggleActive(auto.id);
                   }}
-                  className={`px-3 py-1 rounded-full text-sm font-medium transition-colors ${
+                  className={`px-3 py-1 rounded-full text-base font-medium transition-colors ${
                     auto.active
                       ? 'bg-green-100 text-green-700 hover:bg-green-200'
                       : 'bg-yellow-100 text-yellow-700 hover:bg-yellow-200'
@@ -1639,7 +1639,7 @@ export default function DashboardPage() {
               Guardar orden
             </button>
           )}
-          <div className='flex items-center gap-2 text-sm'>
+          <div className='flex items-center gap-2 text-base'>
             <div className='bg-blue-100 text-blue-700 px-3 py-1.5 rounded-full'>
               <span className='font-semibold'>{autosDestacados.length}/10</span>{' '}
               ingresos
@@ -1787,7 +1787,7 @@ export default function DashboardPage() {
                             ) : (
                               ''
                             )}
-                            <p className='text-sm lg:text-base text-gray-500 mt-2'>
+                            <p className='text-base lg:text-base text-gray-500 mt-2'>
                               {auto.kilometraje.toLocaleString('es-AR')} km •{' '}
                               {auto.combustible}
                             </p>
@@ -1798,7 +1798,7 @@ export default function DashboardPage() {
                                 e.stopPropagation();
                                 handleToggleEstado(auto.id);
                               }}
-                              className={`px-3 py-1 rounded-full text-sm font-medium transition-colors ${
+                              className={`px-3 py-1 rounded-full text-base font-medium transition-colors ${
                                 auto.active
                                   ? 'bg-green-100 text-green-700 hover:bg-green-200'
                                   : 'bg-yellow-100 text-yellow-700 hover:bg-yellow-200'

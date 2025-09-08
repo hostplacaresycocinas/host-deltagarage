@@ -85,7 +85,7 @@ export default function LoginPage() {
                 <div>
                   <label
                     htmlFor='username'
-                    className='block text-sm font-medium text-color-text-light mb-2'
+                    className='block text-base font-medium text-color-text-light mb-2'
                   >
                     Usuario
                   </label>
@@ -103,7 +103,7 @@ export default function LoginPage() {
                 <div>
                   <label
                     htmlFor='password'
-                    className='block text-sm font-medium text-color-text-light mb-2'
+                    className='block text-base font-medium text-color-text-light mb-2'
                   >
                     Contraseña
                   </label>
@@ -120,7 +120,7 @@ export default function LoginPage() {
               </div>
 
               {error && (
-                <div className='mt-5 text-sm text-red-600'>{error}</div>
+                <div className='mt-5 text-base text-red-600'>{error}</div>
               )}
 
               <div className='mt-8'>

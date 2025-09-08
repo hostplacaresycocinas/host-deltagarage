@@ -27,7 +27,7 @@ const ServiciosHome = () => {
               <h3 className='text-color-primary'>Tu próximo vehículo</h3>
               <h3 className='text-color-secondary'>te esta esperando</h3>
             </div>
-            <p className='text-color-text text-sm sm:text-base md:text-lg lg:text-xl text-center mt-2'>
+            <p className='text-color-text text-base sm:text-base md:text-lg lg:text-xl text-center mt-2'>
               Cotización Sin Cargo - Sin Compromiso
             </p>
           </article>

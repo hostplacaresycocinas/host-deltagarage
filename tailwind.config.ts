@@ -10,12 +10,13 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        poppins: ['var(--font-poppins)', 'sans-serif'],
+        oswald: ['var(--font-oswald)', 'sans-serif'],
+        sourceSans3: ['var(--font-source-sans-3)', 'sans-serif'],
       },
       colors: {
-        'color-primary': '#FE019A',
-        'color-primary-dark': '#F9007D',
-        'color-primary-light': '#FE019A',
+        'color-primary': '#FEBA10',
+        'color-primary-dark': '#E2A100',
+        'color-primary-light': '#FFC229',
         'color-primary-admin': '#E9262C',
         'color-primary-dark-admin': '#F0161C',
         'color-secondary': '#144BFF',

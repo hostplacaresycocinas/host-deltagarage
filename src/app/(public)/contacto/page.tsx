@@ -55,166 +55,188 @@ const ContactoPage = () => {
       </section>
 
       {/* Información de contacto principal */}
-      <section>
-        <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-16'>
-          <div className='grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start'>
-            {/* Columna izquierda - Información de contacto */}
-            <div className='space-y-6'>
-              {/* Tarjetas de contacto */}
-              <div className='space-y-6'>
-                {/* WhatsApp */}
-                <motion.a
-                  href={`https://api.whatsapp.com/send?phone=549${company.whatsapp[0]}&text=Hola! Quería hacer una consulta sobre un vehículo`}
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.3 }}
-                  viewport={{ once: true }}
-                  className='group flex items-center p-6 bg-color-bg-secondary rounded-2xl shadow-lg hover:shadow-xl transition-colors duration-300 border border-gray-700 hover:border-color-primary/30 hover:scale-[1.02]'
-                >
-                  <div className='flex-shrink-0 w-14 h-14 bg-neutral-700 transition-colors rounded-xl flex items-center justify-center shadow-lg'>
-                    <WhatsappFillIcon className='w-7 h-7 text-white' />
-                  </div>
-                  <div className='ml-6 flex-1'>
-                    <h3 className='text-lg font-semibold text-color-title-light group-hover:text-color-primary transition-colors'>
-                      WhatsApp
-                    </h3>
-                    <p className='text-color-text-light text-base font-medium'>
-                      {company.whatsapp[0]}
-                    </p>
-                    <p className='text-sm text-color-primary font-medium mt-1'>
-                      Respuesta inmediata →
-                    </p>
-                  </div>
-                </motion.a>
-
-                {/* Instagram */}
-                <motion.a
-                  href={`https://www.instagram.com/${company.instagram}/`}
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.4 }}
-                  viewport={{ once: true }}
-                  className='group flex items-center p-6 bg-color-bg-secondary rounded-2xl shadow-lg hover:shadow-xl transition-colors duration-300 border border-gray-700 hover:border-color-primary/30 hover:scale-[1.02]'
-                >
-                  <div className='flex-shrink-0 w-14 h-14 bg-neutral-700 transition-colors rounded-xl flex items-center justify-center shadow-lg'>
-                    <InstagramIcon className='w-7 h-7 text-white' />
-                  </div>
-                  <div className='ml-6 flex-1'>
-                    <h3 className='text-lg font-semibold text-color-title-light group-hover:text-color-primary transition-colors'>
-                      Instagram
-                    </h3>
-                    <p className='text-color-text-light text-base font-medium'>
-                      @{company.instagram}
-                    </p>
-                    <p className='text-sm text-color-primary font-medium mt-1'>
-                      Seguinos y enterate de las novedades →
-                    </p>
-                  </div>
-                </motion.a>
-
-                {/* Ubicación */}
-                <motion.a
-                  href={company.googlemapsLink || ''}
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.5 }}
-                  viewport={{ once: true }}
-                  className='group flex items-center p-6 bg-color-bg-secondary rounded-2xl shadow-lg hover:shadow-xl transition-colors duration-300 border border-gray-700 hover:border-color-primary/30 hover:scale-[1.02]'
-                >
-                  <div className='flex-shrink-0 w-14 h-14 bg-neutral-700 transition-colors rounded-xl flex items-center justify-center shadow-lg'>
-                    <LocationIcon
-                      className={`${
+      <section className='bg-black'>
+        <div className='max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-16'>
+          {/* Sección de redes sociales - Diseño horizontal */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className='mb-16'
+          >
+            <div className='grid grid-cols-1 md:grid-cols-3 gap-6'>
+              {/* WhatsApp */}
+              <motion.a
+                href={`https://api.whatsapp.com/send?phone=549${company.whatsapp[0]}&text=Hola! Quería hacer una consulta sobre un vehículo`}
+                target='_blank'
+                rel='noopener noreferrer'
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
+                className='group relative overflow-hidden bg-gradient-to-br from-color-primary/10 to-color-primary/5 rounded-2xl border border-color-primary/20 hover:border-color-primary/40 hover:scale-105'
+              >
+                <div className='p-8 text-center'>
+                  <div className='w-16 h-16 bg-color-primary rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300'>
+                    <WhatsappFillIcon
+                      className={`w-8 h-8 ${
                         company.dark ? 'text-white' : 'text-black'
-                      } w-7 h-7`}
+                      }`}
                     />
                   </div>
-                  <div className='ml-6 flex-1'>
-                    <h3 className='text-lg font-semibold text-color-title-light group-hover:text-color-primary transition-colors'>
-                      Ubicación
-                    </h3>
-                    <p className='text-color-text-light text-base font-medium'>
-                      {company.adress}, {company.city}
-                    </p>
-                    <p className='text-sm text-color-primary font-medium mt-1'>
-                      Ver en Google Maps →
-                    </p>
-                  </div>
-                </motion.a>
-              </div>
-            </div>
-
-            {/* Columna derecha - Horarios y mapa */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              viewport={{ once: true, margin: '0px 100px -100px 0px' }}
-              className='space-y-8 h-full'
-            >
-              {/* Horarios */}
-              <div className='bg-gradient-to-br from-color-bg-secondary to-color-bg-secondary-dark rounded-3xl shadow-xl p-4 sm:p-6 lg:p-8 border border-gray-700 h-full'>
-                <div className='text-center mb-6 sm:mb-8'>
-                  <div className='inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-neutral-700 transition-colors rounded-xl sm:rounded-2xl shadow-lg mb-3 sm:mb-4'>
-                    <ClockIcon
-                      className={`${
-                        company.dark ? 'text-white' : 'text-black'
-                      } w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8`}
-                    />
-                  </div>
-                  <h3 className='text-xl sm:text-2xl lg:text-3xl font-bold text-color-title-light mb-2'>
-                    Horarios de Atención
+                  <h3
+                    className={`text-white text-xl font-semibold mb-2 group-hover:text-color-primary transition-colors`}
+                  >
+                    WhatsApp
                   </h3>
-                  <p className='text-color-text-light text-xs sm:text-sm lg:text-base'>
-                    Te esperamos para brindarte la mejor atención
+                  <p className='text-color-text-light mb-3'>
+                    {company.whatsapp[0]}
+                  </p>
+                  <p className='text-color-primary font-medium'>
+                    Envia tu consulta
                   </p>
                 </div>
+                <div className='absolute inset-0 bg-gradient-to-br from-color-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity'></div>
+              </motion.a>
 
-                <div className='space-y-2 sm:space-y-3'>
-                  <div className='relative flex flex-col gap-2 sm:gap-3'>
-                    {company.openDays.map((day, index) => (
-                      <motion.div
-                        key={index}
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
-                        viewport={{ once: true }}
-                        className='flex items-center justify-between p-3 sm:p-4 bg-gradient-to-r from-color-bg-secondary-dark/80 to-color-bg-secondary/80 rounded-xl sm:rounded-2xl border border-neutral-800'
-                      >
-                        <div className='flex items-center space-x-2 sm:space-x-4'>
-                          <div className='w-2 h-2 sm:w-3 sm:h-3 bg-color-primary rounded-full shadow-sm'></div>
-                          <span className='font-bold text-color-title-light text-sm sm:text-base lg:text-lg'>
-                            {day.title}: {day.time}
-                          </span>
-                        </div>
-                      </motion.div>
-                    ))}
+              {/* Instagram */}
+              <motion.a
+                href={`https://www.instagram.com/${company.instagram}/`}
+                target='_blank'
+                rel='noopener noreferrer'
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                viewport={{ once: true }}
+                className='group relative overflow-hidden bg-gradient-to-br from-color-primary/10 to-color-primary/5 rounded-2xl border border-color-primary/20 hover:border-color-primary/40 hover:scale-105'
+              >
+                <div className='p-8 text-center'>
+                  <div className='w-16 h-16 bg-color-primary rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300'>
+                    <InstagramIcon
+                      className={`w-8 h-8 ${
+                        company.dark ? 'text-white' : 'text-black'
+                      }`}
+                    />
                   </div>
+                  <h3
+                    className={`text-white text-xl font-semibold mb-2 group-hover:text-color-primary transition-colors`}
+                  >
+                    Instagram
+                  </h3>
+                  <p className='text-color-text-light mb-3'>
+                    @{company.instagram}
+                  </p>
+                  <p className='text-color-primary font-medium'>
+                    Seguinos para novedades
+                  </p>
                 </div>
-              </div>
-            </motion.div>
-            <div className='bg-color-bg-secondary rounded-2xl shadow-lg overflow-hidden border border-gray-700 lg:col-span-2'>
-              <div className='relative'>
-                <iframe
-                  className='w-full h-80 sm:h-96 md:h-[28rem] lg:h-[32rem]'
-                  src={`${company.googlemaps}`}
-                  width='100%'
-                  height='400'
-                  loading='lazy'
-                  referrerPolicy='no-referrer-when-downgrade'
-                  style={{
-                    minWidth: '450px',
-                    border: 'none',
-                  }}
-                ></iframe>
+                <div className='absolute inset-0 bg-gradient-to-br from-color-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity'></div>
+              </motion.a>
+
+              {/* Ubicación */}
+              <motion.a
+                href={company.googlemapsLink || ''}
+                target='_blank'
+                rel='noopener noreferrer'
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                viewport={{ once: true }}
+                className='group relative overflow-hidden bg-gradient-to-br from-color-primary/10 to-color-primary/5 rounded-2xl border border-color-primary/20 hover:border-color-primary/40 hover:scale-105'
+              >
+                <div className='p-8 text-center'>
+                  <div className='w-16 h-16 bg-color-primary rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300'>
+                    <LocationIcon
+                      className={`w-8 h-8 ${
+                        company.dark ? 'text-white' : 'text-black'
+                      }`}
+                    />
+                  </div>
+                  <h3
+                    className={`text-white text-xl font-semibold mb-2 group-hover:text-color-primary transition-colors`}
+                  >
+                    Ubicación
+                  </h3>
+                  <p className='text-color-text-light mb-3'>
+                    {company.adress}, {company.city}
+                  </p>
+                  <p className='text-color-primary font-medium'>
+                    Ver en Google Maps
+                  </p>
+                </div>
+                <div className='absolute inset-0 bg-gradient-to-br from-color-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity'></div>
+              </motion.a>
+            </div>
+          </motion.div>
+
+          {/* Sección de horarios - Diseño vertical */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+            className='mb-16'
+          >
+            <div className='text-center mb-12'>
+              <h2 className='text-3xl md:text-4xl font-light text-white mb-4 tracking-wide'>
+                Horarios de Atención
+              </h2>
+              <div className='w-16 h-px bg-color-primary mx-auto mb-6'></div>
+              <p className='text-color-text-light text-lg lg:text-xl font-light'>
+                Te esperamos para brindarte la mejor atención
+              </p>
+            </div>
+
+            <div className='max-w-2xl mx-auto'>
+              <div className='grid grid-cols-1 sm:grid-cols-2 gap-4'>
+                {company.openDays.map((day, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
+                    viewport={{ once: true }}
+                    className='group relative overflow-hidden bg-white/5 backdrop-blur-sm rounded-xl border border-white/10'
+                  >
+                    <div className='p-6 text-center'>
+                      <div className='w-3 h-3 bg-color-primary rounded-full mx-auto mb-3'></div>
+                      <h4 className='text-lg font-semibold text-white mb-1'>
+                        {day.title}
+                      </h4>
+                      <p className='text-color-text-light text-base font-medium'>
+                        {day.time}
+                      </p>
+                    </div>
+                  </motion.div>
+                ))}
               </div>
             </div>
-          </div>
+          </motion.div>
+
+          {/* Mapa */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            viewport={{ once: true }}
+            className='bg-white/5 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/10'
+          >
+            <div className='relative'>
+              <iframe
+                className='w-full h-80 sm:h-96 md:h-[28rem] lg:h-[32rem]'
+                src={`${company.googlemaps}`}
+                width='100%'
+                height='400'
+                loading='lazy'
+                referrerPolicy='no-referrer-when-downgrade'
+                style={{
+                  minWidth: '450px',
+                  border: 'none',
+                }}
+              ></iframe>
+            </div>
+          </motion.div>
         </div>
       </section>
 

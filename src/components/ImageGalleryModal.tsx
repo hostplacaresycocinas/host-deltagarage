@@ -222,7 +222,7 @@ const ImageGalleryModal = ({
 
         {/* Contador de imágenes */}
         {images.length > 1 && (
-          <div className='absolute bottom-2 left-1/2 -translate-x-1/2 text-white bg-black/50 px-3 py-1 rounded-full text-sm'>
+          <div className='absolute bottom-2 left-1/2 -translate-x-1/2 text-white bg-black/50 px-3 py-1 rounded-full text-base'>
             {selectedIndex + 1} / {images.length}
           </div>
         )}

@@ -556,7 +556,7 @@ export function ImageUpload({
         {/* Imágenes actuales con reordenamiento */}
         {existingImages.length > 0 && (
           <div className='mb-6'>
-            <label className='block text-sm font-medium text-gray-700 mb-2'>
+            <label className='block text-base font-medium text-gray-700 mb-2'>
               Imágenes actuales{' '}
               <span className='text-gray-500 text-xs font-normal'>
                 (Arrastra para reordenar)
@@ -590,7 +590,7 @@ export function ImageUpload({
 
         {/* Sección de nuevas imágenes */}
         <div>
-          <label className='block text-sm font-medium text-gray-700 mb-2'>
+          <label className='block text-base font-medium text-gray-700 mb-2'>
             Nuevas imágenes{' '}
             <span className='text-gray-500 text-xs font-normal'>
               {selectedFiles.length > 0 ? '(Arrastra para reordenar)' : ''}
@@ -621,7 +621,7 @@ export function ImageUpload({
                     onClick={triggerFileInput}
                   >
                     <Plus className='h-8 w-8 text-gray-400 mb-2' />
-                    <span className='text-sm text-gray-500'>Agregar</span>
+                    <span className='text-base text-gray-500'>Agregar</span>
                   </div>
                 )}
 

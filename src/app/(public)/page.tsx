@@ -5,7 +5,6 @@ import PreguntasHome from '@/components/PreguntasHome';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import CarsHome from '@/components/CarsHome';
-import LogosCarousel from '@/components/LogosCarousel';
 import Gallery from '@/components/Gallery';
 import Proceso from '@/components/Proceso';
 
@@ -22,9 +21,6 @@ export default function Home() {
             </section>
             <Gallery />
             <Proceso />
-            <div className='flex justify-center'>
-              <LogosCarousel />
-            </div>
             <PreguntasHome />
           </main>
         </div>

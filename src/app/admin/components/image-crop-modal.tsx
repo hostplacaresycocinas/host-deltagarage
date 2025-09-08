@@ -232,7 +232,7 @@ export function ImageCropModal({
           </div>
 
           <div className='w-full md:w-64 flex flex-col'>
-            <p className='text-sm font-medium text-gray-700 mb-2'>
+            <p className='text-base font-medium text-gray-700 mb-2'>
               Vista previa
             </p>
             <div

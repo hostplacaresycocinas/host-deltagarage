@@ -78,7 +78,7 @@ const ShareMenu = ({ url, title }: ShareMenuProps) => {
         className={`${
           company.secondaryColor
             ? 'bg-color-secondary-light hover:bg-color-secondary-dark'
-            : 'bg-color-primary hover:bg-color-primary-dark'
+            : 'bg-neutral-700 hover:bg-neutral-600'
         } flex items-center justify-center gap-2 text-white rounded transition-colors h-full w-full`}
       >
         <ShareIcon className='w-5 h-5' />
@@ -94,7 +94,7 @@ const ShareMenu = ({ url, title }: ShareMenuProps) => {
         className={`${
           company.secondaryColor
             ? 'bg-color-secondary-light hover:bg-color-secondary-dark'
-            : 'bg-color-primary hover:bg-color-primary-dark'
+            : 'bg-neutral-700 hover:bg-neutral-600'
         } flex items-center justify-center gap-2 text-white rounded transition-colors h-full w-full`}
       >
         <ShareIcon className='w-5 h-5' />
@@ -108,7 +108,7 @@ const ShareMenu = ({ url, title }: ShareMenuProps) => {
               type='text'
               readOnly
               value={url}
-              className='flex-1 bg-neutral-900 border border-neutral-700 rounded-lg px-3 py-2 text-sm text-white'
+              className='flex-1 bg-neutral-900 border border-neutral-700 rounded-lg px-3 py-2 text-base text-white'
               onClick={(e) => (e.target as HTMLInputElement).select()}
             />
             <button
