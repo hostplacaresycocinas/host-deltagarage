@@ -1,7 +1,6 @@
 'use client';
 
 import { company } from '@/app/constants/constants';
-import ClockIcon from '@/components/icons/ClockIcon';
 import LocationIcon from '@/components/icons/LocationIcon';
 import InstagramIcon from '@/components/icons/InstagramIcon';
 import WhatsappFillIcon from '@/components/icons/WhatsappFillIcon';
@@ -179,11 +178,11 @@ const ContactoPage = () => {
             className='mb-16'
           >
             <div className='text-center mb-12'>
-              <h2 className='text-3xl md:text-4xl font-light text-white mb-4 tracking-wide'>
+              <h2 className='text-3xl md:text-4xl text-white mb-4 tracking-wide'>
                 Horarios de Atención
               </h2>
               <div className='w-16 h-px bg-color-primary mx-auto mb-6'></div>
-              <p className='text-color-text-light text-lg lg:text-xl font-light'>
+              <p className='text-color-text-light text-lg lg:text-xl'>
                 Te esperamos para brindarte la mejor atención
               </p>
             </div>

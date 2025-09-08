@@ -7,7 +7,6 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { company } from '@/app/constants/constants';
 import data from '@/data/data.json';
-import CarStrokeIcon from './icons/CarStrokeIcon';
 import AutoScroll from 'embla-carousel-auto-scroll';
 
 interface Imagen {

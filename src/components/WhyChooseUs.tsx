@@ -39,7 +39,7 @@ const WhyChooseUs = () => {
             <h3 className='text-xs text-white/60 uppercase tracking-[0.3em] mb-3'>
               Experiencia
             </h3>
-            <h2 className='text-3xl md:text-4xl lg:text-5xl font-light text-white mb-5'>
+            <h2 className='text-3xl md:text-4xl lg:text-5xl  text-white mb-5'>
               ¿Por qué elegirnos?
             </h2>
             <div className='w-16 md:w-24 h-0.5 bg-color-primary mx-auto'></div>

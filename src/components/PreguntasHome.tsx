@@ -30,7 +30,7 @@ const PreguntasHome = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true, margin: '0px 0px -100px 0px' }}
-            className='text-3xl md:text-4xl lg:text-5xl font-light text-white mb-4 tracking-wide'
+            className='text-3xl md:text-4xl lg:text-5xl  text-white mb-4 tracking-wide'
           >
             Preguntas Frecuentes
           </motion.h2>
@@ -40,7 +40,7 @@ const PreguntasHome = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
             viewport={{ once: true, margin: '0px 0px -100px 0px' }}
-            className='text-white/70 max-w-2xl mx-auto text-lg font-light leading-relaxed'
+            className='text-white/70 max-w-2xl mx-auto text-lg  leading-relaxed'
           >
             Resolvemos todas tus dudas sobre nuestros servicios y procesos
           </motion.p>
@@ -121,7 +121,7 @@ const PreguntasHome = () => {
                         className='overflow-hidden'
                       >
                         <div className='mt-6 pt-6 border-t border-white/10'>
-                          <p className='text-color-text-light leading-relaxed text-base md:text-lg font-light'>
+                          <p className='text-color-text-light leading-relaxed text-base md:text-lg '>
                             {pregunta.answer}
                           </p>
                         </div>
