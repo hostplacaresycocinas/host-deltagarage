@@ -6,20 +6,20 @@ export const company = {
   price: true,
   secondaryColor: false,
   objectCover: '50%',
-  id: 'automotoresituzaingo',
-  name: 'Automotores Ituzaingo',
-  adress: 'Ratti 2205',
-  city: 'Ituzaingó',
-  email: 'autoituzaingo@gmail.com',
-  instagram: 'automotoresituzaingo',
-  facebook: 'https://www.facebook.com/profile.php?id=61576237040695',
-  whatsapp: ['1151383310'],
-  googlemapsLink: 'https://maps.app.goo.gl/EvxYpDZeJQLTmbvh9',
+  id: 'millioncars',
+  name: 'Million Cars',
+  adress: 'Pergamino 1590',
+  city: 'Flores',
+  email: 'millioncars@gmail.com',
+  instagram: 'millioncarsoficial',
+  facebook: null,
+  whatsapp: ['1159465637', '1152201274'],
+  googlemapsLink: 'https://maps.app.goo.gl/tx3VZxh8bpzEYwrw9',
   googlemaps:
-    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3282.3755316770917!2d-58.69065491530991!3d-34.64521789956258!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcbfbce362f80b%3A0xd25c40c80ac13aee!2sAutomotores%20ituzaingo!5e0!3m2!1sen!2sar!4v1757331774874!5m2!1sen!2sar',
+    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3282.275031197181!2d-58.46297307330715!3d-34.64775652401883!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccbde9c40651f%3A0x5a4fd19e3c78dd94!2sMillion%20Cars!5e0!3m2!1sen!2sar!4v1757421014547!5m2!1sen!2sar',
   openDays: [
-    { title: 'Lunes a Viernes', time: '08:30 a 19:00hs' },
-    { title: 'Sábados', time: '09:00 a 14:00hs' },
+    { title: 'Lunes a Viernes', time: '09:00 a 18:30hs' },
+    { title: 'Sábados y Domingos', time: 'Cerrado' },
   ],
   footer:
     'Compra y Venta de Autos: Vehículos seleccionados, atención personalizada.',
@@ -29,8 +29,8 @@ export const API_BASE_URL = 'https://dealership.agenciagrvity.com';
 export const TENANT = 'accotto-automotores';
 
 export const metadataCompany = {
-  metadataBase: 'https://automotoresituzaingo.vercel.app/',
-  title: 'Automotores Ituzaingo - Compra y Venta de Autos',
+  metadataBase: 'https://millioncars.vercel.app/',
+  title: 'Million Cars - Compra y Venta de Autos',
   description:
     'Compra y Venta de Autos: Vehículos seleccionados, atención personalizada.',
 };
