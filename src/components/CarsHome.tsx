@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { company } from '@/app/constants/constants';
-import data from '@/data/data.json';
+import catalogoData from '@/data/catalogo.json';
 import AutoScroll from 'embla-carousel-auto-scroll';
 
 interface Imagen {
@@ -75,7 +75,7 @@ const CarsHome = ({ title }: CarsHomeProps) => {
       setLoading(true);
       try {
         // Filtrar vehículos que tienen imágenes
-        const vehiculosConImagenes = data.cars.filter(
+        const vehiculosConImagenes = catalogoData.filter(
           (auto) => auto.images && auto.images.length > 0
         );
 
@@ -83,40 +83,40 @@ const CarsHome = ({ title }: CarsHomeProps) => {
           .slice(0, 6) // Máximo 6 vehículos
           .map((auto) => ({
             id: auto.id,
-            brand: auto.brand,
-            model: auto.mlTitle,
-            year: auto.year,
-            color: auto.color,
+            brand: auto.marca,
+            model: auto.name,
+            year: auto.ano,
+            color: 'No especificado', // No hay color en catalogo.json
             price: {
-              valor: auto.price,
-              moneda: auto.currency,
+              valor: auto.precio.valor,
+              moneda: auto.precio.moneda,
             },
-            description: auto.description,
-            position: auto.position,
-            featured: auto.featured,
-            favorite: auto.favorite,
-            active: auto.active,
-            categoryId: auto.categoryId,
-            mileage: auto.mileage,
-            transmission: auto.transmission,
-            fuel: auto.fuel,
-            doors: auto.doors,
-            createdAt: auto.createdAt,
-            updatedAt: auto.updatedAt,
+            description: auto.descripcion,
+            position: 0, // No hay position en catalogo.json
+            featured: false, // No hay featured en catalogo.json
+            favorite: false, // No hay favorite en catalogo.json
+            active: true, // Asumimos que todos están activos
+            categoryId: auto.categoria,
+            mileage: auto.kilometraje,
+            transmission: auto.transmision,
+            fuel: auto.combustible,
+            doors: auto.puertas,
+            createdAt: new Date().toISOString(),
+            updatedAt: new Date().toISOString(),
             Images: auto.images.map((img, index) => ({
               id: `${auto.id}-img-${index}`,
               carId: auto.id,
-              imageUrl: img.thumbnailUrl,
-              thumbnailUrl: img.thumbnailUrl,
+              imageUrl: `/assets/catalogo/${img}`,
+              thumbnailUrl: `/assets/catalogo/${img}`,
               order: index,
-              createdAt: auto.createdAt,
-              updatedAt: auto.updatedAt,
+              createdAt: new Date().toISOString(),
+              updatedAt: new Date().toISOString(),
             })),
             Category: {
-              id: auto.Category.id,
-              name: auto.Category.name,
-              createdAt: auto.createdAt,
-              updatedAt: auto.updatedAt,
+              id: auto.categoria.toLowerCase().replace(/\s+/g, '-'),
+              name: auto.categoria,
+              createdAt: new Date().toISOString(),
+              updatedAt: new Date().toISOString(),
             },
           }));
 

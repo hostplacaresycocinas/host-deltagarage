@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { company } from '@/app/constants/constants';
-import data from '@/data/data.json';
+import catalogo from '@/data/catalogo.json';
 import AutoScroll from 'embla-carousel-auto-scroll';
 
 interface Imagen {
@@ -77,7 +77,7 @@ const CarrouselRelated = ({ title, currentCarId }: CarrouselRelatedProps) => {
       setCargando(true);
       try {
         // Encontrar el auto actual y su categoría
-        const autoActual = data.cars.find((auto) => auto.id === currentCarId);
+        const autoActual = catalogo.find((auto) => auto.id === currentCarId);
         if (!autoActual) {
           throw new Error('Auto no encontrado');
         }
@@ -92,10 +92,9 @@ const CarrouselRelated = ({ title, currentCarId }: CarrouselRelatedProps) => {
           return shuffled;
         };
 
-        // Obtener todos los autos excepto el actual (solo con imágenes)
-        const autosDisponibles = data.cars.filter(
-          (auto) =>
-            auto.id !== currentCarId && auto.images && auto.images.length > 0
+        // Obtener todos los autos excepto el actual
+        const autosDisponibles = catalogo.filter(
+          (auto) => auto.id !== currentCarId
         );
 
         // Mezclar aleatoriamente y tomar máximo 10
@@ -103,40 +102,40 @@ const CarrouselRelated = ({ title, currentCarId }: CarrouselRelatedProps) => {
 
         const autosRelacionados = autosAleatorios.map((auto) => ({
           id: auto.id,
-          brand: auto.brand,
-          model: auto.mlTitle,
-          year: auto.year,
-          color: auto.color,
+          brand: auto.marca,
+          model: auto.name,
+          year: auto.ano,
+          color: '',
           price: {
-            valor: auto.price,
-            moneda: auto.currency,
+            valor: auto.precio.valor,
+            moneda: auto.precio.moneda,
           },
-          description: auto.description,
-          position: auto.position,
-          featured: auto.featured,
-          favorite: auto.favorite,
-          active: auto.active,
-          categoryId: auto.categoryId,
-          mileage: auto.mileage,
-          transmission: auto.transmission,
-          fuel: auto.fuel,
-          doors: auto.doors,
-          createdAt: auto.createdAt,
-          updatedAt: auto.updatedAt,
-          Images: auto.images.map((img, index) => ({
+          description: auto.descripcion,
+          position: 0,
+          featured: false,
+          favorite: false,
+          active: true,
+          categoryId: auto.categoria,
+          mileage: auto.kilometraje,
+          transmission: auto.transmision,
+          fuel: auto.combustible,
+          doors: auto.puertas,
+          createdAt: new Date().toISOString(),
+          updatedAt: new Date().toISOString(),
+          Images: auto.images.map((img: string, index: number) => ({
             id: `${auto.id}-img-${index}`,
             carId: auto.id,
-            imageUrl: img.thumbnailUrl,
-            thumbnailUrl: img.thumbnailUrl,
+            imageUrl: `/assets/catalogo/${img}`,
+            thumbnailUrl: `/assets/catalogo/${img}`,
             order: index,
-            createdAt: auto.createdAt,
-            updatedAt: auto.updatedAt,
+            createdAt: new Date().toISOString(),
+            updatedAt: new Date().toISOString(),
           })),
           Category: {
-            id: auto.Category.id,
-            name: auto.Category.name,
-            createdAt: auto.createdAt,
-            updatedAt: auto.updatedAt,
+            id: auto.categoria.toLowerCase(),
+            name: auto.categoria,
+            createdAt: new Date().toISOString(),
+            updatedAt: new Date().toISOString(),
           },
         }));
 
@@ -160,13 +159,7 @@ const CarrouselRelated = ({ title, currentCarId }: CarrouselRelatedProps) => {
       <section className='flex justify-center w-full bg-color-bg-primary'>
         <div className='max-w-7xl w-full mx-4 sm:mx-6 md:mx-8 lg:mx-10 overflow-hidden'>
           <div className='flex items-center mb-4 md:mb-6 lg:mb-8'>
-            <div
-              className={`${
-                company.secondaryColor
-                  ? 'bg-color-secondary-light'
-                  : 'bg-color-primary'
-              } h-10 w-1 mr-4`}
-            ></div>
+            <div className='h-10 w-1 bg-color-primary mr-4'></div>
             <h3 className='text-2xl sm:text-3xl text-color-title-light tracking-wide'>
               {title}
             </h3>
@@ -184,13 +177,7 @@ const CarrouselRelated = ({ title, currentCarId }: CarrouselRelatedProps) => {
       <section className='flex justify-center w-full bg-color-bg-primary'>
         <div className='max-w-7xl w-full mx-4 sm:mx-6 md:mx-8 lg:mx-10 overflow-hidden'>
           <div className='flex items-center mb-4 md:mb-6 lg:mb-8'>
-            <div
-              className={`${
-                company.secondaryColor
-                  ? 'bg-color-secondary-light'
-                  : 'bg-color-primary'
-              } h-10 w-1 mr-4`}
-            ></div>
+            <div className='h-10 w-1 bg-color-primary mr-4'></div>
             <h3 className='text-2xl sm:text-3xl text-color-title-light tracking-wide'>
               {title}
             </h3>
@@ -206,13 +193,7 @@ const CarrouselRelated = ({ title, currentCarId }: CarrouselRelatedProps) => {
       <section className='flex justify-center w-full bg-color-bg-primary'>
         <div className='max-w-7xl w-full mx-4 sm:mx-6 md:mx-8 lg:mx-10 overflow-hidden'>
           <div className='flex items-center mb-4 md:mb-6 lg:mb-8'>
-            <div
-              className={`${
-                company.secondaryColor
-                  ? 'bg-color-secondary-light'
-                  : 'bg-color-primary'
-              } h-10 w-1 mr-4`}
-            ></div>
+            <div className='h-10 w-1 bg-color-primary mr-4'></div>
             <h3 className='text-2xl sm:text-3xl text-color-title-light tracking-wide'>
               {title}
             </h3>
@@ -229,13 +210,7 @@ const CarrouselRelated = ({ title, currentCarId }: CarrouselRelatedProps) => {
     <section className='flex justify-center w-full bg-color-bg-primary'>
       <div className='max-w-7xl w-full mx-4 sm:mx-6 md:mx-8 lg:mx-10 overflow-hidden'>
         <div className='flex items-center mb-4 md:mb-6 lg:mb-8'>
-          <div
-            className={`${
-              company.secondaryColor
-                ? 'bg-color-secondary-light'
-                : 'bg-color-primary'
-            } h-10 w-1 mr-4`}
-          ></div>
+          <div className='h-10 w-1 bg-color-primary mr-4'></div>
           <h3 className='text-2xl sm:text-3xl text-color-title-light tracking-wide'>
             {title}
           </h3>
@@ -245,22 +220,20 @@ const CarrouselRelated = ({ title, currentCarId }: CarrouselRelatedProps) => {
           onMouseUp={() => setClicked(false)}
           onMouseDown={() => setClicked(true)}
           ref={emblaRef}
-          className={`${
-            clicked ? 'cursor-grabbing' : 'cursor-grab'
-          } select-none`}
+          className={`${clicked ? 'cursor-grabbing' : 'cursor-grab'}`}
         >
-          <div className='flex'>
+          <div className='flex gap-6 sm:gap-7 md:gap-8'>
             {relatedCars.map((auto) => (
               <Link
                 href={`/catalogo/${auto.id}`}
-                className='w-full relative overflow-hidden flex-[0_0_75%] min-[500px]:flex-[0_0_55%] sm:flex-[0_0_40%] lg:flex-[0_0_30%] xl:flex-[0_0_26%] ml-6 sm:ml-7 md:ml-8'
+                className='w-full relative overflow-hidden flex-[0_0_75%] min-[500px]:flex-[0_0_55%] sm:flex-[0_0_40%] lg:flex-[0_0_30%] xl:flex-[0_0_26%]'
                 key={auto.id}
               >
                 {/* Card container con borde que se ilumina */}
-                <div className='relative overflow-hidden group-hover:border-color-primary transition-all duration-500 h-full shadow-[0_8px_30px_-15px_rgba(0,0,0,0.7)] group-hover:shadow-[0_8px_30px_-10px_rgba(233,0,2,0.2)] select-none'>
+                <div className='relative overflow-hidden group-hover:border-color-primary transition-all duration-500 h-full shadow-[0_8px_30px_-15px_rgba(0,0,0,0.7)] group-hover:shadow-[0_8px_30px_-10px_rgba(233,0,2,0.2)]'>
                   {!auto.active && (
                     <div className='absolute top-0 left-0 w-full h-full bg-black/70 flex items-center justify-center z-20'>
-                      <span className='bg-red-500 text-white text-base font-medium px-3 py-1.5 rounded'>
+                      <span className='bg-red-500 text-white text-sm font-medium px-3 py-1.5 rounded'>
                         Pausado
                       </span>
                     </div>
@@ -278,7 +251,7 @@ const CarrouselRelated = ({ title, currentCarId }: CarrouselRelatedProps) => {
                         priority
                         width={600}
                         height={600}
-                        className='object-cover w-full h-full transition-transform duration-700 select-none pointer-events-none'
+                        className='object-cover w-full h-full transition-transform duration-700'
                         style={{
                           objectPosition: `center ${company.objectCover}`,
                         }}
@@ -316,7 +289,7 @@ const CarrouselRelated = ({ title, currentCarId }: CarrouselRelatedProps) => {
                             />
                           </svg>
                         </div>
-                        <span className='text-base font-medium tracking-wide'>
+                        <span className='text-sm font-medium tracking-wide'>
                           Ver más
                         </span>
                       </div>
@@ -336,7 +309,7 @@ const CarrouselRelated = ({ title, currentCarId }: CarrouselRelatedProps) => {
                           company.dark
                             ? 'group-hover:text-color-primary'
                             : 'group-hover:text-color-primary'
-                        } text-color-title-light text-lg md:text-xl font-medium tracking-tight truncate md:mb-1 transition-colors duration-300`}
+                        } text-color-title-light text-lg md:text-xl font-bold tracking-tight truncate md:mb-1 transition-colors duration-300`}
                       >
                         {auto.model}
                       </h3>
@@ -344,7 +317,7 @@ const CarrouselRelated = ({ title, currentCarId }: CarrouselRelatedProps) => {
                       <div
                         className={`${
                           company.price ? '' : 'hidden'
-                        } text-color-primary text-lg md:text-xl font-semibold tracking-tight truncate md:mb-1 transition-colors duration-300`}
+                        } text-color-primary text-lg md:text-xl font-bold tracking-tight truncate md:mb-1 transition-colors duration-300`}
                       >
                         {auto.price.moneda === 'ARS' ? '$' : 'US$'}
                         {auto.price.valor.toLocaleString('es-ES')}
@@ -368,12 +341,12 @@ const CarrouselRelated = ({ title, currentCarId }: CarrouselRelatedProps) => {
                       {/* Precio o etiqueta destacada */}
                       <div className='flex justify-between items-center text-color-text-light mt-0.5'>
                         {auto.mileage === 0 ? (
-                          <span className='text-base font-semibold uppercase tracking-wider text-color-primary'>
+                          <span className='text-sm font-semibold uppercase tracking-wider text-color-primary'>
                             Nuevo <span className='text-color-primary'>•</span>{' '}
                             {auto.mileage.toLocaleString('es-ES')} km
                           </span>
                         ) : (
-                          <span className='text-base text-color-text-light font-medium uppercase tracking-wider'>
+                          <span className='text-sm text-color-text-light font-medium uppercase tracking-wider'>
                             Usado <span className='text-color-primary'>•</span>{' '}
                             {auto.mileage.toLocaleString('es-ES')} km
                           </span>
