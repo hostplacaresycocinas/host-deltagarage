@@ -1,18 +1,18 @@
 [
   {
-    "id": "renault-captur-luxe-2018",
-    "name": "Renault Captur Luxe",
-    "marca": "Renault",
-    "marcaId": "renault",
-    "ano": 2018,
-    "kilometraje": 999999,
+    "id": "audi-a1-ambition-2011",
+    "name": "Audi A1 Ambition",
+    "marca": "Audi",
+    "marcaId": "audi",
+    "ano": 2011,
+    "kilometraje": 126000,
     "precio": {
-      "valor": 999999,
-      "moneda": "ARS"
+      "valor": 13000,
+      "moneda": "USD"
     },
-    "categoria": "SUV",
-    "transmision": "Manual",
-    "motor": "2.0 nafta",
+    "categoria": "Hatchback",
+    "transmision": "Automática",
+    "motor": "1.4 Tfsi",
     "combustible": "Nafta",
     "puertas": 5,
     "images": [
@@ -26,24 +26,24 @@
       "1-8.webp",
       "1-9.webp"
     ],
-    "descripcion": "STOCK FÍSICO ✅\n\n🔸 Marca: Renault\n🔸 Modelo: Captur Luxe\n\n🔩 Motor: 2.0 nafta ⛽️\n🕹 Transmisión: Manual 🔩\n\n🕰 Año: 2018\n💲 Precio: 📨 🇦🇷\n\n🌎 Ubicación: Tristán Suárez Ezeiza Bs as\n\n👤 Contacto: BBrunoAutomotores\n📱 Teléfono: 1523150051 Lucas\n📲 1561900965 Kevin\n\n⚠️ Publicá GRATIS tu vehículo con nosotros ⚠️"
+    "descripcion": "Marca: Audi\nModelo: A1 Ambition\nAño: 2011\n\n⚙️ Motor: 1.4 Tfsi\nTransmisión: Automática\n⛽️ Combustible: Nafta\nKilometraje: 126.000\nPrecio: $13.000usd\n\n📍 Ubicación: Lacarra 365, Canning\n📞 Contacto: 11 34431777\n\nComentario: Audi A1 Ambition 1.4 Tfsi\n◽️ Service al día\n* Contamos con financiación en cuotas fijas\n* Entrega inmediata\n\nEncontranos en Instagram: @_f1cars\n• F1 Cars Seleccionados"
   },
   {
-    "id": "chevrolet-apache-1960",
-    "name": "Chevrolet Apache",
-    "marca": "Chevrolet",
-    "marcaId": "chevrolet",
-    "ano": 1960,
-    "kilometraje": 999999,
+    "id": "bmw-x6-xdrive-35i-2017",
+    "name": "BMW X6 XDrive 35i",
+    "marca": "BMW",
+    "marcaId": "bmw",
+    "ano": 2017,
+    "kilometraje": 48000,
     "precio": {
-      "valor": 999999,
-      "moneda": "ARS"
+      "valor": 75500,
+      "moneda": "USD"
     },
-    "categoria": "Pickup",
-    "transmision": "Manual",
-    "motor": "Original",
+    "categoria": "SUV",
+    "transmision": "Automática",
+    "motor": "3.0",
     "combustible": "Nafta",
-    "puertas": 2,
+    "puertas": 5,
     "images": [
       "2-1.webp",
       "2-2.webp",
@@ -51,25 +51,26 @@
       "2-4.webp",
       "2-5.webp",
       "2-6.webp",
-      "2-7.webp"
+      "2-7.webp",
+      "2-8.webp"
     ],
-    "descripcion": "STOCK FÍSICO ✅\n\n🔸 Marca: Chevrolet\n🔸 Modelo: Apache\n\n🔩 Motor: Original ⛽️\n🕹 Transmisión: Manual 🔩\n\n🕰 Año: 1960\n💲 Precio: 📨 🇦🇷\n\n🌎 Ubicación: Tristán Suárez Ezeiza Bs as\n\n👤 Contacto: BBrunoAutomotores\n📱 Teléfono: 1523150051 Lucas\n📲 1561900965 Kevin\n\n⚠️ Publicá GRATIS tu vehículo con nosotros ⚠️"
+    "descripcion": "Marca: BMW\nModelo: X6 XDrive 35i. Linea nueva, Tablero Digital\nAño: 2017\n\n⚙️ Motor: 3.0\nTransmisión: Automática\n⛽️ Combustible: Nafta\nKilometraje: 48.000\nPrecio: $75.500usd\n\n📍 Ubicación: Canning\n📞 Contacto: 11 3443 1777\n\nComentario: BMW X6 XDrive 35i\n◾️ Service y mantenimiento al día\n◽️ Tratamiento acrílico en la pintura\n\n• F1 Cars Seleccionados"
   },
   {
-    "id": "toyota-hilux-dx-2014",
-    "name": "Toyota Hilux DX",
-    "marca": "Toyota",
-    "marcaId": "toyota",
-    "ano": 2014,
-    "kilometraje": 999999,
+    "id": "ford-f-150-raptor-2023",
+    "name": "Ford F-150 Raptor",
+    "marca": "Ford",
+    "marcaId": "ford",
+    "ano": 2023,
+    "kilometraje": 50000,
     "precio": {
-      "valor": 999999,
-      "moneda": "ARS"
+      "valor": 110000,
+      "moneda": "USD"
     },
     "categoria": "Pickup",
-    "transmision": "Manual",
-    "motor": "2.5 Gasolero",
-    "combustible": "Diesel",
+    "transmision": "Automática",
+    "motor": "3.5l Bi-turbo",
+    "combustible": "Nafta",
     "puertas": 4,
     "images": [
       "3-1.webp",
@@ -79,24 +80,26 @@
       "3-5.webp",
       "3-6.webp",
       "3-7.webp",
-      "3-8.webp"
+      "3-8.webp",
+      "3-9.webp",
+      "3-10.webp"
     ],
-    "descripcion": "STOCK FÍSICO ✅\n\n🔸 Marca: Toyota\n🔸 Modelo: Hilux DX\n\n🔩 Motor: 2.5 Gasolero ⛽️\n🕹 Transmisión: Manual 🔩\n\n🕰 Año: 2014\n💲 Precio: 📨 🇦🇷\n\n🌎 Ubicación: Tristán Suárez Ezeiza Bs as\n\n👤 Contacto: BBrunoAutomotores\n📱 Teléfono: 1523150051 Lucas\n📲 1561900965 Kevin\n\n⚠️ PODES FINANCIAR HACIENDO UNA ENTREGA DESDE $13.000.000 y CUOTAS FIJAS ✍🏻\n🚧 TAMBIEN PODES HACER UN PLAN ENTREGANDO TU VEHICULO Y FINANCIADO CON RECIBO DE SUELDO Y DNI 🚧\n\n⚠️ Publicá GRATIS tu vehículo con nosotros ⚠️"
+    "descripcion": "Marca: Ford\nModelo: F-150 Raptor\nAño: 2023\n\n⚙️ Motor: 3.5l Bi-turbo\nTransmisión: Automática\n⛽️ Combustible: Nafta\nKilometraje: 50.000\nPrecio: $110.000usd\n\n📍 Ubicación: Lacarra 365, Canning\n📞 Contacto: 11 34431777\n\nComentario: Ford F-150 Raptor 3.5l Bi-turbo\n◽️ 4 cubiertas nuevas\n◾️ Tratamiento acrílico en la pintura\n◽️ Service oficiales\n* Contamos con financiación en cuotas fijas\n* Entrega inmediata\n\nEncontranos en Instagram: @_f1cars\n• F1 Cars Seleccionados"
   },
   {
-    "id": "volkswagen-vento-advance-2016",
-    "name": "Volkswagen Vento Advance",
-    "marca": "Volkswagen",
-    "marcaId": "volkswagen",
-    "ano": 2016,
-    "kilometraje": 999999,
+    "id": "audi-a7-sportback-v6-2017",
+    "name": "Audi A7 Sportback V6 3.0 TFSI Quattro",
+    "marca": "Audi",
+    "marcaId": "audi",
+    "ano": 2017,
+    "kilometraje": 64000,
     "precio": {
-      "valor": 999999,
-      "moneda": "ARS"
+      "valor": 46500,
+      "moneda": "USD"
     },
     "categoria": "Sedan",
-    "transmision": "Manual",
-    "motor": "2.5 naftero",
+    "transmision": "Automática",
+    "motor": "3.0 T",
     "combustible": "Nafta",
     "puertas": 4,
     "images": [
@@ -107,26 +110,28 @@
       "4-5.webp",
       "4-6.webp",
       "4-7.webp",
-      "4-8.webp"
+      "4-8.webp",
+      "4-9.webp",
+      "4-10.webp"
     ],
-    "descripcion": "STOCK FÍSICO ✅\n\n🔸 Marca: Volkswagen\n🔸 Modelo: VENTO advance\n\n🔩 Motor: 2.5 naftero ⛽️\n🕹 Transmisión: Manual 🔩\n\n🕰 Año: 2016\n💲 Precio: 📨 🇦🇷\n\n🌎 Ubicación: Tristán Suárez Ezeiza Bs as\n\n👤 Contacto: BBrunoAutomotores\n📱 Teléfono: 1523150051 Lucas\n📲 1561900965 Kevin\n\n⚠️ PODES FINANCIAR HACIENDO UNA ENTREGA DESDE $11.900.000 y CUOTAS FIJAS ✍🏻\n🚧 TAMBIEN PODES HACER UN PLAN ENTREGANDO TU VEHICULO Y FINANCIADO CON RECIBO DE SUELDO Y DNI 🚧\n\n⚠️ Publicá GRATIS tu vehículo con nosotros ⚠️"
+    "descripcion": "Marca: Audi\nModelo: A7 Sportback V6 3.0 TFSI Quattro\nAño: 2017\n\n⚙️ Motor: 3.0 T\nTransmisión: Automática\n⛽️ Combustible: Nafta\nKilometraje: 64.000\nPrecio: $46500usd\n\n📍 Ubicación: Canning\n📞 Contacto: 11 3443-1777\n\nComentario: A7 Sportback V6 3.0 TFSI Quattro\n◽️ Service al día\n◾️ Tratamiento acrílico en la pintura\n\n• F1 Cars Seleccionados"
   },
   {
-    "id": "peugeot-208-active-2017",
-    "name": "Peugeot 208 Active",
-    "marca": "Peugeot",
-    "marcaId": "peugeot",
-    "ano": 2017,
-    "kilometraje": 999999,
+    "id": "toyota-corolla-seg-hev-2021",
+    "name": "Toyota Corolla SEG HEV",
+    "marca": "Toyota",
+    "marcaId": "toyota",
+    "ano": 2021,
+    "kilometraje": 44000,
     "precio": {
-      "valor": 999999,
-      "moneda": "ARS"
+      "valor": 24500,
+      "moneda": "USD"
     },
-    "categoria": "Hatchback",
-    "transmision": "Manual",
-    "motor": "1.6 máster o",
+    "categoria": "Sedan",
+    "transmision": "Automática Cvt",
+    "motor": "1.8",
     "combustible": "Nafta",
-    "puertas": 5,
+    "puertas": 4,
     "images": [
       "5-1.webp",
       "5-2.webp",
@@ -136,25 +141,28 @@
       "5-6.webp",
       "5-7.webp",
       "5-8.webp",
-      "5-9.webp"
+      "5-9.webp",
+      "5-10.webp",
+      "5-11.webp",
+      "5-12.webp"
     ],
-    "descripcion": "STOCK FÍSICO ✅\n\n🔸 Marca: Peugeot\n🔸 Modelo: 208 active\n\n🔩 Motor: 1.6 máster o ⛽️\n🕹 Transmisión: Manual 🔩\n\n🕰 Año: 2017\n💲 Precio: 📨 🇦🇷\n\n🌎 Ubicación: Tristán Suárez Ezeiza Bs as\n\n👤 Contacto: BBrunoAutomotores\n📱 Teléfono: 1523150051 Lucas\n📲 1561900965 Kevin\n\n⚠️ PODES FINANCIAR HACIENDO UNA ENTREGA DESDE $8.000.000 y CUOTAS FIJAS ✍🏻\n🚧 TAMBIEN PODES HACER UN PLAN ENTREGANDO TU VEHICULO Y FINANCIADO CON RECIBO DE SUELDO Y DNI 🚧\n\n⚠️ Publicá GRATIS tu vehículo con nosotros ⚠️"
+    "descripcion": "- VENDIDO -\n🏷️ Marca: Toyota\nModelo: Corolla SEG HEV\nAño: 2021\n\n⚙️ Motor: 1.8\nTransmisión: Automática Cvt\n⛽️ Combustible: Nafta\nKilometraje: 44.000\nPrecio: $24.500usd\n\n📍 Ubicación: Canning\n📞 Contacto: 11 3443 1777\n\nComentario: Toyota Corolla SEG HEV\n◾️ Services Oficiales\n◽️ ÚNICO DUEÑO\n◾️ Garantía oficial\n◽️ Tratamiento cerámico CarPro\n\n• F1 Cars Seleccionados"
   },
   {
-    "id": "volkswagen-v6-highline-2017",
-    "name": "Volkswagen V6 Highline",
+    "id": "volkswagen-taos-confortline-250-tsi-2023",
+    "name": "Volkswagen Taos Confortline 250 Tsi",
     "marca": "Volkswagen",
     "marcaId": "volkswagen",
-    "ano": 2017,
-    "kilometraje": 999999,
+    "ano": 2023,
+    "kilometraje": 43000,
     "precio": {
-      "valor": 999999,
-      "moneda": "ARS"
+      "valor": 27500,
+      "moneda": "USD"
     },
     "categoria": "SUV",
-    "transmision": "Automática",
-    "motor": "v6 turbo Diesel",
-    "combustible": "Diesel",
+    "transmision": "Automatica",
+    "motor": "1.4 tsi",
+    "combustible": "Nafta",
     "puertas": 5,
     "images": [
       "6-1.webp",
@@ -165,179 +173,9 @@
       "6-6.webp",
       "6-7.webp",
       "6-8.webp",
-      "6-9.webp"
+      "6-9.webp",
+      "6-10.webp"
     ],
-    "descripcion": "STOCK FÍSICO ✅\n\n🔸 Marca: Volkswagen\n🔸 Modelo: v6 highline\n\n🔩 Motor: v6 turbo Diesel ⛽️\n🕹 Transmisión: Automática 🔩\n\n🕰 Año: 2017\n💲 Precio: 📨 🇦🇷\n\n🌎 Ubicación: Tristán Suárez Ezeiza Bs as\n\n👤 Contacto: BBrunoAutomotores\n📱 Teléfono: 1523150051 Leila\n📲 1561900965 Kevin\n\n⚠️ PODES FINANCIAR HACIENDO UNA ENTREGA DESDE $23.900.000 y CUOTAS FIJAS ✍🏻\n🚧 TAMBIEN PODES HACER UN PLAN ENTREGANDO TU VEHICULO Y FINANCIADO CON RECIBO DE SUELDO Y DNI 🚧\n\n⚠️ Publicá GRATIS tu vehículo con nosotros ⚠️"
-  },
-  {
-    "id": "renault-duster-oroch-2018",
-    "name": "Renault Duster Oroch",
-    "marca": "Renault",
-    "marcaId": "renault",
-    "ano": 2018,
-    "kilometraje": 999999,
-    "precio": {
-      "valor": 999999,
-      "moneda": "ARS"
-    },
-    "categoria": "Pickup",
-    "transmision": "Manual",
-    "motor": "2.0 nafta",
-    "combustible": "Nafta",
-    "puertas": 4,
-    "images": [
-      "7-1.webp",
-      "7-2.webp",
-      "7-3.webp",
-      "7-4.webp",
-      "7-5.webp",
-      "7-6.webp",
-      "7-7.webp",
-      "7-8.webp"
-    ],
-    "descripcion": "STOCK FÍSICO ✅\n\n🔸 Marca: Renault\n🔸 Modelo: DUSTER Oroch\n\n🔩 Motor: 2.0 nafta ⛽️\n🕹 Transmisión: Manual 🔩\n\n🕰 Año: 2018\n💲 Precio: 📨 🇦🇷\n\n🌎 Ubicación: Tristán Suárez Ezeiza Bs as\n\n👤 Contacto: BBrunoAutomotores\n📱 Teléfono: 1523150051 Leila\n📲 1561900965 Kevin\n\n⚠️ PODES FINANCIAR HACIENDO UNA ENTREGA DESDE $10.000.000 y CUOTAS FIJAS ✍🏻\n🚧 TAMBIEN PODES HACER UN PLAN ENTREGANDO TU VEHICULO Y FINANCIADO CON RECIBO DE SUELDO Y DNI 🚧\n\n⚠️ Publicá GRATIS tu vehículo con nosotros ⚠️"
-  },
-  {
-    "id": "ford-fiesta-se-2018",
-    "name": "Ford Fiesta Se",
-    "marca": "Ford",
-    "marcaId": "ford",
-    "ano": 2018,
-    "kilometraje": 999999,
-    "precio": {
-      "valor": 999999,
-      "moneda": "ARS"
-    },
-    "categoria": "Hatchback",
-    "transmision": "Manual",
-    "motor": "1.6 nafta",
-    "combustible": "Nafta",
-    "puertas": 5,
-    "images": [
-      "8-1.webp",
-      "8-2.webp",
-      "8-3.webp",
-      "8-4.webp",
-      "8-5.webp",
-      "8-6.webp",
-      "8-7.webp",
-      "8-8.webp"
-    ],
-    "descripcion": "STOCK FÍSICO ✅\n\n🔸 Marca: Ford\n🔸 Modelo: Fiesta Se\n\n🔩 Motor: 1.6 nafta ⛽️\n🕹 Transmisión: Manual 🔩\n\n🕰 Año: 2018\n💲 Precio: 📨 🇦🇷\n\n🌎 Ubicación: Tristán Suárez Ezeiza Bs as\n\n👤 Contacto: BBrunoAutomotores\n📱 Teléfono: 1523150051 Leila\n📲 1561900965 Kevin\n\n⚠️ PODES FINANCIAR HACIENDO UNA ENTREGA DESDE $7.500.000 y CUOTAS FIJAS ✍🏻\n🚧 TAMBIEN PODES HACER UN PLAN ENTREGANDO TU VEHICULO Y FINANCIADO CON RECIBO DE SUELDO Y DNI 🚧\n\n⚠️ Publicá GRATIS tu vehículo con nosotros ⚠️"
-  },
-  {
-    "id": "peugeot-207-conpact-2012",
-    "name": "Peugeot 207 Conpact",
-    "marca": "Peugeot",
-    "marcaId": "peugeot",
-    "ano": 2012,
-    "kilometraje": 999999,
-    "precio": {
-      "valor": 999999,
-      "moneda": "ARS"
-    },
-    "categoria": "Hatchback",
-    "transmision": "Manual",
-    "motor": "1.4 Nafta",
-    "combustible": "Nafta",
-    "puertas": 5,
-    "images": [
-      "9-1.webp",
-      "9-2.webp",
-      "9-3.webp",
-      "9-4.webp",
-      "9-5.webp",
-      "9-6.webp",
-      "9-7.webp",
-      "9-8.webp"
-    ],
-    "descripcion": "STOCK FÍSICO ✅\n\n🔸 Marca: Peugeot\n🔸 Modelo: 207 Conpact\n\n🔩 Motor: 1.4 Nafta ⛽️\n🕹 Transmisión: Manual 🔩\n\n🕰 Año: 2012\n💲 Precio: 📨 🇦🇷\n\n🌎 Ubicación: Tristán Suárez Ezeiza Bs as\n\n👤 Contacto: BBrunoAutomotores\n📱 Teléfono: 1523150051 Leila\n📲 1561900965 Kevin\n\n⚠️ PODES FINANCIAR HACIENDO UNA ENTREGA DESDE $4.650.000 y CUOTAS FIJAS ✍🏻\n🚧 TAMBIEN PODES HACER UN PLAN ENTREGANDO TU VEHICULO Y FINANCIADO CON RECIBO DE SUELDO Y DNI 🚧\n\n⚠️ Publicá GRATIS tu vehículo con nosotros ⚠️"
-  },
-  {
-    "id": "fiat-cronos-drive-s-desing-2021",
-    "name": "Fiat Cronos Drive S-Desing",
-    "marca": "Fiat",
-    "marcaId": "fiat",
-    "ano": 2021,
-    "kilometraje": 999999,
-    "precio": {
-      "valor": 999999,
-      "moneda": "ARS"
-    },
-    "categoria": "Sedan",
-    "transmision": "Manual",
-    "motor": "1.3 Nafta",
-    "combustible": "Nafta",
-    "puertas": 4,
-    "images": [
-      "10-1.webp",
-      "10-2.webp",
-      "10-3.webp",
-      "10-4.webp",
-      "10-5.webp",
-      "10-6.webp",
-      "10-7.webp",
-      "10-8.webp",
-      "10-9.webp"
-    ],
-    "descripcion": "STOCK FÍSICO ✅\n\n🔸 Marca: Fiat\n🔸 Modelo: Cronos Drive S-Desing\n\n🔩 Motor: 1.3 Nafta ⛽️\n🕹 Transmisión: Manual 🔩\n\n🕰 Año: 2021\n💲 Precio: 📨 🇦🇷\n\n🌎 Ubicación: Tristán Suárez Ezeiza Bs as\n\n👤 Contacto: BBrunoAutomotores\n📱 Teléfono: 1523150051 Leila\n📲 1561900965 Kevin\n\n⚠️ PODES FINANCIAR HACIENDO UNA ENTREGA DESDE $8.650.000 y CUOTAS FIJAS ✍🏻\n🚧 TAMBIEN PODES HACER UN PLAN ENTREGANDO TU VEHICULO Y FINANCIADO CON RECIBO DE SUELDO Y DNI 🚧\n\n⚠️ Publicá GRATIS tu vehículo con nosotros ⚠️"
-  },
-  {
-    "id": "toyota-corolla-xei-2011",
-    "name": "Toyota Corolla Xei",
-    "marca": "Toyota",
-    "marcaId": "toyota",
-    "ano": 2011,
-    "kilometraje": 999999,
-    "precio": {
-      "valor": 999999,
-      "moneda": "ARS"
-    },
-    "categoria": "Sedan",
-    "transmision": "Manual",
-    "motor": "1.8 Nafta",
-    "combustible": "Nafta",
-    "puertas": 4,
-    "images": [
-      "11-1.webp",
-      "11-2.webp",
-      "11-3.webp",
-      "11-4.webp",
-      "11-5.webp",
-      "11-6.webp",
-      "11-7.webp",
-      "11-8.webp",
-      "11-9.webp"
-    ],
-    "descripcion": "STOCK FÍSICO ✅\n\n🔸 Marca: Toyota\n🔸 Modelo: Corolla Xei\n\n🔩 Motor: 1.8 Nafta ⛽️\n🕹 Transmisión: Manual 🔩\n\n🕰 Año: 2011\n💲 Precio: 📨 🇦🇷\n\n🌎 Ubicación: Tristán Suárez Ezeiza Bs as\n\n👤 Contacto: BBrunoAutomotores\n📱 Teléfono: 1523150051 Leila\n📲 1561900965 Kevin\n\n⚠️ PODES FINANCIAR HACIENDO UNA ENTREGA DESDE $8.650.000 y CUOTAS FIJAS ✍🏻\n🚧 TAMBIEN PODES HACER UN PLAN ENTREGANDO TU VEHICULO Y FINANCIADO CON RECIBO DE SUELDO Y DNI 🚧\n\n⚠️ Publicá GRATIS tu vehículo con nosotros ⚠️"
-  },
-  {
-    "id": "volkswagen-vento-2011",
-    "name": "Volkswagen Vento",
-    "marca": "Volkswagen",
-    "marcaId": "volkswagen",
-    "ano": 2011,
-    "kilometraje": 999999,
-    "precio": {
-      "valor": 999999,
-      "moneda": "ARS"
-    },
-    "categoria": "Sedan",
-    "transmision": "Automático",
-    "motor": "2.5 Nafta Gnc",
-    "combustible": "Nafta GNC",
-    "puertas": 4,
-    "images": [
-      "12-1.webp",
-      "12-2.webp",
-      "12-3.webp",
-      "12-4.webp",
-      "12-5.webp",
-      "12-6.webp",
-      "12-7.webp",
-      "12-8.webp",
-      "12-9.webp"
-    ],
-    "descripcion": "STOCK FÍSICO ✅\n\n🔸 Marca: Volkswagen\n🔸 Modelo: Vento\n\n🔩 Motor: 2.5 Nafta Gnc ⛽️\n🕹 Transmisión: Automático 🔩\n\n🕰 Año: 2011\n💲 Precio: 📨 🇦🇷\n\n🌎 Ubicación: Tristán Suárez Ezeiza Bs as\n\n👤 Contacto: BBrunoAutomotores\n📱 Teléfono: 1523150051 Leila\n📲 1561900965 Kevin\n\n⚠️ PODES FINANCIAR HACIENDO UNA ENTREGA DESDE $7.500.000 y CUOTAS FIJAS ✍🏻\n🚧 TAMBIEN PODES HACER UN PLAN ENTREGANDO TU VEHICULO Y FINANCIADO CON RECIBO DE SUELDO Y DNI 🚧\n\n⚠️ Publicá GRATIS tu vehículo con nosotros ⚠️"
+    "descripcion": "- EN VENTA -\n🏷️ Marca: Volkswagen\nModelo: Taos Confortline 250 Tsi\nAño: 2023\n\n⚙️ Motor: 1.4 tsi\nTransmisión: Automatica\n⛽️ Combustible: Nafta\nKilometraje: 43.000\nPrecio: $27.500usd\n\n📍 Ubicación: Canning\n📞 Contacto: 11 3443 1777\n\nComentario: Volkswagen Taos 250 Tsi\n◽️ ÚNICO DUEÑO\n◾️ Cubiertas nuevas\n◽️ Service oficiales\n◾️ Service recién hecho\n\n• F1 Cars Seleccionados"
   }
 ]

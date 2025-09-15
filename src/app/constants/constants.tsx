@@ -1,25 +1,25 @@
 export const company = {
-  dark: false,
+  dark: true,
   darkmode: true,
   shortAdress: true,
   favicon: false,
-  price: false,
+  price: true,
   secondaryColor: false,
   objectCover: '50%',
-  id: 'bbrunoautomotores',
-  name: 'BBRUNO AUTOMOTORES',
-  adress: 'San Martín 5878',
-  city: 'Tristán Suárez',
-  email: 'bbrunoautomotores@gmail.com',
-  instagram: 'bbrunoautomotores',
-  facebook: 'https://www.facebook.com/bbrunoautos/',
-  whatsapp: ['1123150051', '1161900965'],
-  googlemapsLink: 'https://maps.app.goo.gl/fJ8caF7LjyDnjmCw7',
+  id: 'f1-cars',
+  name: 'F1 Cars',
+  adress: 'Lacarra 365',
+  city: 'Canning',
+  email: 'f1cars@gmail.com',
+  instagram: '_f1cars',
+  facebook: null,
+  whatsapp: ['1134431777'],
+  googlemapsLink: 'https://maps.app.goo.gl/LN7KhWdvkcAFN4a58',
   googlemaps:
-    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d757.5704137333689!2d-58.56096056948612!3d-34.88423580200593!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcd9e6c9b246f1%3A0xcce9b6ca40ec9b09!2sBBrunoAutomotores!5e0!3m2!1sen!2sar!4v1757710182303!5m2!1sen!2sar',
+    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3273.676733933083!2d-58.505506822888705!3d-34.864349171311815!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcd6dbd7dc9513%3A0x569e4098ced608fb!2sLacarra%20365%2C%20B1804%20Canning%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1sen!2sar!4v1757927115529!5m2!1sen!2sar',
   openDays: [
-    { title: 'Lunes a Sábado', time: '08:30 a 19:00hs' },
-    { title: 'Domingo', time: 'Cerrado' },
+    { title: 'Lunes a Viernes', time: '09:00 a 17:00hs' },
+    { title: 'Sábado', time: '09:00 a 13:00hs' },
   ],
   footer:
     'Compra y Venta de Autos: Vehículos seleccionados, atención personalizada.',
@@ -29,8 +29,8 @@ export const API_BASE_URL = 'https://dealership.agenciagrvity.com';
 export const TENANT = 'accotto-automotores';
 
 export const metadataCompany = {
-  metadataBase: 'https://millioncars.vercel.app/',
-  title: 'Million Cars - Compra y Venta de Autos',
+  metadataBase: 'https://f1-cars.vercel.app/',
+  title: 'F1 Cars - Compra y Venta de Autos',
   description:
     'Compra y Venta de Autos: Vehículos seleccionados, atención personalizada.',
 };
