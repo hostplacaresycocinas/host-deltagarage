@@ -138,7 +138,7 @@ const Footer = () => {
             {/* Redes sociales */}
             <div className='lg:col-span-1'>
               <h3 className='text-color-title-light text-xl font-bold mb-6 relative'>
-                Síguenos
+                Seguinos
                 <div className='absolute -bottom-2 left-0 w-12 h-0.5 bg-color-primary rounded-full'></div>
               </h3>
               <div className='space-y-4'>
