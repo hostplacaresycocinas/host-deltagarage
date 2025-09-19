@@ -1,20 +1,20 @@
 [
   {
-    "id": "audi-a1-ambition-2011",
-    "name": "Audi A1 Ambition",
-    "marca": "Audi",
-    "marcaId": "audi",
-    "ano": 2011,
-    "kilometraje": 126000,
+    "id": "chevrolet-coupe-chevy-1971",
+    "name": "Chevrolet Coupé Chevy",
+    "marca": "Chevrolet",
+    "marcaId": "chevrolet",
+    "ano": 1971,
+    "kilometraje": 999999,
     "precio": {
-      "valor": 13000,
+      "valor": 28000,
       "moneda": "USD"
     },
-    "categoria": "Hatchback",
-    "transmision": "Automática",
-    "motor": "1.4 Tfsi",
+    "categoria": "Deportivo",
+    "transmision": "Manual",
+    "motor": "V8",
     "combustible": "Nafta",
-    "puertas": 5,
+    "puertas": 2,
     "images": [
       "1-1.webp",
       "1-2.webp",
@@ -24,26 +24,27 @@
       "1-6.webp",
       "1-7.webp",
       "1-8.webp",
-      "1-9.webp"
+      "1-9.webp",
+      "1-10.webp"
     ],
-    "descripcion": "Marca: Audi\nModelo: A1 Ambition\nAño: 2011\n\n⚙️ Motor: 1.4 Tfsi\nTransmisión: Automática\n⛽️ Combustible: Nafta\nKilometraje: 126.000\nPrecio: $13.000usd\n\n📍 Ubicación: Lacarra 365, Canning\n📞 Contacto: 11 34431777\n\nComentario: Audi A1 Ambition 1.4 Tfsi\n◽️ Service al día\n* Contamos con financiación en cuotas fijas\n* Entrega inmediata\n\nEncontranos en Instagram: @_f1cars\n• F1 Cars Seleccionados"
+    "descripcion": "Chevrolet Coupé Chevy | Año 1971 | u$s28.000.\n\nSi! Es año 1971 convertida en Serie 2. Tras un gran trabajo de pintura y mecánica, ésta coupé Chevy luce y tiene un estado realmente impresionante!\n\nMotor 0km y stanadar 100%. Los únicos vidrios no originales son su parabrisas y el ventilete lado conductor. El resto son originales.\n\nUn auto impresionante que merece un dueño especial.\n\nTe espero en BroCar Av. General Frías 3346, Turdera.\nTel.: 11 2715 2344, Guido."
   },
   {
-    "id": "bmw-x6-xdrive-35i-2017",
-    "name": "BMW X6 XDrive 35i",
-    "marca": "BMW",
-    "marcaId": "bmw",
-    "ano": 2017,
-    "kilometraje": 48000,
+    "id": "suzuki-samurai-1999",
+    "name": "Suzuki Samurai",
+    "marca": "Suzuki",
+    "marcaId": "suzuki",
+    "ano": 1999,
+    "kilometraje": 999999,
     "precio": {
-      "valor": 75500,
+      "valor": 16000,
       "moneda": "USD"
     },
-    "categoria": "SUV",
-    "transmision": "Automática",
-    "motor": "3.0",
-    "combustible": "Nafta",
-    "puertas": 5,
+    "categoria": "Utilitario",
+    "transmision": "Manual",
+    "motor": "Diesel Turbo",
+    "combustible": "Diesel",
+    "puertas": 2,
     "images": [
       "2-1.webp",
       "2-2.webp",
@@ -52,26 +53,28 @@
       "2-5.webp",
       "2-6.webp",
       "2-7.webp",
-      "2-8.webp"
+      "2-8.webp",
+      "2-9.webp",
+      "2-10.webp"
     ],
-    "descripcion": "Marca: BMW\nModelo: X6 XDrive 35i. Linea nueva, Tablero Digital\nAño: 2017\n\n⚙️ Motor: 3.0\nTransmisión: Automática\n⛽️ Combustible: Nafta\nKilometraje: 48.000\nPrecio: $75.500usd\n\n📍 Ubicación: Canning\n📞 Contacto: 11 3443 1777\n\nComentario: BMW X6 XDrive 35i\n◾️ Service y mantenimiento al día\n◽️ Tratamiento acrílico en la pintura\n\n• F1 Cars Seleccionados"
+    "descripcion": "Suzuki Samurai | Año 1999 | u$s16.000.\n\nEn venta éste increíble 4x4 en excelente estado. Toda la mecánica repasada a nuevo, sus service completos y listo para la aventura!\n\nMotor diesel turbo, tracción 4x4 con alta y baja.\n\nUn vehículo que se mete por todos lados! Un verdadero todo terreno japonés y de líneas clásicas.\n\nLa mejor inversión que podés hacer para tener un vehículo en la costa o dónde precises un todo terreno. Indestructible!\n\nTe esperamos en BroCar Av. General Frías 3346, Turdera.\nTel.: 11 2715 2344, Guido."
   },
   {
-    "id": "ford-f-150-raptor-2023",
-    "name": "Ford F-150 Raptor",
-    "marca": "Ford",
-    "marcaId": "ford",
-    "ano": 2023,
-    "kilometraje": 50000,
+    "id": "dodge-dart-1969",
+    "name": "Dodge Dart",
+    "marca": "Dodge",
+    "marcaId": "dodge",
+    "ano": 1969,
+    "kilometraje": 999999,
     "precio": {
-      "valor": 110000,
+      "valor": 50000,
       "moneda": "USD"
     },
-    "categoria": "Pickup",
-    "transmision": "Automática",
-    "motor": "3.5l Bi-turbo",
+    "categoria": "Deportivo",
+    "transmision": "Manual",
+    "motor": "V8 440cc",
     "combustible": "Nafta",
-    "puertas": 4,
+    "puertas": 2,
     "images": [
       "3-1.webp",
       "3-2.webp",
@@ -84,24 +87,24 @@
       "3-9.webp",
       "3-10.webp"
     ],
-    "descripcion": "Marca: Ford\nModelo: F-150 Raptor\nAño: 2023\n\n⚙️ Motor: 3.5l Bi-turbo\nTransmisión: Automática\n⛽️ Combustible: Nafta\nKilometraje: 50.000\nPrecio: $110.000usd\n\n📍 Ubicación: Lacarra 365, Canning\n📞 Contacto: 11 34431777\n\nComentario: Ford F-150 Raptor 3.5l Bi-turbo\n◽️ 4 cubiertas nuevas\n◾️ Tratamiento acrílico en la pintura\n◽️ Service oficiales\n* Contamos con financiación en cuotas fijas\n* Entrega inmediata\n\nEncontranos en Instagram: @_f1cars\n• F1 Cars Seleccionados"
+    "descripcion": "Dodge Dart | Año 1969 | u$s50.000.\n\nEn venta y permuta éste impresionante Dart!\n\nMotor V8 440cc, Sniper 2, caja de 4ta manual.\n\nUn verdadero Muscle Car americano.\n\nTe esperamos en BroCar!\nAv. General Frías 3346, Turdera.\nTel.: 11 2715 2344, Guido."
   },
   {
-    "id": "audi-a7-sportback-v6-2017",
-    "name": "Audi A7 Sportback V6 3.0 TFSI Quattro",
-    "marca": "Audi",
-    "marcaId": "audi",
+    "id": "chevrolet-onix-joy-plus-2017",
+    "name": "Chevrolet Onix Joy Plus",
+    "marca": "Chevrolet",
+    "marcaId": "chevrolet",
     "ano": 2017,
-    "kilometraje": 64000,
+    "kilometraje": 40000,
     "precio": {
-      "valor": 46500,
+      "valor": 13500,
       "moneda": "USD"
     },
-    "categoria": "Sedan",
-    "transmision": "Automática",
-    "motor": "3.0 T",
+    "categoria": "Hatchback",
+    "transmision": "Manual",
+    "motor": "1.0",
     "combustible": "Nafta",
-    "puertas": 4,
+    "puertas": 5,
     "images": [
       "4-1.webp",
       "4-2.webp",
@@ -114,23 +117,23 @@
       "4-9.webp",
       "4-10.webp"
     ],
-    "descripcion": "Marca: Audi\nModelo: A7 Sportback V6 3.0 TFSI Quattro\nAño: 2017\n\n⚙️ Motor: 3.0 T\nTransmisión: Automática\n⛽️ Combustible: Nafta\nKilometraje: 64.000\nPrecio: $46500usd\n\n📍 Ubicación: Canning\n📞 Contacto: 11 3443-1777\n\nComentario: A7 Sportback V6 3.0 TFSI Quattro\n◽️ Service al día\n◾️ Tratamiento acrílico en la pintura\n\n• F1 Cars Seleccionados"
+    "descripcion": "⭕ VENDIDO ⭕\n\nChevrolet Onix Joy Plus | Año 2017 | 40.000kms | u$s13.500.\n\nEn venta, permuta y financiación éste impecable Onix con apenas 40.000kms!\n\nAbsolutamente impecable de todos lados!\n\nAire, dirección, cierre con alarma y levanta vidrios delanteros.\n\nTe esperamos en BroCar!\nAv. General Frías 3346, Turdera.\n11 2715 2344, Guido.\n11 3128 6235, Federico."
   },
   {
-    "id": "toyota-corolla-seg-hev-2021",
-    "name": "Toyota Corolla SEG HEV",
+    "id": "toyota-hilux-dx-4x4-2013",
+    "name": "Toyota Hilux DX 4x4",
     "marca": "Toyota",
     "marcaId": "toyota",
-    "ano": 2021,
-    "kilometraje": 44000,
+    "ano": 2013,
+    "kilometraje": 180000,
     "precio": {
-      "valor": 24500,
+      "valor": 22500,
       "moneda": "USD"
     },
-    "categoria": "Sedan",
-    "transmision": "Automática Cvt",
-    "motor": "1.8",
-    "combustible": "Nafta",
+    "categoria": "Pickup",
+    "transmision": "Manual",
+    "motor": "2.5TD",
+    "combustible": "Diesel",
     "puertas": 4,
     "images": [
       "5-1.webp",
@@ -142,28 +145,26 @@
       "5-7.webp",
       "5-8.webp",
       "5-9.webp",
-      "5-10.webp",
-      "5-11.webp",
-      "5-12.webp"
+      "5-10.webp"
     ],
-    "descripcion": "- VENDIDO -\n🏷️ Marca: Toyota\nModelo: Corolla SEG HEV\nAño: 2021\n\n⚙️ Motor: 1.8\nTransmisión: Automática Cvt\n⛽️ Combustible: Nafta\nKilometraje: 44.000\nPrecio: $24.500usd\n\n📍 Ubicación: Canning\n📞 Contacto: 11 3443 1777\n\nComentario: Toyota Corolla SEG HEV\n◾️ Services Oficiales\n◽️ ÚNICO DUEÑO\n◾️ Garantía oficial\n◽️ Tratamiento cerámico CarPro\n\n• F1 Cars Seleccionados"
+    "descripcion": "Toyota Hilux DX 4x4 | Año 2013 | 180.000kms | u$s22.500.\n\nEn venta y permuta ésta impecable Hilux, versión DX 2.5TD 4x4.\n\nCubiertas impecables! El andar es perfecto, sin el más mínimo ruido!\n\nFunciona excelente y se vé excelente!\n\nTe esperamos en BroCar!\nAv. General Frías 3346, Temperley.\nTel: 11 3128 6235, Federico."
   },
   {
-    "id": "volkswagen-taos-confortline-250-tsi-2023",
-    "name": "Volkswagen Taos Confortline 250 Tsi",
-    "marca": "Volkswagen",
-    "marcaId": "volkswagen",
-    "ano": 2023,
-    "kilometraje": 43000,
+    "id": "ford-ranchero-1974",
+    "name": "Ford Ranchero",
+    "marca": "Ford",
+    "marcaId": "ford",
+    "ano": 1974,
+    "kilometraje": 999999,
     "precio": {
-      "valor": 27500,
+      "valor": 15000,
       "moneda": "USD"
     },
-    "categoria": "SUV",
-    "transmision": "Automatica",
-    "motor": "1.4 tsi",
+    "categoria": "Pickup",
+    "transmision": "Manual",
+    "motor": "221",
     "combustible": "Nafta",
-    "puertas": 5,
+    "puertas": 2,
     "images": [
       "6-1.webp",
       "6-2.webp",
@@ -176,6 +177,186 @@
       "6-9.webp",
       "6-10.webp"
     ],
-    "descripcion": "- EN VENTA -\n🏷️ Marca: Volkswagen\nModelo: Taos Confortline 250 Tsi\nAño: 2023\n\n⚙️ Motor: 1.4 tsi\nTransmisión: Automatica\n⛽️ Combustible: Nafta\nKilometraje: 43.000\nPrecio: $27.500usd\n\n📍 Ubicación: Canning\n📞 Contacto: 11 3443 1777\n\nComentario: Volkswagen Taos 250 Tsi\n◽️ ÚNICO DUEÑO\n◾️ Cubiertas nuevas\n◽️ Service oficiales\n◾️ Service recién hecho\n\n• F1 Cars Seleccionados"
+    "descripcion": "Ford Ranchero | Año 1974 | u$s15.000.\n\nEn venta y permuta ésta impresionante e impecable Ford Ranchero.\n\nMotor 221 con caja de 4ta al piso y aire acondicionado.\n\nCasco inobjetable, llantas ñandú, interior original y muy sano!\n\nTe esperamos en BroCar!\nAv. General Frías 3346, Turdera.\nTel.: 11 2715 2344, Guido."
+  },
+  {
+    "id": "chrysler-town-country-2010",
+    "name": "Chrysler Town & Country",
+    "marca": "Chrysler",
+    "marcaId": "chrysler",
+    "ano": 2010,
+    "kilometraje": 156000,
+    "precio": {
+      "valor": 19500,
+      "moneda": "USD"
+    },
+    "categoria": "Minivan",
+    "transmision": "Automática",
+    "motor": "3.6",
+    "combustible": "Nafta",
+    "puertas": 5,
+    "images": [
+      "7-1.webp",
+      "7-2.webp",
+      "7-3.webp",
+      "7-4.webp",
+      "7-5.webp",
+      "7-6.webp",
+      "7-7.webp",
+      "7-8.webp",
+      "7-9.webp",
+      "7-10.webp"
+    ],
+    "descripcion": "Chrysler Town & Country | Año 2010 | 156.000 | u$s19.500.\n\nEn venta, permuta y financiación! Excelente Chrysler.\n\nFunciona todo! Super espaciosa, super cómoda e ideal para la familia y viaje de amigos!\n\nConsumo a 120kms/h 11.5 litros. Una belleza!\n\nTe esperamos en BroCar Av. General Frías 3346, Turdera.\nTel: 11 2715 2344, Guido.\n11 3128 6235, Federico."
+  },
+  {
+    "id": "ford-focus-trend-2009",
+    "name": "Ford Focus Trend",
+    "marca": "Ford",
+    "marcaId": "ford",
+    "ano": 2009,
+    "kilometraje": 165000,
+    "precio": {
+      "valor": 9500,
+      "moneda": "USD"
+    },
+    "categoria": "Hatchback",
+    "transmision": "Manual",
+    "motor": "2.0",
+    "combustible": "Nafta",
+    "puertas": 5,
+    "images": [
+      "8-1.webp",
+      "8-2.webp",
+      "8-3.webp",
+      "8-4.webp",
+      "8-5.webp",
+      "8-6.webp",
+      "8-7.webp",
+      "8-8.webp",
+      "8-9.webp",
+      "8-10.webp"
+    ],
+    "descripcion": "Ford Focus Trend | Año 2009 | 165.000kms | u$s9.500.\n\nEn venta, permuta y financiación éste hermoso Ford Focus.\n\nExcelente mecánica y estado general. Motor 2.0 de 145 caballos y un andar espectacular.\n\nUn auto que comparte plataforma con los Volvo de esos años.\n\nVehículo muy confortable y seguro!\n\nTe esperamos en BroCar!\nAv. General Frías 3346, Turdera.\nTel.: 11 2715 2344."
+  },
+  {
+    "id": "ford-customline-1955",
+    "name": "Ford Customline",
+    "marca": "Ford",
+    "marcaId": "ford",
+    "ano": 1955,
+    "kilometraje": 999999,
+    "precio": {
+      "valor": 19000,
+      "moneda": "USD"
+    },
+    "categoria": "Deportivo",
+    "transmision": "Manual",
+    "motor": "V8 272",
+    "combustible": "Nafta",
+    "puertas": 2,
+    "images": [
+      "9-1.webp",
+      "9-2.webp",
+      "9-3.webp",
+      "9-4.webp",
+      "9-5.webp",
+      "9-6.webp",
+      "9-7.webp",
+      "9-8.webp",
+      "9-9.webp",
+      "9-10.webp"
+    ],
+    "descripcion": "⭕ VENDIDO ⭕\n\nFord Customline | Año 1955 | u$s19.000.\n\nSi, se vende este impresionante clásico del 55. Se trata de un Ford Customline muy especial.\n\nTiene su motor V8 272, tres carburadores, caja de 5ta y freno a disco en las cuatro ruedas.\n\nLo que se buscó y se encontró con éste proyecto finalizado, era hacer un clásico coupé y V8 con prestaciones y manejo más deportivo y seguro.\n\nGracias a su caja de 5ta moderna, el accionamiento es preciso y placentero. Sus frenos a disco en las cuatro ruedas dan una gran seguridad a la hora de parar este bólido a velocidades altas.\n\nSu interior está totalmente original, con su desgaste propio pero estéticamente hermoso.\n\nSi tenemos en cuenta su precio de u$s19.000 por un clásico coupé y sus excelentes mejoras sobre un auto en un estado sobresaliente, se convierte en la pieza ideal para quien se inicie en este mundo hermoso de los clásicos.\n\nPero! Si en tu cochera ya gozas de tener algún fierro así, éste color y sus lineas preciosas, van a sumar muchísimo a tu colección. Es una excelente inversión y una muy divertida.\n\nTe espero en BroCar! Av. General Frías 3346, Turdera.\nTel.: 11 2715 2344, Guido."
+  },
+  {
+    "id": "volkswagen-gol-power-2007",
+    "name": "Volkswagen Gol Power",
+    "marca": "Volkswagen",
+    "marcaId": "volkswagen",
+    "ano": 2007,
+    "kilometraje": 187000,
+    "precio": {
+      "valor": 8000000,
+      "moneda": "ARS"
+    },
+    "categoria": "Hatchback",
+    "transmision": "Manual",
+    "motor": "1.6",
+    "combustible": "Nafta/GNC",
+    "puertas": 5,
+    "images": [
+      "10-1.webp",
+      "10-2.webp",
+      "10-3.webp",
+      "10-4.webp",
+      "10-5.webp",
+      "10-6.webp",
+      "10-7.webp",
+      "10-8.webp",
+      "10-9.webp",
+      "10-10.webp"
+    ],
+    "descripcion": "Volkswagen Gol Power | Año 2007 | $8.000.000.\n\nEn venta, permuta y financiación éste Gol Power, 5 puertas, del año 2007.\n\nAndando perfecto a nafta y GNC, 187.000kms.\n\nAire acondicionado y dirección.\n\nIdeal primer auto o para trabajar.\n\nTe esperamos en BroCar!\nAv. General Frías 3346, Turdera.\nTel.: 11 2715 2344, Guido."
+  },
+  {
+    "id": "chevrolet-agile-ls-2015",
+    "name": "Chevrolet Agile LS",
+    "marca": "Chevrolet",
+    "marcaId": "chevrolet",
+    "ano": 2015,
+    "kilometraje": 108000,
+    "precio": {
+      "valor": 9700,
+      "moneda": "USD"
+    },
+    "categoria": "Hatchback",
+    "transmision": "Manual",
+    "motor": "1.4",
+    "combustible": "Nafta",
+    "puertas": 5,
+    "images": [
+      "11-1.webp",
+      "11-2.webp",
+      "11-3.webp",
+      "11-4.webp",
+      "11-5.webp",
+      "11-6.webp",
+      "11-7.webp",
+      "11-8.webp",
+      "11-9.webp",
+      "11-10.webp"
+    ],
+    "descripcion": "Chevrolet Agile LS | Año 2015 | 108.000kms | u$s9.700.\n\nEn venta, permuta y financiación éste impecable Chevrolet Agile LS con 108.000kms.\n\nInterior, exterior, mecánico, todo impecable!\n\nTe esperamos en BroCar Av. General Frías 3346, Turdera\nTel.: 11 2715 2344, Guido"
+  },
+  {
+    "id": "volkswagen-suran-comfortline-2017",
+    "name": "Volkswagen Suran Comfortline",
+    "marca": "Volkswagen",
+    "marcaId": "volkswagen",
+    "ano": 2017,
+    "kilometraje": 79000,
+    "precio": {
+      "valor": 13500,
+      "moneda": "USD"
+    },
+    "categoria": "Hatchback",
+    "transmision": "Manual",
+    "motor": "1.6",
+    "combustible": "Nafta",
+    "puertas": 5,
+    "images": [
+      "12-1.webp",
+      "12-2.webp",
+      "12-3.webp",
+      "12-4.webp",
+      "12-5.webp",
+      "12-6.webp",
+      "12-7.webp",
+      "12-8.webp",
+      "12-9.webp",
+      "12-10.webp"
+    ],
+    "descripcion": "Volkswagen Suran Comfortline | Año 2017 | 79.000kms | u$s13.500.\n\nEn venta, permuta y financiación ésta impecable Suran del año 2017 con solamente 79.000kms.\n\nCubiertas impecables, funcionamiento impecable, interior impecable, mecánica impecable.\n\nVehículo muy pero muy sano en todos sus detalles.\n\nVení manejarla y revisarla con tu mecánico de confianza.\n\nBroCar.\nAv. General Frías 3346, Turdera.\nTel.: 11 2715 2344, Guido"
   }
 ]

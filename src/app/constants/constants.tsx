@@ -1,24 +1,24 @@
 export const company = {
-  dark: true,
+  dark: false,
   darkmode: true,
   shortAdress: true,
-  favicon: false,
+  favicon: true,
   price: true,
   secondaryColor: false,
   objectCover: '50%',
-  id: 'f1-cars',
-  name: 'F1 Cars',
-  adress: 'Lacarra 365',
-  city: 'Canning',
-  email: 'f1cars@gmail.com',
-  instagram: '_f1cars',
-  facebook: null,
-  whatsapp: ['1134431777'],
-  googlemapsLink: 'https://maps.app.goo.gl/LN7KhWdvkcAFN4a58',
+  id: 'brocar',
+  name: 'Brocar',
+  adress: 'Gral. Frías 3346',
+  city: 'Turdera',
+  email: 'concesonaria.brocar@gmail.com',
+  instagram: 'brocar_arg',
+  facebook: 'https://www.facebook.com/profile.php?id=61576964776723#',
+  whatsapp: ['1127152344', '1131286235'],
+  googlemapsLink: 'https://maps.app.goo.gl/qBoHz5wfx9qcRgU18',
   googlemaps:
-    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3273.676733933083!2d-58.505506822888705!3d-34.864349171311815!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcd6dbd7dc9513%3A0x569e4098ced608fb!2sLacarra%20365%2C%20B1804%20Canning%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1sen!2sar!4v1757927115529!5m2!1sen!2sar',
+    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d37068.09678613908!2d-58.415001679948936!3d-34.796183516499745!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcd3000acaf3f7%3A0xaeeea27597c5d8db!2sBroCar!5e0!3m2!1ses!2sar!4v1758287985023!5m2!1ses!2sar',
   openDays: [
-    { title: 'Lunes a Viernes', time: '09:00 a 17:00hs' },
+    { title: 'Lunes a Viernes', time: '09:00 a 18:00hs' },
     { title: 'Sábado', time: '09:00 a 13:00hs' },
   ],
   footer:
@@ -29,8 +29,8 @@ export const API_BASE_URL = 'https://dealership.agenciagrvity.com';
 export const TENANT = 'accotto-automotores';
 
 export const metadataCompany = {
-  metadataBase: 'https://f1-cars.vercel.app/',
-  title: 'F1 Cars - Compra y Venta de Autos',
+  metadataBase: 'https://brocar.vercel.app/',
+  title: 'Brocar - Compra y Venta de Autos',
   description:
     'Compra y Venta de Autos: Vehículos seleccionados, atención personalizada.',
 };
