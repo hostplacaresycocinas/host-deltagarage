@@ -218,7 +218,7 @@ const SortableAutoCard = ({
                 </h3>
                 <p className='text-gray-600 lg:text-lg'>{auto.año}</p>
                 {auto.precio && auto.precio > 0 ? (
-                  <p className='text-xl lg:text-2xl font-bold text-color-primary mt-1'>
+                  <p className='text-xl lg:text-2xl font-bold text-color-primary-admin mt-1'>
                     {auto.currency === 'ARS' ? '$' : 'US$'}
                     {auto.precio.toLocaleString(
                       auto.currency === 'ARS' ? 'es-AR' : 'en-US'
@@ -305,7 +305,7 @@ const SortableAutoCard = ({
                   }}
                   className='p-2 hover:bg-gray-100 rounded-full transition-colors'
                 >
-                  <Edit size={20} className='text-color-primary' />
+                  <Edit size={20} className='text-color-primary-admin' />
                 </button>
                 <button
                   onClick={(e) => {
@@ -1602,7 +1602,7 @@ export default function DashboardPage() {
   if (loading && autos.length === 0) {
     return (
       <div className='flex items-center justify-center min-h-screen'>
-        <div className='animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-color-primary'></div>
+        <div className='animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-color-primary-admin'></div>
       </div>
     );
   }
@@ -1717,7 +1717,7 @@ export default function DashboardPage() {
           {buscando && (
             <button
               onClick={limpiarBusqueda}
-              className='mt-3 text-color-primary hover:underline'
+              className='mt-3 text-color-primary-admin hover:underline'
             >
               Limpiar búsqueda
             </button>
@@ -1778,7 +1778,7 @@ export default function DashboardPage() {
                               {auto.año}
                             </p>
                             {auto.precio && auto.precio > 0 ? (
-                              <p className='text-xl lg:text-2xl font-bold text-color-primary mt-1'>
+                              <p className='text-xl lg:text-2xl font-bold text-color-primary-admin mt-1'>
                                 {auto.currency === 'ARS' ? '$' : 'US$'}
                                 {auto.precio.toLocaleString(
                                   auto.currency === 'ARS' ? 'es-AR' : 'en-US'
@@ -1874,7 +1874,10 @@ export default function DashboardPage() {
                               }}
                               className='p-2 hover:bg-gray-100 rounded-full transition-colors'
                             >
-                              <Edit size={20} className='text-color-primary' />
+                              <Edit
+                                size={20}
+                                className='text-color-primary-admin'
+                              />
                             </button>
                             <button
                               onClick={(e) => {
@@ -1910,7 +1913,7 @@ export default function DashboardPage() {
               )}
               {loadingMore && (
                 <div className='py-6 flex justify-center items-center'>
-                  <div className='animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-color-primary'></div>
+                  <div className='animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-color-primary-admin'></div>
                   <span className='ml-3 text-gray-600'>
                     Cargando más vehículos...
                   </span>
@@ -1959,7 +1962,7 @@ export default function DashboardPage() {
                     )}
                   {loadingMore && (
                     <div className='py-6 flex justify-center items-center'>
-                      <div className='animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-color-primary'></div>
+                      <div className='animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-color-primary-admin'></div>
                       <span className='ml-3 text-gray-600'>
                         Cargando más vehículos...
                       </span>

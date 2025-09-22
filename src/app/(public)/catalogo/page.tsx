@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useSearchParams, useRouter } from 'next/navigation';
 import { Suspense, useEffect, useState } from 'react';
-import { company } from '@/app/constants/constants';
+import { company, API_BASE_URL, TENANT } from '@/app/constants/constants';
 import ArrowIcon from '@/components/icons/ArrowIcon';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
@@ -18,7 +18,6 @@ import {
 import CloseIcon from '@/components/icons/CloseIcon';
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
-import catalogo from '@/data/catalogo.json';
 
 interface ApiCar {
   id: string;
@@ -26,10 +25,8 @@ interface ApiCar {
   model: string;
   year: number;
   color: string;
-  price: {
-    valor: number;
-    moneda: string;
-  };
+  price: string;
+  currency: 'USD' | 'ARS';
   description: string;
   categoryId: string;
   mileage: number;
@@ -48,11 +45,18 @@ interface ApiCar {
     createdAt: string;
     updatedAt: string;
   };
-  Images: {
+  images: {
     thumbnailUrl: string;
     imageUrl: string;
     order: number;
   }[];
+}
+
+interface ApiResponse {
+  total: number;
+  totalPages: number;
+  currentPage: number;
+  cars: ApiCar[];
 }
 
 interface Category {
@@ -82,113 +86,63 @@ const CatalogoPage = () => {
   const [categorias, setCategorias] = useState<Category[]>([]);
 
   // Función para obtener todas las marcas disponibles
-  const fetchMarcas = () => {
+  const fetchMarcas = async () => {
     try {
-      // Obtener marcas únicas del catálogo
-      const marcas = Array.from(
-        new Set(catalogo.map((car) => car.marca))
-      ).sort();
-      setTodasLasMarcas(marcas);
+      const response = await fetch(
+        `${API_BASE_URL}/api/cars/brands?tenant=${TENANT}`
+      );
+      if (!response.ok) {
+        throw new Error('Error al cargar las marcas');
+      }
+      const data: string[] = await response.json();
+      setTodasLasMarcas(data.sort());
     } catch (error) {
       console.error('Error al cargar las marcas:', error);
     }
   };
 
-  // Función para obtener las categorías del catálogo
-  const fetchCategories = () => {
+  // Función para obtener las categorías del API
+  const fetchCategories = async () => {
     try {
-      // Obtener categorías únicas del catálogo
-      const categoriasUnicas = Array.from(
-        new Set(catalogo.map((car) => car.categoria))
+      const response = await fetch(
+        `${API_BASE_URL}/api/categories?tenant=${TENANT}`
       );
-      const categoriasProcesadas = categoriasUnicas.map((cat) => ({
-        id: cat.toLowerCase(),
-        name: cat,
-        createdAt: new Date().toISOString(),
-        updatedAt: new Date().toISOString(),
-      }));
-      setCategorias(categoriasProcesadas);
+      if (!response.ok) {
+        throw new Error('Error al cargar las categorías');
+      }
+      const data: Category[] = await response.json();
+      setCategorias(data);
     } catch (error) {
       console.error('Error al cargar las categorías:', error);
     }
   };
 
   // Función para obtener los autos con filtros
-  const fetchCars = (
+  const fetchCars = async (
     page: number,
     filters?: { search?: string; marca?: string; categoria?: string }
   ) => {
     setLoading(true);
     try {
-      let filteredCars = [...catalogo];
+      let url = `${API_BASE_URL}/api/cars?page=${page}&limit=${ITEMS_PER_PAGE}&sort=position:desc&tenant=${TENANT}`;
 
-      // Aplicar filtros
       if (filters?.search) {
-        const searchTerm = filters.search.toLowerCase();
-        filteredCars = filteredCars.filter(
-          (car) =>
-            car.name.toLowerCase().includes(searchTerm) ||
-            car.marca.toLowerCase().includes(searchTerm)
-        );
+        url += `&model=${encodeURIComponent(filters.search)}`;
       }
       if (filters?.marca) {
-        filteredCars = filteredCars.filter(
-          (car) => car.marca.toLowerCase() === filters.marca?.toLowerCase()
-        );
+        url += `&brand=${encodeURIComponent(filters.marca)}`;
       }
       if (filters?.categoria) {
-        filteredCars = filteredCars.filter(
-          (car) =>
-            car.categoria.toLowerCase() === filters.categoria?.toLowerCase()
-        );
+        url += `&category=${encodeURIComponent(filters.categoria)}`;
       }
 
-      // Calcular paginación
-      const total = filteredCars.length;
-      const totalPages = Math.ceil(total / ITEMS_PER_PAGE);
-      const start = (page - 1) * ITEMS_PER_PAGE;
-      const end = start + ITEMS_PER_PAGE;
-
-      // Obtener autos de la página actual
-      const paginatedCars: ApiCar[] = filteredCars
-        .slice(start, end)
-        .map((car) => ({
-          id: car.id,
-          brand: car.marca,
-          model: car.name,
-          year: car.ano,
-          color: '',
-          price: {
-            valor: car.precio.valor,
-            moneda: car.precio.moneda,
-          },
-          description: car.descripcion,
-          categoryId: car.categoria,
-          mileage: car.kilometraje,
-          transmission: car.transmision,
-          fuel: car.combustible,
-          doors: car.puertas,
-          position: 0,
-          featured: false,
-          favorite: false,
-          active: true,
-          createdAt: new Date().toISOString(),
-          updatedAt: new Date().toISOString(),
-          Category: {
-            id: car.categoria.toLowerCase(),
-            name: car.categoria,
-            createdAt: new Date().toISOString(),
-            updatedAt: new Date().toISOString(),
-          },
-          Images: car.images.map((img, index) => ({
-            thumbnailUrl: `/assets/catalogo/${img}`,
-            imageUrl: `/assets/catalogo/${img}`,
-            order: index,
-          })),
-        }));
-
-      setCars(paginatedCars);
-      setTotalPages(totalPages);
+      const response = await fetch(url);
+      if (!response.ok) {
+        throw new Error('Error al cargar los vehículos');
+      }
+      const data: ApiResponse = await response.json();
+      setCars(data.cars);
+      setTotalPages(data.totalPages);
     } catch (error) {
       console.error('Error al cargar los vehículos:', error);
     } finally {
@@ -400,7 +354,8 @@ const CatalogoPage = () => {
                           value={categoria.name}
                           className='hover:text-color-primary hover:bg-neutral-700'
                         >
-                          {categoria.name}
+                          {categoria.name.charAt(0).toUpperCase() +
+                            categoria.name.slice(1)}
                         </SelectItem>
                       ))}
                     </SelectContent>
@@ -513,7 +468,8 @@ const CatalogoPage = () => {
                                   : 'hover:text-color-primary'
                               } hover:bg-neutral-700`}
                             >
-                              {categoria.name}
+                              {categoria.name.charAt(0).toUpperCase() +
+                                categoria.name.slice(1)}
                             </SelectItem>
                           ))}
                         </SelectContent>
@@ -637,12 +593,13 @@ const CatalogoPage = () => {
                                   objectPosition: `center ${company.objectCover}`,
                                 }}
                                 src={
-                                  car.Images.sort(
-                                    (a, b) => a.order - b.order
-                                  )[0]?.thumbnailUrl ||
-                                  '/assets/placeholder.webp'
+                                  car.images &&
+                                  car.images.length > 0 &&
+                                  car.images[0]?.thumbnailUrl
+                                    ? car.images[0].thumbnailUrl
+                                    : '/assets/placeholder.webp'
                                 }
-                                alt={`${car.model}`}
+                                alt={`${car.model || 'Vehículo'}`}
                               />
                             </motion.div>
 
@@ -694,7 +651,7 @@ const CatalogoPage = () => {
                                     : 'group-hover:text-color-primary'
                                 } text-color-title-light text-lg md:text-xl font-medium tracking-tight truncate md:mb-1 transition-colors duration-300`}
                               >
-                                {car.model}
+                                {car.model || 'Sin título'}
                               </h3>
 
                               <div
@@ -702,13 +659,23 @@ const CatalogoPage = () => {
                                   company.price ? '' : 'hidden'
                                 } text-color-primary text-lg md:text-xl font-semibold tracking-tight truncate md:mb-1 transition-colors duration-300`}
                               >
-                                {car.price.moneda === 'ARS' ? '$' : 'US$'}
-                                {car.price.valor.toLocaleString('es-ES')}
+                                {car.price && parseFloat(car.price) > 0 ? (
+                                  <>
+                                    {car.currency === 'ARS' ? '$' : 'US$'}
+                                    {parseFloat(car.price).toLocaleString(
+                                      'es-ES'
+                                    )}
+                                  </>
+                                ) : (
+                                  'Consultar precio'
+                                )}
                               </div>
 
                               {/* Diseño minimalista con separadores tipo | */}
                               <div className='flex flex-wrap items-center text-color-text-light font-medium'>
-                                <span className=''>{car.brand}</span>
+                                <span className=''>
+                                  {car.brand || 'Sin marca'}
+                                </span>
                                 <span
                                   className={`${
                                     company.dark
@@ -718,7 +685,7 @@ const CatalogoPage = () => {
                                 >
                                   |
                                 </span>
-                                <span>{car.year}</span>
+                                <span>{car.year || 'Sin año'}</span>
                               </div>
 
                               {/* Precio o etiqueta destacada */}
@@ -731,13 +698,17 @@ const CatalogoPage = () => {
                                     </span>{' '}
                                     {car.mileage.toLocaleString('es-ES')} km
                                   </span>
-                                ) : (
+                                ) : car.mileage && car.mileage > 0 ? (
                                   <span className='text-base text-color-text-light font-medium uppercase tracking-wider'>
                                     Usado{' '}
                                     <span className='text-color-primary'>
                                       •
                                     </span>{' '}
                                     {car.mileage.toLocaleString('es-ES')} km
+                                  </span>
+                                ) : (
+                                  <span className='text-base text-color-text-light font-medium uppercase tracking-wider'>
+                                    {car.mileage === 0 ? 'Nuevo' : 'Usado'}
                                   </span>
                                 )}
                               </div>

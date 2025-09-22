@@ -5,51 +5,40 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { company } from '@/app/constants/constants';
-import catalogoData from '@/data/catalogo.json';
+import { company, API_BASE_URL, TENANT } from '@/app/constants/constants';
 import AutoScroll from 'embla-carousel-auto-scroll';
 
-interface Imagen {
-  id: string;
-  carId: string;
-  imageUrl: string;
-  thumbnailUrl: string;
-  order: number;
-  createdAt: string;
-  updatedAt: string;
-}
-
-interface Categoria {
-  id: string;
-  name: string;
-  createdAt: string;
-  updatedAt: string;
-}
-
-interface Auto {
+interface ApiCar {
   id: string;
   brand: string;
   model: string;
   year: number;
   color: string;
-  price: {
-    valor: number;
-    moneda: string;
-  };
+  price: string;
+  currency: 'USD' | 'ARS';
   description: string;
-  position: number;
-  featured: boolean;
-  favorite: boolean;
-  active: boolean;
   categoryId: string;
   mileage: number;
   transmission: string;
   fuel: string;
   doors: number;
+  position: number;
+  featured: boolean;
+  favorite: boolean;
+  active: boolean;
   createdAt: string;
   updatedAt: string;
-  Images: Imagen[];
-  Category: Categoria;
+  Category: {
+    id: string;
+    name: string;
+    createdAt: string;
+    updatedAt: string;
+  };
+  images: {
+    thumbnailUrl: string;
+    imageUrl: string;
+    order: number;
+  }[];
 }
 
 interface CarsHomeProps {
@@ -66,70 +55,31 @@ const CarsHome = ({ title }: CarsHomeProps) => {
     }),
   ]);
   const [clicked, setClicked] = useState(false);
-  const [vehiculos, setVehiculos] = useState<Auto[]>([]);
+  const [vehiculos, setVehiculos] = useState<ApiCar[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const loadVehiculos = () => {
+    const fetchVehiculos = async () => {
       setLoading(true);
       try {
-        // Filtrar vehículos que tienen imágenes
-        const vehiculosConImagenes = catalogoData.filter(
-          (auto) => auto.images && auto.images.length > 0
+        const response = await fetch(
+          `${API_BASE_URL}/api/cars?tenant=${TENANT}&limit=6&sort=position:desc`
         );
-
-        const vehiculosProcesados = vehiculosConImagenes
-          .slice(0, 6) // Máximo 6 vehículos
-          .map((auto) => ({
-            id: auto.id,
-            brand: auto.marca,
-            model: auto.name,
-            year: auto.ano,
-            color: 'No especificado', // No hay color en catalogo.json
-            price: {
-              valor: auto.precio.valor,
-              moneda: auto.precio.moneda,
-            },
-            description: auto.descripcion,
-            position: 0, // No hay position en catalogo.json
-            featured: false, // No hay featured en catalogo.json
-            favorite: false, // No hay favorite en catalogo.json
-            active: true, // Asumimos que todos están activos
-            categoryId: auto.categoria,
-            mileage: auto.kilometraje,
-            transmission: auto.transmision,
-            fuel: auto.combustible,
-            doors: auto.puertas,
-            createdAt: new Date().toISOString(),
-            updatedAt: new Date().toISOString(),
-            Images: auto.images.map((img, index) => ({
-              id: `${auto.id}-img-${index}`,
-              carId: auto.id,
-              imageUrl: `/assets/catalogo/${img}`,
-              thumbnailUrl: `/assets/catalogo/${img}`,
-              order: index,
-              createdAt: new Date().toISOString(),
-              updatedAt: new Date().toISOString(),
-            })),
-            Category: {
-              id: auto.categoria.toLowerCase().replace(/\s+/g, '-'),
-              name: auto.categoria,
-              createdAt: new Date().toISOString(),
-              updatedAt: new Date().toISOString(),
-            },
-          }));
-
-        setVehiculos(vehiculosProcesados);
+        if (!response.ok) {
+          throw new Error('Error al cargar los vehículos');
+        }
+        const data = await response.json();
+        setVehiculos(data.cars || []);
       } catch (err) {
-        console.error('Error al cargar vehículos:', err);
+        console.error('Error al obtener vehículos:', err);
         setError('No se pudieron cargar los vehículos');
       } finally {
         setLoading(false);
       }
     };
 
-    loadVehiculos();
+    fetchVehiculos();
   }, []);
 
   if (loading) {
@@ -261,8 +211,11 @@ const CarsHome = ({ title }: CarsHomeProps) => {
                           objectPosition: `center ${company.objectCover}`,
                         }}
                         src={
-                          auto.Images.sort((a, b) => a.order - b.order)[0]
-                            ?.thumbnailUrl || '/assets/placeholder.webp'
+                          auto.images &&
+                          auto.images.length > 0 &&
+                          auto.images[0]?.thumbnailUrl
+                            ? auto.images[0].thumbnailUrl
+                            : '/assets/placeholder.webp'
                         }
                         alt={`${auto.model}`}
                       />
@@ -324,8 +277,14 @@ const CarsHome = ({ title }: CarsHomeProps) => {
                           company.price ? '' : 'hidden'
                         } text-color-primary text-lg md:text-xl font-semibold tracking-tight truncate md:mb-1 transition-colors duration-300`}
                       >
-                        {auto.price.moneda === 'ARS' ? '$' : 'US$'}
-                        {auto.price.valor.toLocaleString('es-ES')}
+                        {auto.price && parseFloat(auto.price) > 0 ? (
+                          <>
+                            {auto.currency === 'ARS' ? '$' : 'US$'}
+                            {parseFloat(auto.price).toLocaleString('es-ES')}
+                          </>
+                        ) : (
+                          'Consultar precio'
+                        )}
                       </div>
 
                       {/* Diseño minimalista con separadores tipo | */}
@@ -350,10 +309,14 @@ const CarsHome = ({ title }: CarsHomeProps) => {
                             Nuevo <span className='text-color-primary'>•</span>{' '}
                             {auto.mileage.toLocaleString('es-ES')} km
                           </span>
-                        ) : (
+                        ) : auto.mileage && auto.mileage > 0 ? (
                           <span className='text-base text-color-text-light font-medium uppercase tracking-wider'>
                             Usado <span className='text-color-primary'>•</span>{' '}
                             {auto.mileage.toLocaleString('es-ES')} km
+                          </span>
+                        ) : (
+                          <span className='text-base text-color-text-light font-medium uppercase tracking-wider'>
+                            {auto.mileage === 0 ? 'Nuevo' : 'Usado'}
                           </span>
                         )}
                       </div>

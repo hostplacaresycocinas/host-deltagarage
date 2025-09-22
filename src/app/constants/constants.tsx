@@ -26,7 +26,7 @@ export const company = {
 };
 
 export const API_BASE_URL = 'https://dealership.agenciagrvity.com';
-export const TENANT = 'accotto-automotores';
+export const TENANT = 'brocar';
 
 export const metadataCompany = {
   metadataBase: 'https://brocar.vercel.app/',

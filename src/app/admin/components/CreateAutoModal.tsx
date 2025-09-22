@@ -417,7 +417,7 @@ const CreateAutoModal = ({
                     </button>
                     <button
                       type='submit'
-                      className='px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-color-primary hover:bg-color-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-color-secondary flex items-center'
+                      className='px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-color-primary-admin hover:bg-color-primary-admin/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-color-secondary flex items-center'
                       disabled={submitting}
                     >
                       {submitting ? (

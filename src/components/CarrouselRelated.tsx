@@ -5,51 +5,40 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { company } from '@/app/constants/constants';
-import catalogo from '@/data/catalogo.json';
+import { company, API_BASE_URL, TENANT } from '@/app/constants/constants';
 import AutoScroll from 'embla-carousel-auto-scroll';
 
-interface Imagen {
-  id: string;
-  carId: string;
-  imageUrl: string;
-  thumbnailUrl: string;
-  order: number;
-  createdAt: string;
-  updatedAt: string;
-}
-
-interface Categoria {
-  id: string;
-  name: string;
-  createdAt: string;
-  updatedAt: string;
-}
-
-interface Auto {
+interface ApiCar {
   id: string;
   brand: string;
   model: string;
   year: number;
   color: string;
-  price: {
-    valor: number;
-    moneda: string;
-  };
+  price: string;
+  currency: 'USD' | 'ARS';
   description: string;
-  position: number;
-  featured: boolean;
-  favorite: boolean;
-  active: boolean;
   categoryId: string;
   mileage: number;
   transmission: string;
   fuel: string;
   doors: number;
+  position: number;
+  featured: boolean;
+  favorite: boolean;
+  active: boolean;
   createdAt: string;
   updatedAt: string;
-  Images: Imagen[];
-  Category: Categoria;
+  Category: {
+    id: string;
+    name: string;
+    createdAt: string;
+    updatedAt: string;
+  };
+  images: {
+    thumbnailUrl: string;
+    imageUrl: string;
+    order: number;
+  }[];
 }
 
 interface CarrouselRelatedProps {
@@ -68,90 +57,35 @@ const CarrouselRelated = ({ title, currentCarId }: CarrouselRelatedProps) => {
     }),
   ]);
   const [clicked, setClicked] = useState(false);
-  const [relatedCars, setRelatedCars] = useState<Auto[]>([]);
+  const [relatedCars, setRelatedCars] = useState<ApiCar[]>([]);
   const [cargando, setCargando] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const obtenerRelacionados = () => {
+    const obtenerRelacionados = async () => {
       setCargando(true);
       try {
-        // Encontrar el auto actual y su categoría
-        const autoActual = catalogo.find((auto) => auto.id === currentCarId);
-        if (!autoActual) {
-          throw new Error('Auto no encontrado');
+        const response = await fetch(
+          `${API_BASE_URL}/api/cars/${currentCarId}/recommended?tenant=${TENANT}`
+        );
+
+        if (!response.ok) {
+          throw new Error(`Error ${response.status}: ${response.statusText}`);
         }
 
-        // Función para mezclar array aleatoriamente (Fisher-Yates shuffle)
-        const shuffleArray = <T,>(array: T[]): T[] => {
-          const shuffled = [...array];
-          for (let i = shuffled.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-          }
-          return shuffled;
-        };
-
-        // Obtener todos los autos excepto el actual
-        const autosDisponibles = catalogo.filter(
-          (auto) => auto.id !== currentCarId
-        );
-
-        // Mezclar aleatoriamente y tomar máximo 10
-        const autosAleatorios = shuffleArray(autosDisponibles).slice(0, 10);
-
-        const autosRelacionados = autosAleatorios.map((auto) => ({
-          id: auto.id,
-          brand: auto.marca,
-          model: auto.name,
-          year: auto.ano,
-          color: '',
-          price: {
-            valor: auto.precio.valor,
-            moneda: auto.precio.moneda,
-          },
-          description: auto.descripcion,
-          position: 0,
-          featured: false,
-          favorite: false,
-          active: true,
-          categoryId: auto.categoria,
-          mileage: auto.kilometraje,
-          transmission: auto.transmision,
-          fuel: auto.combustible,
-          doors: auto.puertas,
-          createdAt: new Date().toISOString(),
-          updatedAt: new Date().toISOString(),
-          Images: auto.images.map((img: string, index: number) => ({
-            id: `${auto.id}-img-${index}`,
-            carId: auto.id,
-            imageUrl: `/assets/catalogo/${img}`,
-            thumbnailUrl: `/assets/catalogo/${img}`,
-            order: index,
-            createdAt: new Date().toISOString(),
-            updatedAt: new Date().toISOString(),
-          })),
-          Category: {
-            id: auto.categoria.toLowerCase(),
-            name: auto.categoria,
-            createdAt: new Date().toISOString(),
-            updatedAt: new Date().toISOString(),
-          },
-        }));
-
-        setRelatedCars(autosRelacionados);
+        const data = await response.json();
+        setRelatedCars(data || []);
       } catch (err) {
-        console.error(
-          'Error al cargar vehículos relacionados del catálogo:',
-          err
-        );
+        console.error('Error al obtener vehículos relacionados:', err);
         setError('No se pudieron cargar los vehículos relacionados');
       } finally {
         setCargando(false);
       }
     };
 
-    obtenerRelacionados();
+    if (currentCarId) {
+      obtenerRelacionados();
+    }
   }, [currentCarId]);
 
   if (cargando) {
@@ -256,8 +190,11 @@ const CarrouselRelated = ({ title, currentCarId }: CarrouselRelatedProps) => {
                           objectPosition: `center ${company.objectCover}`,
                         }}
                         src={
-                          auto.Images.sort((a, b) => a.order - b.order)[0]
-                            ?.thumbnailUrl || '/assets/placeholder.webp'
+                          auto.images &&
+                          auto.images.length > 0 &&
+                          auto.images[0]?.thumbnailUrl
+                            ? auto.images[0].thumbnailUrl
+                            : '/assets/placeholder.webp'
                         }
                         alt={`${auto.model}`}
                       />
@@ -319,8 +256,14 @@ const CarrouselRelated = ({ title, currentCarId }: CarrouselRelatedProps) => {
                           company.price ? '' : 'hidden'
                         } text-color-primary text-lg md:text-xl font-bold tracking-tight truncate md:mb-1 transition-colors duration-300`}
                       >
-                        {auto.price.moneda === 'ARS' ? '$' : 'US$'}
-                        {auto.price.valor.toLocaleString('es-ES')}
+                        {auto.price && parseFloat(auto.price) > 0 ? (
+                          <>
+                            {auto.currency === 'ARS' ? '$' : 'US$'}
+                            {parseFloat(auto.price).toLocaleString('es-ES')}
+                          </>
+                        ) : (
+                          'Consultar precio'
+                        )}
                       </div>
 
                       {/* Diseño minimalista con separadores tipo | */}
@@ -345,10 +288,14 @@ const CarrouselRelated = ({ title, currentCarId }: CarrouselRelatedProps) => {
                             Nuevo <span className='text-color-primary'>•</span>{' '}
                             {auto.mileage.toLocaleString('es-ES')} km
                           </span>
-                        ) : (
+                        ) : auto.mileage && auto.mileage > 0 ? (
                           <span className='text-sm text-color-text-light font-medium uppercase tracking-wider'>
                             Usado <span className='text-color-primary'>•</span>{' '}
                             {auto.mileage.toLocaleString('es-ES')} km
+                          </span>
+                        ) : (
+                          <span className='text-sm text-color-text-light font-medium uppercase tracking-wider'>
+                            {auto.mileage === 0 ? 'Nuevo' : 'Usado'}
                           </span>
                         )}
                       </div>

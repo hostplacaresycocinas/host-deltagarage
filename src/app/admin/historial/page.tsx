@@ -200,7 +200,7 @@ export default function HistorialPage() {
   if (loading && autosVendidos.length === 0) {
     return (
       <div className='flex items-center justify-center min-h-screen'>
-        <div className='animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-color-primary'></div>
+        <div className='animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-color-primary-admin'></div>
       </div>
     );
   }
@@ -290,7 +290,7 @@ export default function HistorialPage() {
                             Precio de venta
                           </p>
                           {auto.price && parseFloat(auto.price) > 0 ? (
-                            <p className='text-xl font-bold text-color-primary mt-1'>
+                            <p className='text-xl font-bold text-color-primary-admin mt-1'>
                               {auto.currency === 'ARS' ? '$' : 'US$'}
                               {parseFloat(auto.price).toLocaleString(
                                 auto.currency === 'ARS' ? 'es-AR' : 'en-US'
@@ -323,7 +323,7 @@ export default function HistorialPage() {
           )}
           {loadingMore && (
             <div className='py-6 flex justify-center items-center'>
-              <div className='animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-color-primary'></div>
+              <div className='animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-color-primary-admin'></div>
               <span className='ml-3 text-gray-600'>Cargando más ventas...</span>
             </div>
           )}

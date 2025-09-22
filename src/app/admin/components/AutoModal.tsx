@@ -476,9 +476,9 @@ const AutoModal = ({
   };
 
   const inputStyles =
-    'mt-1 block w-full px-4 py-2.5 bg-white border border-gray-300 rounded-lg text-base shadow-sm placeholder-gray-400 focus:outline-none focus:border-color-secondary focus:ring-1 focus:ring-color-secondary transition-colors';
+    'mt-1 block w-full px-4 py-2.5 bg-white border border-gray-300 rounded-lg text-base shadow-sm placeholder-gray-400 focus:outline-none focus:border-color-primary-admin focus:ring-1 focus:ring-color-primary-admin transition-colors';
   const textareaStyles =
-    'mt-1 block w-full px-4 py-2.5 bg-white border border-gray-300 rounded-lg text-base shadow-sm placeholder-gray-400 focus:outline-none focus:border-color-secondary focus:ring-1 focus:ring-color-secondary transition-colors';
+    'mt-1 block w-full px-4 py-2.5 bg-white border border-gray-300 rounded-lg text-base shadow-sm placeholder-gray-400 focus:outline-none focus:border-color-primary-admin focus:ring-1 focus:ring-color-primary-admin transition-colors';
 
   const handleImageClick = (
     url: string,
@@ -533,7 +533,7 @@ const AutoModal = ({
 
                 {loading ? (
                   <div className='flex justify-center py-8'>
-                    <div className='animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-color-primary'></div>
+                    <div className='animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-color-primary-admin'></div>
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className='space-y-4'>
@@ -747,8 +747,9 @@ const AutoModal = ({
                                 }))
                               }
                               onFocus={() => setShowCombustibleDropdown(true)}
-                              className={inputStyles}
+                              className={`${inputStyles} cursor-pointer`}
                               placeholder='Seleccionar tipo de combustible'
+                              readOnly
                               required
                             />
                             <button
@@ -867,8 +868,9 @@ const AutoModal = ({
                                 }))
                               }
                               onFocus={() => setShowTransmisionDropdown(true)}
-                              className={inputStyles}
+                              className={`${inputStyles} cursor-pointer`}
                               placeholder='Seleccionar tipo de transmisión'
+                              readOnly
                               required
                             />
                             <button
@@ -999,14 +1001,14 @@ const AutoModal = ({
                       <button
                         type='button'
                         onClick={onClose}
-                        className='px-4 py-2 border border-gray-300 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-color-secondary'
+                        className='px-4 py-2 border border-gray-300 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-color-primary-admin'
                         disabled={submitting}
                       >
                         Cancelar
                       </button>
                       <button
                         type='submit'
-                        className='px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-color-primary-admin hover:bg-color-primary-admin/90 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-color-secondary flex items-center'
+                        className='px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-color-primary-admin hover:bg-color-primary-admin/90 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-color-primary-admin flex items-center'
                         disabled={submitting}
                       >
                         {submitting ? (
@@ -1091,7 +1093,7 @@ const AutoModal = ({
                   <div className='mt-4'>
                     <button
                       type='button'
-                      className='inline-flex justify-center rounded-md border border-transparent bg-color-primary-admin px-4 py-2 text-base font-medium text-white hover:bg-color-primary-admin/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-color-primary focus-visible:ring-offset-2'
+                      className='inline-flex justify-center rounded-md border border-transparent bg-color-primary-admin px-4 py-2 text-base font-medium text-white hover:bg-color-primary-admin/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-color-primary-admin focus-visible:ring-offset-2'
                       onClick={() => setShowErrorModal(false)}
                     >
                       Entendido
