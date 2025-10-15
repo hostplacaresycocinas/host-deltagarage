@@ -19,7 +19,6 @@ import { ConfirmModal } from '../components/ConfirmModal';
 import SellConfirmModal from '../components/SellConfirmModal';
 import { useInfiniteScroll } from '@/hooks/useInfiniteScroll';
 import { Notification } from '../components/Notification';
-import { LimitModal } from '../components/LimitModal';
 import {
   DndContext,
   closestCenter,
