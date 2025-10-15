@@ -751,7 +751,11 @@ const CatalogoPage = () => {
                     }`}
                   >
                     <ArrowIcon
-                      className={`w-4 h-4 rotate-180 text-color-title-light transition-opacity duration-300 relative z-10 ${
+                      className={`${
+                        company.dark
+                          ? 'text-color-title-light'
+                          : 'text-color-title'
+                      } w-4 h-4 rotate-180 transition-opacity duration-300 relative z-10 ${
                         currentPage === 1 ? 'opacity-50' : 'opacity-100'
                       }`}
                     />
@@ -771,7 +775,11 @@ const CatalogoPage = () => {
                     }`}
                   >
                     <ArrowIcon
-                      className={`w-4 h-4 text-color-title-light transition-opacity duration-300 relative z-10 ${
+                      className={`${
+                        company.dark
+                          ? 'text-color-title-light'
+                          : 'text-color-title'
+                      } w-4 h-4 transition-opacity duration-300 relative z-10 ${
                         currentPage === totalPages
                           ? 'opacity-50'
                           : 'opacity-100'
