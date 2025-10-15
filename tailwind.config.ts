@@ -10,13 +10,13 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        oswald: ['var(--font-oswald)', 'sans-serif'],
-        sourceSans3: ['var(--font-source-sans-3)', 'sans-serif'],
+        anton: ['var(--font-anton)', 'sans-serif'],
+        roboto: ['var(--font-roboto)', 'sans-serif'],
       },
       colors: {
-        'color-primary': '#FFD083',
-        'color-primary-dark': '#FFDCA3',
-        'color-primary-light': '#FFEEB4',
+        'color-primary': '#85F415',
+        'color-primary-dark': '#9CE100',
+        'color-primary-light': '#A5F402',
         'color-primary-admin': '#1F3473',
         'color-primary-dark-admin': '#2E4CA6',
         'color-secondary': '#144BFF',

@@ -16,14 +16,14 @@ export default function PublicLayout({
     <div className='relative min-h-screen w-full'>
       {/* Fondo fijo */}
       <div
-        className='fixed inset-0 w-full h-screen bg-center no-repeat'
+        className='fixed inset-0 w-full h-screen bg-center'
         style={{
           backgroundImage: 'url(/assets/inicio/background.webp)',
         }}
       />
 
       {/* Overlay negro con opacidad */}
-      <div className='fixed inset-0 w-full h-screen bg-black/70' />
+      <div className='fixed inset-0 w-full h-screen bg-black/80' />
 
       {/* Contenido */}
       <div className='relative z-10'>

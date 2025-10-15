@@ -136,8 +136,6 @@ interface SortableAutoCardProps {
   onDelete: (auto: Auto) => void;
   onSell: (auto: Auto) => void;
   onToggleActive: (id: string) => void;
-  onToggleDestacado: (id: string) => void;
-  onToggleFavorito: (id: string) => void;
   isDragDisabled?: boolean;
 }
 
@@ -147,8 +145,6 @@ const SortableAutoCard = ({
   onDelete,
   onSell,
   onToggleActive,
-  onToggleDestacado,
-  onToggleFavorito,
   isDragDisabled = false,
 }: SortableAutoCardProps) => {
   const {
@@ -245,58 +241,6 @@ const SortableAutoCard = ({
                   }`}
                 >
                   {auto.active ? 'Activo' : 'Pausado'}
-                </button>
-                <button
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    if (auto.active) {
-                      onToggleDestacado(auto.id);
-                    }
-                  }}
-                  className={`p-2 rounded-full transition-all ${
-                    auto.destacado
-                      ? 'bg-blue-100 text-blue-700 hover:bg-blue-200 shadow-sm'
-                      : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
-                  } ${!auto.active ? 'opacity-50 cursor-not-allowed' : ''}`}
-                  title={
-                    !auto.active
-                      ? 'Auto pausado, no puede modificarse'
-                      : auto.destacado
-                      ? 'Quitar de Ingreso'
-                      : 'Marcar como Ingreso'
-                  }
-                >
-                  {auto.destacado ? (
-                    <Zap size={20} fill='currentColor' />
-                  ) : (
-                    <Zap size={20} />
-                  )}
-                </button>
-                <button
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    if (auto.active) {
-                      onToggleFavorito(auto.id);
-                    }
-                  }}
-                  className={`p-2 rounded-full transition-all ${
-                    auto.favorito
-                      ? 'bg-yellow-100 text-yellow-700 hover:bg-yellow-200 shadow-sm'
-                      : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
-                  } ${!auto.active ? 'opacity-50 cursor-not-allowed' : ''}`}
-                  title={
-                    !auto.active
-                      ? 'Auto pausado, no puede modificarse'
-                      : auto.favorito
-                      ? 'Quitar de favoritos'
-                      : 'Marcar como favorito'
-                  }
-                >
-                  {auto.favorito ? (
-                    <Star size={20} fill='currentColor' />
-                  ) : (
-                    <Star size={20} />
-                  )}
                 </button>
                 <button
                   onClick={(e) => {
@@ -1639,16 +1583,6 @@ export default function DashboardPage() {
               Guardar orden
             </button>
           )}
-          <div className='flex items-center gap-2 text-base'>
-            <div className='bg-blue-100 text-blue-700 px-3 py-1.5 rounded-full'>
-              <span className='font-semibold'>{autosDestacados.length}/10</span>{' '}
-              ingresos
-            </div>
-            <div className='bg-yellow-100 text-yellow-700 px-3 py-1.5 rounded-full'>
-              <span className='font-semibold'>{autosFavoritos.length}/10</span>{' '}
-              destacados
-            </div>
-          </div>
           <button
             onClick={() => {
               setSelectedAuto(undefined);
@@ -1809,66 +1743,6 @@ export default function DashboardPage() {
                             <button
                               onClick={(e) => {
                                 e.stopPropagation();
-                                if (auto.active) {
-                                  handleToggleDestacado(auto.id);
-                                }
-                              }}
-                              className={`p-2 rounded-full transition-all ${
-                                auto.destacado
-                                  ? 'bg-blue-100 text-blue-700 hover:bg-blue-200 shadow-sm'
-                                  : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
-                              } ${
-                                !auto.active
-                                  ? 'opacity-50 cursor-not-allowed'
-                                  : ''
-                              }`}
-                              title={
-                                !auto.active
-                                  ? 'Auto pausado, no puede modificarse'
-                                  : auto.destacado
-                                  ? 'Quitar de Ingreso'
-                                  : 'Marcar como Ingreso'
-                              }
-                            >
-                              {auto.destacado ? (
-                                <Zap size={20} fill='currentColor' />
-                              ) : (
-                                <Zap size={20} />
-                              )}
-                            </button>
-                            <button
-                              onClick={(e) => {
-                                e.stopPropagation();
-                                if (auto.active) {
-                                  handleToggleFavorito(auto.id);
-                                }
-                              }}
-                              className={`p-2 rounded-full transition-all ${
-                                auto.favorito
-                                  ? 'bg-yellow-100 text-yellow-700 hover:bg-yellow-200 shadow-sm'
-                                  : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
-                              } ${
-                                !auto.active
-                                  ? 'opacity-50 cursor-not-allowed'
-                                  : ''
-                              }`}
-                              title={
-                                !auto.active
-                                  ? 'Auto pausado, no puede modificarse'
-                                  : auto.favorito
-                                  ? 'Quitar de favoritos'
-                                  : 'Marcar como favorito'
-                              }
-                            >
-                              {auto.favorito ? (
-                                <Star size={20} fill='currentColor' />
-                              ) : (
-                                <Star size={20} />
-                              )}
-                            </button>
-                            <button
-                              onClick={(e) => {
-                                e.stopPropagation();
                                 setSelectedAuto(auto);
                                 setIsModalOpen(true);
                               }}
@@ -1950,8 +1824,6 @@ export default function DashboardPage() {
                       onDelete={handleDeleteClick}
                       onSell={handleSellClick}
                       onToggleActive={handleToggleEstado}
-                      onToggleDestacado={handleToggleDestacado}
-                      onToggleFavorito={handleToggleFavorito}
                       isDragDisabled={guardandoOrden}
                     />
                   ))}

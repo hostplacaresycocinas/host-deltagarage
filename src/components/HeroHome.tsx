@@ -19,15 +19,15 @@ const HeroHome = () => {
               className={`absolute w-full h-full top-0 -right-0 bg-black/65 md:bg-black/75 -z-20`}
             ></div>
 
-            <div className='flex flex-col gap-2 md:gap-3 items-center font-oswald'>
+            <div className='flex flex-col gap-2 md:gap-3 items-center font-anton'>
               <div className='md:gap-3 text-nowrap'>
                 <motion.h2
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5 }}
-                  className='uppercase text-[28px] sm:text-4xl md:text-4xl lg:text-5xl xl:text-7xl font-bold text-color-primary-light'
+                  className='uppercase text-4xl sm:text-4xl md:text-4xl lg:text-5xl xl:text-[80px] tracking-wide text-color-primary-light'
                 >
-                  Brocker Automotor
+                  El auto que buscas
                 </motion.h2>
               </div>
               <div className='md:gap-3 text-nowrap lg:mb-2'>
@@ -35,9 +35,9 @@ const HeroHome = () => {
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.1 }}
-                  className='uppercase text-[28px] sm:text-4xl md:text-4xl lg:text-5xl xl:text-7xl font-bold text-color-title-light'
+                  className='uppercase text-4xl sm:text-4xl md:text-4xl lg:text-5xl xl:text-[80px] tracking-wide text-color-title-light'
                 >
-                  Compra y Venta
+                  te esta esperando
                 </motion.h2>
               </div>
             </div>
@@ -45,10 +45,11 @@ const HeroHome = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className='text-lg lg:text-xl xl:text-2xl text-center text-color-text-light mx-4 max-w-md sm:max-w-md lg:max-w-lg xl:max-w-xl mb-1 sm:mb-2 md:mb-4 mt-1'
+              className='text-lg lg:text-xl xl:text-[26px] text-center text-color-text-light mx-4 max-w-md sm:max-w-md lg:max-w-lg xl:max-w-xl mb-1 sm:mb-2 md:mb-4 mt-1'
             >
-              Tenemos el auto que buscas: Vehículos seleccionados, usados y 0km.
-              ¡Consultanos!
+              Vehículos seleccionados, usados y 0km:
+              <br />
+              Compra y Venta
             </motion.p>
 
             <motion.div
@@ -59,8 +60,10 @@ const HeroHome = () => {
             >
               <Link
                 href='/catalogo'
-                className={`flex group relative px-6 md:px-8 py-3.5 md:py-4 bg-color-primary hover:bg-color-primary-dark font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform ${
-                  company.dark ? 'text-color-title-light' : 'text-color-title'
+                className={`flex group relative px-6 md:px-8 py-3.5 md:py-4 bg-color-primary hover:bg-color-primary-dark rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform ${
+                  company.dark
+                    ? 'text-color-title-light font-medium'
+                    : 'text-color-title font-semibold'
                 }`}
               >
                 <span className='relative z-10 flex items-center justify-center gap-2'>
