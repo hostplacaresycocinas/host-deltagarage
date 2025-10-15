@@ -8,6 +8,8 @@ import {
   Trash,
   Plus,
   RefreshCw,
+  Star,
+  Zap,
   GripVertical,
   Save,
   Search,
@@ -19,6 +21,7 @@ import { ConfirmModal } from '../components/ConfirmModal';
 import SellConfirmModal from '../components/SellConfirmModal';
 import { useInfiniteScroll } from '@/hooks/useInfiniteScroll';
 import { Notification } from '../components/Notification';
+import { LimitModal } from '../components/LimitModal';
 import {
   DndContext,
   closestCenter,
@@ -133,6 +136,8 @@ interface SortableAutoCardProps {
   onDelete: (auto: Auto) => void;
   onSell: (auto: Auto) => void;
   onToggleActive: (id: string) => void;
+  onToggleDestacado: (id: string) => void;
+  onToggleFavorito: (id: string) => void;
   isDragDisabled?: boolean;
 }
 
@@ -142,6 +147,8 @@ const SortableAutoCard = ({
   onDelete,
   onSell,
   onToggleActive,
+  onToggleDestacado,
+  onToggleFavorito,
   isDragDisabled = false,
 }: SortableAutoCardProps) => {
   const {
@@ -242,6 +249,58 @@ const SortableAutoCard = ({
                 <button
                   onClick={(e) => {
                     e.stopPropagation();
+                    if (auto.active) {
+                      onToggleDestacado(auto.id);
+                    }
+                  }}
+                  className={`p-2 rounded-full transition-all hidden ${
+                    auto.destacado
+                      ? 'bg-blue-100 text-blue-700 hover:bg-blue-200 shadow-sm'
+                      : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
+                  } ${!auto.active ? 'opacity-50 cursor-not-allowed' : ''}`}
+                  title={
+                    !auto.active
+                      ? 'Auto pausado, no puede modificarse'
+                      : auto.destacado
+                      ? 'Quitar de Ingreso'
+                      : 'Marcar como Ingreso'
+                  }
+                >
+                  {auto.destacado ? (
+                    <Zap size={20} fill='currentColor' />
+                  ) : (
+                    <Zap size={20} />
+                  )}
+                </button>
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    if (auto.active) {
+                      onToggleFavorito(auto.id);
+                    }
+                  }}
+                  className={`p-2 rounded-full transition-all hidden ${
+                    auto.favorito
+                      ? 'bg-yellow-100 text-yellow-700 hover:bg-yellow-200 shadow-sm'
+                      : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
+                  } ${!auto.active ? 'opacity-50 cursor-not-allowed' : ''}`}
+                  title={
+                    !auto.active
+                      ? 'Auto pausado, no puede modificarse'
+                      : auto.favorito
+                      ? 'Quitar de favoritos'
+                      : 'Marcar como favorito'
+                  }
+                >
+                  {auto.favorito ? (
+                    <Star size={20} fill='currentColor' />
+                  ) : (
+                    <Star size={20} />
+                  )}
+                </button>
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
                     onEdit(auto);
                   }}
                   className='p-2 hover:bg-gray-100 rounded-full transition-colors'
@@ -297,6 +356,12 @@ export default function DashboardPage() {
   const [todosLosAutos, setTodosLosAutos] = useState<Auto[]>([]);
   const [ordenModificado, setOrdenModificado] = useState(false);
   const [guardandoOrden, setGuardandoOrden] = useState(false);
+  const [autosDestacados, setAutosDestacados] = useState<Auto[]>([]);
+  const [autosFavoritos, setAutosFavoritos] = useState<Auto[]>([]);
+  const [limitModalOpen, setLimitModalOpen] = useState(false);
+  const [limitType, setLimitType] = useState<'destacado' | 'favorito'>(
+    'destacado'
+  );
   const [notification, setNotification] = useState<{
     isOpen: boolean;
     type: 'success' | 'error';
@@ -694,9 +759,250 @@ export default function DashboardPage() {
           )
         );
       }
+
+      // Si el auto está en destacados o favoritos, actualizar esas listas también
+      setAutosDestacados((prevAutos) =>
+        prevAutos.map((auto) =>
+          auto.id === id
+            ? {
+                ...auto,
+                active: autoActualizado.active,
+              }
+            : auto
+        )
+      );
+
+      setAutosFavoritos((prevAutos) =>
+        prevAutos.map((auto) =>
+          auto.id === id
+            ? {
+                ...auto,
+                active: autoActualizado.active,
+              }
+            : auto
+        )
+      );
     } catch (error) {
       console.error('Error al cambiar el estado del auto:', error);
       alert('Error al cambiar el estado del auto');
+    }
+  };
+
+  const handleToggleDestacado = async (id: string) => {
+    try {
+      const token = Cookies.get('admin-auth');
+
+      // Verificar si estamos intentando activar un auto destacado y ya llegamos al límite
+      const autoActual = todosLosAutos.find((auto) => auto.id === id);
+      if (autoActual && !autoActual.destacado && autosDestacados.length >= 10) {
+        // Mostrar modal de límite alcanzado
+        setLimitType('destacado');
+        setLimitModalOpen(true);
+        return;
+      }
+
+      const response = await fetch(
+        `${API_BASE_URL}/api/cars/${id}/toggle-featured?tenant=${TENANT}`,
+        {
+          method: 'PATCH',
+          headers: {
+            Authorization: `Bearer ${token}`,
+            'Content-Type': 'application/json',
+          },
+        }
+      );
+
+      if (response.status === 403) {
+        handleUnauthorized();
+        return;
+      }
+
+      if (!response.ok) {
+        const errorText = await response.text();
+        console.error('Error response:', errorText);
+        throw new Error(
+          `Error al cambiar el estado de destacado del auto: ${response.status}`
+        );
+      }
+
+      const autoActualizado = await response.json();
+
+      // Actualizar en la lista visible actual
+      setAutos((prevAutos) =>
+        prevAutos.map((auto) =>
+          auto.id === id
+            ? {
+                ...auto,
+                destacado: autoActualizado.featured,
+              }
+            : auto
+        )
+      );
+
+      // Actualizar en todos los autos
+      setTodosLosAutos((prevAutos) =>
+        prevAutos.map((auto) =>
+          auto.id === id
+            ? {
+                ...auto,
+                destacado: autoActualizado.featured,
+              }
+            : auto
+        )
+      );
+
+      // Actualizar resultados de búsqueda si hay búsqueda activa
+      if (buscando) {
+        setResultadosBusqueda((prevResultados) =>
+          prevResultados.map((auto) =>
+            auto.id === id
+              ? {
+                  ...auto,
+                  destacado: autoActualizado.featured,
+                }
+              : auto
+          )
+        );
+      }
+
+      // Actualizar la lista de autos destacados
+      // Si el auto se convirtió en destacado, añadirlo a la lista si no existe
+      if (autoActualizado.featured) {
+        const autoExistente = autosDestacados.find((auto) => auto.id === id);
+        if (!autoExistente) {
+          // Buscar el auto completo en todosLosAutos
+          const autoCompleto =
+            todosLosAutos.find((auto) => auto.id === id) ||
+            (buscando
+              ? resultadosBusqueda.find((auto) => auto.id === id)
+              : null);
+
+          if (autoCompleto) {
+            setAutosDestacados((prev) => [
+              ...prev,
+              { ...autoCompleto, destacado: true },
+            ]);
+          }
+        }
+      } else {
+        // Si el auto dejó de ser destacado, eliminarlo de la lista
+        setAutosDestacados((prev) => prev.filter((auto) => auto.id !== id));
+      }
+
+      // Volver a obtener la lista completa de destacados para asegurar sincronización
+      fetchAutosDestacados();
+    } catch (error) {
+      console.error('Error al cambiar el estado de destacado del auto:', error);
+      alert('Error al cambiar el estado de destacado del auto');
+    }
+  };
+
+  const handleToggleFavorito = async (id: string) => {
+    try {
+      const token = Cookies.get('admin-auth');
+
+      // Verificar si estamos intentando activar un auto favorito y ya llegamos al límite
+      const autoActual = todosLosAutos.find((auto) => auto.id === id);
+      if (autoActual && !autoActual.favorito && autosFavoritos.length >= 10) {
+        // Mostrar modal de límite alcanzado
+        setLimitType('favorito');
+        setLimitModalOpen(true);
+        return;
+      }
+
+      const response = await fetch(
+        `${API_BASE_URL}/api/cars/${id}/toggle-favorite?tenant=${TENANT}`,
+        {
+          method: 'PATCH',
+          headers: {
+            Authorization: `Bearer ${token}`,
+            'Content-Type': 'application/json',
+          },
+        }
+      );
+
+      if (response.status === 403) {
+        handleUnauthorized();
+        return;
+      }
+
+      if (!response.ok) {
+        const errorText = await response.text();
+        console.error('Error response:', errorText);
+        throw new Error(
+          `Error al cambiar el estado de favorito del auto: ${response.status}`
+        );
+      }
+
+      const autoActualizado = await response.json();
+
+      // Actualizar en la lista visible actual
+      setAutos((prevAutos) =>
+        prevAutos.map((auto) =>
+          auto.id === id
+            ? {
+                ...auto,
+                favorito: autoActualizado.favorite,
+              }
+            : auto
+        )
+      );
+
+      // Actualizar en todos los autos
+      setTodosLosAutos((prevAutos) =>
+        prevAutos.map((auto) =>
+          auto.id === id
+            ? {
+                ...auto,
+                favorito: autoActualizado.favorite,
+              }
+            : auto
+        )
+      );
+
+      // Actualizar resultados de búsqueda si hay búsqueda activa
+      if (buscando) {
+        setResultadosBusqueda((prevResultados) =>
+          prevResultados.map((auto) =>
+            auto.id === id
+              ? {
+                  ...auto,
+                  favorito: autoActualizado.favorite,
+                }
+              : auto
+          )
+        );
+      }
+
+      // Actualizar la lista de autos favoritos
+      // Si el auto se convirtió en favorito, añadirlo a la lista si no existe
+      if (autoActualizado.favorite) {
+        const autoExistente = autosFavoritos.find((auto) => auto.id === id);
+        if (!autoExistente) {
+          // Buscar el auto completo en todosLosAutos o en resultados de búsqueda
+          const autoCompleto =
+            todosLosAutos.find((auto) => auto.id === id) ||
+            (buscando
+              ? resultadosBusqueda.find((auto) => auto.id === id)
+              : null);
+
+          if (autoCompleto) {
+            setAutosFavoritos((prev) => [
+              ...prev,
+              { ...autoCompleto, favorito: true },
+            ]);
+          }
+        }
+      } else {
+        // Si el auto dejó de ser favorito, eliminarlo de la lista
+        setAutosFavoritos((prev) => prev.filter((auto) => auto.id !== id));
+      }
+
+      // Volver a obtener la lista completa de favoritos para asegurar sincronización
+      fetchAutosFavoritos();
+    } catch (error) {
+      console.error('Error al cambiar el estado de favorito del auto:', error);
+      alert('Error al cambiar el estado de favorito del auto');
     }
   };
 
@@ -1202,6 +1508,8 @@ export default function DashboardPage() {
         favorito: car.favorite,
         position: car.position,
       }));
+
+      setAutosDestacados(autosFormateados);
     } catch (error) {
       console.error('Error al cargar los autos destacados:', error);
     }
@@ -1252,6 +1560,8 @@ export default function DashboardPage() {
         favorito: car.favorite,
         position: car.position,
       }));
+
+      setAutosFavoritos(autosFormateados);
     } catch (error) {
       console.error('Error al cargar los autos favoritos:', error);
     }
@@ -1329,6 +1639,16 @@ export default function DashboardPage() {
               Guardar orden
             </button>
           )}
+          <div className='hidden items-center gap-2 text-base'>
+            <div className='bg-blue-100 text-blue-700 px-3 py-1.5 rounded-full'>
+              <span className='font-semibold'>{autosDestacados.length}/10</span>{' '}
+              ingresos
+            </div>
+            <div className='bg-yellow-100 text-yellow-700 px-3 py-1.5 rounded-full'>
+              <span className='font-semibold'>{autosFavoritos.length}/10</span>{' '}
+              destacados
+            </div>
+          </div>
           <button
             onClick={() => {
               setSelectedAuto(undefined);
@@ -1489,6 +1809,66 @@ export default function DashboardPage() {
                             <button
                               onClick={(e) => {
                                 e.stopPropagation();
+                                if (auto.active) {
+                                  handleToggleDestacado(auto.id);
+                                }
+                              }}
+                              className={`p-2 rounded-full transition-all hidden ${
+                                auto.destacado
+                                  ? 'bg-blue-100 text-blue-700 hover:bg-blue-200 shadow-sm'
+                                  : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
+                              } ${
+                                !auto.active
+                                  ? 'opacity-50 cursor-not-allowed'
+                                  : ''
+                              }`}
+                              title={
+                                !auto.active
+                                  ? 'Auto pausado, no puede modificarse'
+                                  : auto.destacado
+                                  ? 'Quitar de Ingreso'
+                                  : 'Marcar como Ingreso'
+                              }
+                            >
+                              {auto.destacado ? (
+                                <Zap size={20} fill='currentColor' />
+                              ) : (
+                                <Zap size={20} />
+                              )}
+                            </button>
+                            <button
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                if (auto.active) {
+                                  handleToggleFavorito(auto.id);
+                                }
+                              }}
+                              className={`p-2 rounded-full transition-all hidden ${
+                                auto.favorito
+                                  ? 'bg-yellow-100 text-yellow-700 hover:bg-yellow-200 shadow-sm'
+                                  : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
+                              } ${
+                                !auto.active
+                                  ? 'opacity-50 cursor-not-allowed'
+                                  : ''
+                              }`}
+                              title={
+                                !auto.active
+                                  ? 'Auto pausado, no puede modificarse'
+                                  : auto.favorito
+                                  ? 'Quitar de favoritos'
+                                  : 'Marcar como favorito'
+                              }
+                            >
+                              {auto.favorito ? (
+                                <Star size={20} fill='currentColor' />
+                              ) : (
+                                <Star size={20} />
+                              )}
+                            </button>
+                            <button
+                              onClick={(e) => {
+                                e.stopPropagation();
                                 setSelectedAuto(auto);
                                 setIsModalOpen(true);
                               }}
@@ -1570,6 +1950,8 @@ export default function DashboardPage() {
                       onDelete={handleDeleteClick}
                       onSell={handleSellClick}
                       onToggleActive={handleToggleEstado}
+                      onToggleDestacado={handleToggleDestacado}
+                      onToggleFavorito={handleToggleFavorito}
                       isDragDisabled={guardandoOrden}
                     />
                   ))}
@@ -1629,6 +2011,13 @@ export default function DashboardPage() {
         onClose={() => setNotification((prev) => ({ ...prev, isOpen: false }))}
         type={notification.type}
         message={notification.message}
+      />
+
+      {/* Modal de límite alcanzado */}
+      <LimitModal
+        isOpen={limitModalOpen}
+        onClose={() => setLimitModalOpen(false)}
+        type={limitType}
       />
     </div>
   );
