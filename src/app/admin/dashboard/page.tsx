@@ -1204,8 +1204,6 @@ export default function DashboardPage() {
         favorito: car.favorite,
         position: car.position,
       }));
-
-      setAutosDestacados(autosFormateados);
     } catch (error) {
       console.error('Error al cargar los autos destacados:', error);
     }
@@ -1256,8 +1254,6 @@ export default function DashboardPage() {
         favorito: car.favorite,
         position: car.position,
       }));
-
-      setAutosFavoritos(autosFormateados);
     } catch (error) {
       console.error('Error al cargar los autos favoritos:', error);
     }
@@ -1635,13 +1631,6 @@ export default function DashboardPage() {
         onClose={() => setNotification((prev) => ({ ...prev, isOpen: false }))}
         type={notification.type}
         message={notification.message}
-      />
-
-      {/* Modal de límite alcanzado */}
-      <LimitModal
-        isOpen={limitModalOpen}
-        onClose={() => setLimitModalOpen(false)}
-        type={limitType}
       />
     </div>
   );
