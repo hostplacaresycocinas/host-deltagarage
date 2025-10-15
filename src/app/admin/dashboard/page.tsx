@@ -298,7 +298,6 @@ export default function DashboardPage() {
   const [todosLosAutos, setTodosLosAutos] = useState<Auto[]>([]);
   const [ordenModificado, setOrdenModificado] = useState(false);
   const [guardandoOrden, setGuardandoOrden] = useState(false);
-  const [limitModalOpen, setLimitModalOpen] = useState(false);
   const [notification, setNotification] = useState<{
     isOpen: boolean;
     type: 'success' | 'error';
