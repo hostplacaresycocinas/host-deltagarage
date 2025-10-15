@@ -298,12 +298,7 @@ export default function DashboardPage() {
   const [todosLosAutos, setTodosLosAutos] = useState<Auto[]>([]);
   const [ordenModificado, setOrdenModificado] = useState(false);
   const [guardandoOrden, setGuardandoOrden] = useState(false);
-  const [autosDestacados, setAutosDestacados] = useState<Auto[]>([]);
-  const [autosFavoritos, setAutosFavoritos] = useState<Auto[]>([]);
   const [limitModalOpen, setLimitModalOpen] = useState(false);
-  const [limitType, setLimitType] = useState<'destacado' | 'favorito'>(
-    'destacado'
-  );
   const [notification, setNotification] = useState<{
     isOpen: boolean;
     type: 'success' | 'error';
@@ -701,29 +696,6 @@ export default function DashboardPage() {
           )
         );
       }
-
-      // Si el auto está en destacados o favoritos, actualizar esas listas también
-      setAutosDestacados((prevAutos) =>
-        prevAutos.map((auto) =>
-          auto.id === id
-            ? {
-                ...auto,
-                active: autoActualizado.active,
-              }
-            : auto
-        )
-      );
-
-      setAutosFavoritos((prevAutos) =>
-        prevAutos.map((auto) =>
-          auto.id === id
-            ? {
-                ...auto,
-                active: autoActualizado.active,
-              }
-            : auto
-        )
-      );
     } catch (error) {
       console.error('Error al cambiar el estado del auto:', error);
       alert('Error al cambiar el estado del auto');
