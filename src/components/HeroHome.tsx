@@ -70,6 +70,18 @@ const HeroHome = () => {
                   <span>Explorar Catálogo</span>
                 </span>
               </Link>
+              <Link
+                href='/consignacion'
+                className={`flex group relative px-6 md:px-8 py-3.5 md:py-4 bg-transparent border-2 border-color-primary hover:bg-color-primary/10 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform ${
+                  company.dark
+                    ? 'text-color-primary-light font-medium'
+                    : 'text-color-primary-light font-semibold'
+                }`}
+              >
+                <span className='relative z-10 flex items-center justify-center gap-2'>
+                  <span>Consignación</span>
+                </span>
+              </Link>
             </motion.div>
           </article>
         </div>
