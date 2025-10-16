@@ -83,11 +83,16 @@ export const navigation = [
   },
   {
     id: '2',
+    title: 'Consignación',
+    url: '/consignacion',
+  },
+  {
+    id: '3',
     title: 'Nosotros',
     url: '/nosotros',
   },
   {
-    id: '3',
+    id: '4',
     title: 'Contacto',
     url: '/contacto',
     button: true,
