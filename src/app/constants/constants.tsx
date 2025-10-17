@@ -22,7 +22,7 @@ export const company = {
     { title: 'Sábado', time: '09:00 a 13:00hs' },
   ],
   footer:
-    'Vende tu auto sin preocupaciones: Confia en nosotros para vender tu auto sin costos adicionales',
+    'Compra tu auto sin preocupaciones: El auto que buscas te esta esperando',
 };
 
 export const API_BASE_URL = 'https://dealership.agenciagrvity.com';
@@ -30,9 +30,9 @@ export const TENANT = 'delta-garage';
 
 export const metadataCompany = {
   metadataBase: 'https://deltagarageok.com.ar/',
-  title: 'Delta Garage - Vende tu auto sin preocupaciones',
+  title: 'Delta Garage - Compra tu auto sin preocupaciones',
   description:
-    'Vende tu auto sin preocupaciones: Confia en nosotros para vender tu auto sin costos adicionales',
+    'Compra tu auto sin preocupaciones: El auto que buscas te esta esperando',
 };
 
 // Cambie el archivo data.json, necesito que actualices la informacion de catalogo.json. Las images tomalas de images de data.json, la descripcion tomala de caption de data.json, pero necesito que el texto este parseado, que no este todo junto sin espacios y saltos de linea. En name pone la marca y el modelo del vehiculo en title case, marca, marcaId todo esto acorde a la informacion de caption. Si en caption no se dice kilometraje o precio pone 999999, categoria estimala para el vehiculo (categorias tipicas de vehiculos en argentina. como utilitario, deportivo, suv, hatchback, etc). Transmision, motor, combustible y puertas estimalas acorde al vehiculo. La cantidad de vehiculos tiene que ser la de data.json, si en catalogo.json hay otros vehiculos removelos, los vehiclos de catalogo json tienen que ser los mismos que en data.json. No hagas un script, simplemente actualizalo con ia.
